@@ -56,7 +56,7 @@ class SquareFunctionGenerator
      */
     public function generateCycle()
     {
-        if ($this->phase > $this->wavelength) {
+        if ($this->phase >= $this->wavelength) {
             return NULL;
         }
         return $this->cycle();
@@ -68,10 +68,12 @@ class SquareFunctionGenerator
      */
     public function generateWave(): array
     {
-        if ($this->phase > $this->wavelength) {
+
+        if ($this->phase == $this->wavelength) {
             $this->phase = 0;
+            
         }
-        return $this->cycle;
+        return $this->cycle();
     }
     /**
      * gets value at state
@@ -80,14 +82,18 @@ class SquareFunctionGenerator
      */
     public function getStateAtPhase($phase = 'current'): array
     {
+        
         if ($phase == 'current') {
             $phase = $this->phase;
         }
+        
         switch (($phase % $this->wavelength) < $this->half_wavelength) {
             case true:
+                
                 return array($phase => $this->lower_limit);
                 break;
             case false:
+                
                 return array($phase => $this->upper_limit);
                 break;
         }
@@ -113,7 +119,7 @@ class SquareFunctionGenerator
     }
     public function setPhase(int $phase)
     {
-        $this->checkPhase();
+        $this->checkPhase($phase);
         $this->phase = $phase;
     }
     ###################################
@@ -135,6 +141,16 @@ class SquareFunctionGenerator
     public function setLowerLimit($lower_limit)
     {
         $this->lower_limit = $lower_limit;
+    }
+    #####################################
+    public function getWaveLength()
+    {
+        return $this->wavelength;
+    }
+    public function setWaveLength($wavelength)
+    {
+        $this->wavelength = $wavelength;
+        $this->half_wavelength = intdiv($wavelength, 2);
     }
     # # # # # # # # #
     # Check Values  #

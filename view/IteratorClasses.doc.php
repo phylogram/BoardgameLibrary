@@ -1,4 +1,4 @@
-﻿<!<link href="https://fonts.googleapis.com/css?family=Noto+Sans" rel="stylesheet">
+<!<link href="https://fonts.googleapis.com/css?family=Noto+Sans" rel="stylesheet">
 <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.0/build/pure-min.css" integrity="sha384-nn4HPE8lTHyVtfCBi5yW9d20FjT8BJwUXyWZT9InLYax14RDjBj46LmSztkmNP9w" crossorigin="anonymous" />
 <style>
     article {
@@ -51,7 +51,7 @@
         }
 
         .xdebug-error th {
-            background: rgb(46, 43, 70) !important;
+            background: rgba(48, 185, 67, 0.64) !important;
         }
 
         .xdebug-error span {
@@ -89,7 +89,7 @@
             </figure>
             <p>The SquareFunctiongenerator class generates a ... square wave. This is usefull for example to generate the inner moves for a bishop:</p>
             <img src="pictures/BishopMatrix.PNG"/>
-            <p><strong>Note: </strong> This documentation is about one-dimensional iterators, the examples are two-dimensional. This is covered in the special figure-iterators (#To Do: link). The chess examples here are just for illustration purposes.</p>
+            <p><strong>Note: </strong> This documentation is about one-dimensional iterators, the examples are two-dimensional. This is covered in the special figure-iterators (#To Do: link), which can use as many iterators for each dimension they need. The chess examples here are just for illustration purposes.</p>
 
         </section>
         <section class="code-overview" id="construct">
@@ -105,23 +105,148 @@
             </p>
             <p>Since we are iterating indexes all values are integers and therefore λ must be even (and positive).</p>
             <h2>API</h2>
+            <p><code>SquareFunctionGenerator::generateCycle()</code> returns every time it is called an array of <code>$phase=>$value</code> and at the and of the cycle only <code>NULL</code></p>
+            <p>
+                <code class="code_example">
+                    $square_1_minus_1_2 = new \controller\game_controller\iterators\SquareFunctionGenerator(1, -1, 2);
+                </code>
+            </p>
+            <p>
+                <code class="code_example">
+                    $output_array = array();
+                </code>
+            </p>
             <p>
             <code class="code_example">
-            $square_1_minus_1_2 = new \controller\game_controller\iterators\SquareFunctionGenerator(1, -1, 2); </code></p><code class="code_example">            $output_array = array();</code></p><code class="code_example">
-            foreach(range(0, 8) as $i) {</code></p><code class="code_example">
-                $iterated_array = $square_1_minus_1_2->generateCycle();</code></p><code class="code_example">
-                $output_array = array_merge($output_array, $iterated_array);</code></p><code class="code_example">
-            }</code></p><code class="code_example">
-            echo '<p>', implode(', ', $output_array) . '</p>';</code></p><code class="code_example">
-            <?php
+                foreach(range(0, 7) as $i) {
+            </code>
+            </p>
+            <p>
+            <code class="code_example" style="padding-left: 4em;">
+                $iterated_array = $square_1_minus_1_2->generateCycle();
+                </code>
+            </p>
+            <p>
+            <code class="code_example" style="padding-left:4em;">
+                $output_array = array_merge($output_array, $iterated_array);
+                </code>
+            </p>
+            <p>
+            <code class="code_example" style="padding-left:4em;">
+            }</code>
+            </p>
+            <p>
+            <code class="code_example">
+            var_dump($output_array);
+                </code>
+            </p>
+            <p>
+            <code  class="code_example">
+                <?php
             $square_1_minus_1_2 = new \controller\game_controller\iterators\SquareFunctionGenerator(1, -1, 2);
             $output_array = array();
-            foreach(range(0, 8) as $i) {
+            foreach(range(0, 7) as $i) {
+
                 $iterated_array = $square_1_minus_1_2->generateCycle();
-                $output_array = array_merge($output_array, $iterated_array);
+                if ($iterated_array) {
+                    $output_array = array_merge($output_array, $iterated_array);
+                }
             }
-            echo '<p>', implode(', ', $output_array) . '</p>';
-            ?>
+            var_dump($output_array);
+            #To Do: Visual represantation
+                ?>
+
+            </code>
+                </p>
+            <p>While <code>SquareFunctionGenerator::generateWave()</code> is able to being called at arbritrary times:</p>
+            <p>
+                <code class="code_example">
+                    <?php
+                    $square_1_minus_1_2->setPhase(0);
+
+                    $output_array = array();
+                    foreach(range(0, 7) as $i) {
+
+                        $iterated_array = $square_1_minus_1_2->generateWave();
+                        if ($iterated_array) {
+                            $output_array = array_merge($output_array, $iterated_array);
+                        }
+                    }
+                    var_dump($output_array);
+                    #To Do: Visual represantation
+                    ?>
+                </code>
+            </p>
+            <p>It is possile to calculate the value for an arbritrary phase even when current is not at that phase with: <code>SquareFunctionGenerator::getStateAtPhase($phase = 'current')</code></p>
+            <p>Changing the wavelength to 4 will result in the following: </p>
+            <code class="code_example">
+                <?php
+                $square_1_minus_1_4 = new \controller\game_controller\iterators\SquareFunctionGenerator(1, -1, 4);
+                $output_array = array();
+                foreach(range(0, 7) as $i) {
+
+                    $iterated_array = $square_1_minus_1_4->generateWave();
+
+                    if ($iterated_array) {
+                        $output_array = array_merge($output_array, $iterated_array);
+                    }
+                }
+                var_dump($output_array);
+                #To Do: Visual represantation
+                ?>
+            </code>
+            <p>It is possible to get and set all the properties of the class.</p>
+            <p>Changing the amplitude of the function between calls (++/--) will result in</p>
+            <code class="code_example">
+                <?php
+                $square_1_minus_1_2->setPhase(0);
+                $output_array = array();
+                foreach(range(0, 7) as $i) {
+
+                    $iterated_array = $square_1_minus_1_2->generateWave();
+                    # get Values
+                    $current_upper = $square_1_minus_1_2->getUpperLimit();
+                    $current_lower = $square_1_minus_1_2->getLowerLimit();
+
+                    # change values
+                    $square_1_minus_1_2->setUpperLimit($current_upper+1);
+                    $square_1_minus_1_2->setLowerLimit($current_lower-1);
+
+                    if ($iterated_array) {
+                        $output_array = array_merge($output_array, $iterated_array);
+                    }
+                }
+                var_dump($output_array);
+                #To Do: Visual represantation
+                ?>
+            </code>
+            <p>and changing the wavelength between 4 and 2 (has to be even) every iteration (with ... you guess it: another SquareFunction) will result in</p>
+            <code class="code_example">
+                <?php
+                $square_4_2_2 = new \controller\game_controller\iterators\SquareFunctionGenerator(4, 2, 2);
+
+                $square_1_minus_1_2->setLowerLimit(-1);
+                $square_1_minus_1_2->setUpperLimit(1);
+                $square_1_minus_1_2->setPhase(0);
+                $output_array = array();
+                foreach(range(0, 7) as $i) {
+                    $current_array = $square_4_2_2->generateWave();
+                    $new_wavelength = array_pop($current_array);
+
+                    $iterated_array = $square_1_minus_1_2->generateWave();
+
+                    # change values
+                        $square_1_minus_1_2->setWaveLength($new_wavelength);
+
+
+                    if ($iterated_array) {
+                        $output_array = array_merge($output_array, $iterated_array);
+                    }
+                }
+                var_dump($output_array);
+                #To Do: Visual represantation
+                ?>
+            </code>
 </section>
     </article>
     <time datetime="2017-07-31" id="last-edit">#LAST EDIT 31-07-2017</time>
