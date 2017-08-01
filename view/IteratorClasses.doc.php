@@ -79,15 +79,15 @@
             <p>
                 <time itemprop="datePublished" datetime="2017-07-31">erstellt am: 31.07.2017</time>
             </p>
-            <i>pseudo generators to access the "neighboring" fiels</i>
+            <i>pseudo generators to access the "neighboring" fields</i>
         </header>
         <section>
-            <h2>The basic iterator</h2>
+            <h2>The basic iterator - The SquareFunctionGenerator</h2>
             <figure>
                 <img src="pictures/SquareWave.PNG" />
                 <figcaption>https://en.wikipedia.org/wiki/Square_wave#/media/File:Waveforms.svg (edited)</figcaption>
             </figure>
-            <p>The SquareFunctiongenerator class generates a ... square wave. This is usefull for example to generate the inner moves for a bishop:</p>
+            <p>The SquareFunctionGenerator class generates a ... square wave. This is usefull for example to generate the inner moves for a bishop:</p>
             <img src="pictures/BishopMatrix.PNG"/>
             <p><strong>Note: </strong> This documentation is about one-dimensional iterators, the examples are two-dimensional. This is covered in the special figure-iterators (#To Do: link), which can use as many iterators for each dimension they need. The chess examples here are just for illustration purposes.</p>
 
@@ -248,6 +248,62 @@
                 ?>
             </code>
 </section>
+        <section>
+            <h2>The TriangleFunctionGenerator</h2>
+            <p>Let's take a look how the knight can move:</p>
+            <img src="pictures/knightMatrix.PNG" />
+            <p>which can be seen as Triangle-Function: </p>
+            <figure>
+                <img src="pictures/TriangleWave.PNG" />
+                <figcaption>https://en.wikipedia.org/wiki/Square_wave#/media/File:Waveforms.svg (edited)</figcaption>
+            </figure>
+            <p>adding two shifted square functions will result in a triangle function</p>
+            <p>
+                <code class="code_example">
+                    $square_1_0_2_phase_0 = new \controller\game_controller\iterators\SquareFunctionGenerator(1, 0, 4, 0);
+                </code>
+            </p>
+            <p>
+                <code>
+                    $square_1_0_2_phase_1 = new \controller\game_controller\iterators\SquareFunctionGenerator(1, 0, 4, 1);
+                </code>
+            </p>
+            <p>with <code>$upper_value = $upper_value<sub>0</sub> + $upper_value<sub>1</sub></code> as well as with <code>$lowe_value</code></p>
+            <p>
+                <code class="code_output">
+                    <?php
+                    $square_1_0_2_phase_0 = new \controller\game_controller\iterators\SquareFunctionGenerator(1, 0, 4, 0);
+                    $square_1_0_2_phase_1 = new \controller\game_controller\iterators\SquareFunctionGenerator(1, 0, 4, 1);
+
+                    foreach (range(0,7) as $main_phase) {
+                        $current_left = $square_1_0_2_phase_0->generateWave();
+                        $left = array_pop($current_left);
+
+                        $current_right = $square_1_0_2_phase_1->generateWave();
+                        $right = array_pop($current_right);
+                        $right_phase = $main_phase + 1;
+
+                        $summand = $left + $right;
+                        echo "<p>main (left) phase $main_phase, left value: $left; right phase: $right_phase, right value: $right; summand = $summand </p>";
+                    }
+                    ?>
+                </code>
+            </p>
+        </section>
+        <section>
+            <h2>The Triangle</h2>
+                <code class="code_output">
+                    <?php
+                    $triangle_0121 = new \controller\game_controller\iterators\TriangleFunctionGenerator([1, 0, 4, 0], [1, 0, 4, 1]);
+                    
+                    foreach (range(0,7) as $phase) {
+                        $current = $triangle_0121->generateWave();
+                        echo "<p>phase: $phase, value: $current</p>";
+                    }
+                    ?>
+                </code>
+            </p>
+        </section>
     </article>
     <time datetime="2017-07-31" id="last-edit">#LAST EDIT 31-07-2017</time>
 </div>
