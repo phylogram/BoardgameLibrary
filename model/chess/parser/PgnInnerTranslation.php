@@ -5,9 +5,9 @@ class PgnInnerTranslation
     protected $lower_case_letter;
     protected const UPPER_CASE_LETTER = array(
             'P' =>  'Pawn',     #Bauer
-            'N' =>  'Knight',   #Turm
+            'N' =>  'Rook',   #Turm
             'B' =>  'Bishop',   #Läufer
-            'R' =>  'Rook',     #Springer
+            'R' =>  'Knight',     #Springer
             'Q' =>  'Queen'    #Dame
         );
 

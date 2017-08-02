@@ -89,7 +89,7 @@
             </figure>
             <p>The SquareFunctionGenerator class generates a ... square wave. This is usefull for example to generate the inner moves for a bishop:</p>
             <img src="pictures/BishopMatrix.PNG"/>
-            <p><strong>Note: </strong> This documentation is about one-dimensional iterators, the examples are two-dimensional. This is covered in the special figure-iterators (#To Do: link), which can use as many iterators for each dimension they need. The chess examples here are just for illustration purposes.</p>
+            <p><strong>Note: </strong> This documentation is about one-dimensional iterators, the examples are two-dimensional. This is covered in the special figure-iterators (#To Do: link), which can use as many iterators for each dimension they need. The chess examples here are just for illustration purposes, but as you can see here and will see in the later examples, all patterns are just shifted for each dimension. Providing iterators like these for each dimension allows iterating over an arbitrary number of dimensions.</p>
 
         </section>
         <section class="code-overview" id="construct">
@@ -112,15 +112,11 @@
                 </code>
             </p>
             <p>
-                <code class="code_example">
-                    $output_array = array();
-                </code>
-            </p>
-            <p>
             <code class="code_example">
                 foreach(range(0, 7) as $i) {
             </code>
             </p>
+            <i style="background-color:yellow;">Code entspricht nicht Ausgeführten Code - ändern To Do</i>
             <p>
             <code class="code_example" style="padding-left: 4em;">
                 $iterated_array = $square_1_minus_1_2->generateCycle();
@@ -128,7 +124,9 @@
             </p>
             <p>
             <code class="code_example" style="padding-left:4em;">
-                $output_array = array_merge($output_array, $iterated_array);
+                $phase = key($iterated_array);
+                    $value = current($iterated_array);
+                    echo "line $i: phase: $phase, value: $value";
                 </code>
             </p>
             <p>
@@ -136,62 +134,69 @@
             }</code>
             </p>
             <p>
-            <code class="code_example">
-            var_dump($output_array);
-                </code>
-            </p>
+
             <p>
             <code  class="code_example">
                 <?php
             $square_1_minus_1_2 = new \controller\game_controller\iterators\SquareFunctionGenerator(1, -1, 2);
-            $output_array = array();
-            foreach(range(0, 7) as $i) {
+            foreach(range(0, 7) as $line) {
 
                 $iterated_array = $square_1_minus_1_2->generateCycle();
                 if ($iterated_array) {
-                    $output_array = array_merge($output_array, $iterated_array);
+                    $phase = key($iterated_array);
+                    $value = current($iterated_array);
+                } else {
+                    $phase = NULL;
+                    $value = NULL;
                 }
+                echo "<p>line $line | phase: $phase, value: $value</p>";
             }
-            var_dump($output_array);
+
             #To Do: Visual represantation
                 ?>
 
             </code>
                 </p>
-            <p>While <code>SquareFunctionGenerator::generateWave()</code> is able to being called at arbritrary times:</p>
+            <p>While <code>SquareFunctionGenerator::generateWave()</code> is able to being called at arbitrary times:</p>
+              
             <p>
                 <code class="code_example">
                     <?php
                     $square_1_minus_1_2->setPhase(0);
 
-                    $output_array = array();
-                    foreach(range(0, 7) as $i) {
+                    foreach(range(0, 7) as $line) {
 
                         $iterated_array = $square_1_minus_1_2->generateWave();
                         if ($iterated_array) {
-                            $output_array = array_merge($output_array, $iterated_array);
+                            $phase = key($iterated_array);
+                            $value = current($iterated_array);
+                        } else {
+                            $phase = NULL;
+                            $value = NULL;
                         }
-                    }
-                    var_dump($output_array);
+                        echo "<p>line $line | phase: $phase, value: $value</p>";
+                        }
                     #To Do: Visual represantation
                     ?>
                 </code>
             </p>
-            <p>It is possile to calculate the value for an arbritrary phase even when current is not at that phase with: <code>SquareFunctionGenerator::getStateAtPhase($phase = 'current')</code></p>
+            <p>It is possile to calculate the value for an arbitrary phase even when current is not at that phase with: <code>SquareFunctionGenerator::getStateAtPhase($phase = 'current')</code></p>
             <p>Changing the wavelength to 4 will result in the following: </p>
             <code class="code_example">
                 <?php
                 $square_1_minus_1_4 = new \controller\game_controller\iterators\SquareFunctionGenerator(1, -1, 4);
-                $output_array = array();
-                foreach(range(0, 7) as $i) {
+                foreach(range(0, 7) as $line) {
 
                     $iterated_array = $square_1_minus_1_4->generateWave();
-
                     if ($iterated_array) {
-                        $output_array = array_merge($output_array, $iterated_array);
+                        $phase = key($iterated_array);
+                        $value = current($iterated_array);
+                    } else {
+                        $phase = NULL;
+                        $value = NULL;
                     }
+                    echo "<p>line $line | phase: $phase, value: $value</p>";
                 }
-                var_dump($output_array);
                 #To Do: Visual represantation
                 ?>
             </code>
@@ -200,8 +205,7 @@
             <code class="code_example">
                 <?php
                 $square_1_minus_1_2->setPhase(0);
-                $output_array = array();
-                foreach(range(0, 7) as $i) {
+                foreach(range(0, 7) as $line) {
 
                     $iterated_array = $square_1_minus_1_2->generateWave();
                     # get Values
@@ -212,11 +216,17 @@
                     $square_1_minus_1_2->setUpperLimit($current_upper+1);
                     $square_1_minus_1_2->setLowerLimit($current_lower-1);
 
+
                     if ($iterated_array) {
-                        $output_array = array_merge($output_array, $iterated_array);
+                        $phase = key($iterated_array);
+                        $value = current($iterated_array);
+                    } else {
+                        $phase = NULL;
+                        $value = NULL;
                     }
+                    echo "<p>line $line | phase: $phase, value: $value</p>";
                 }
-                var_dump($output_array);
+
                 #To Do: Visual represantation
                 ?>
             </code>
@@ -228,30 +238,36 @@
                 $square_1_minus_1_2->setLowerLimit(-1);
                 $square_1_minus_1_2->setUpperLimit(1);
                 $square_1_minus_1_2->setPhase(0);
-                $output_array = array();
-                foreach(range(0, 7) as $i) {
+
+                foreach(range(0, 7) as $line) {
                     $current_array = $square_4_2_2->generateWave();
                     $new_wavelength = array_pop($current_array);
 
                     $iterated_array = $square_1_minus_1_2->generateWave();
 
                     # change values
-                        $square_1_minus_1_2->setWaveLength($new_wavelength);
-
+                    $square_1_minus_1_2->setWaveLength($new_wavelength);
 
                     if ($iterated_array) {
-                        $output_array = array_merge($output_array, $iterated_array);
+                        $phase = key($iterated_array);
+                        $value = current($iterated_array);
+                        $wavelength = $square_1_minus_1_2->getWaveLength();
+                    } else {
+                        $phase = NULL;
+                        $value = NULL;
+                        $wavelength = NULL;
                     }
+                    echo "<p>line $line | phase: $phase, value: $value (wavelength: $wavelength)</p>";
                 }
-                var_dump($output_array);
+
                 #To Do: Visual represantation
                 ?>
             </code>
 </section>
         <section>
             <h2>The TriangleFunctionGenerator</h2>
-            <p>Let's take a look how the knight can move:</p>
-            <img src="pictures/knightMatrix.PNG" />
+            <p>Let's take a look how the rook can move:</p>
+            <img src="pictures/RookMatrix.PNG" />
             <p>which can be seen as Triangle-Function: </p>
             <figure>
                 <img src="pictures/TriangleWave.PNG" />
@@ -275,34 +291,59 @@
                     $square_1_0_2_phase_0 = new \controller\game_controller\iterators\SquareFunctionGenerator(1, 0, 4, 0);
                     $square_1_0_2_phase_1 = new \controller\game_controller\iterators\SquareFunctionGenerator(1, 0, 4, 1);
 
-                    foreach (range(0,7) as $main_phase) {
+                    foreach (range(0,7) as $line) {
                         $current_left = $square_1_0_2_phase_0->generateWave();
-                        $left = array_pop($current_left);
+                        $left_phase = key($current_left);
+                        $left_value = current($current_left);
 
                         $current_right = $square_1_0_2_phase_1->generateWave();
-                        $right = array_pop($current_right);
-                        $right_phase = $main_phase + 1;
+                        $right_phase = key($current_right);
+                        $right_value = current($current_right);
 
-                        $summand = $left + $right;
-                        echo "<p>main (left) phase $main_phase, left value: $left; right phase: $right_phase, right value: $right; summand = $summand </p>";
+                        $summand = $left_value + $right_value;
+                        echo "<p>line $line | left phase: $left_phase, left value: $left_value; right phase: $right_phase, right value: $right_value; summand = $summand </p>";
                     }
                     ?>
                 </code>
             </p>
         </section>
         <section>
-            <h2>The Triangle</h2>
+            <h2>The TriangleFunctionGenerator</h2>
+            <p>The TriangleFunctionGenerator calls as many SquareFunctionGenerators as arguments given. Each argument should be an array with the arguments for each Squarefunctiongenerator as above:</p>
+            <p>
+                <code class="code_example">
+                    $triangle_0121 = new \controller\game_controller\iterators\TriangleFunctionGenerator([1, 0, 4, 0], [0, -1, 4, 1]);
+                </code>
+            </p>
+            <p>
                 <code class="code_output">
                     <?php
-                    $triangle_0121 = new \controller\game_controller\iterators\TriangleFunctionGenerator([1, 0, 4, 0], [1, 0, 4, 1]);
+                    $triangle_0121 = new \controller\game_controller\iterators\TriangleFunctionGenerator([1, 0, 4, 0], [0, -1, 4, 1]);
                     
-                    foreach (range(0,7) as $phase) {
+                    foreach (range(0,7) as $line) {
                         $current = $triangle_0121->generateWave();
-                        echo "<p>phase: $phase, value: $current</p>";
+                        $phase = key($current);
+                        $value = current($current);
+                        echo "<p>line $line | phase: $phase, value: $value</p>";
                     }
                     ?>
                 </code>
             </p>
+            <p>The new wavelength is calculated as the least common multiple by reduction by the greatest common divisor (
+<a href="https://en.wikipedia.org/wiki/Least_common_multiple#Reduction_by_the_greatest_common_divisor" target="_blank">wiki</a>) and can be accessed with <code>TriangleFunctionGenerator::getResultingWavelength()</code></p>
+            <p>
+                <code class="code_example">
+                    <?php
+                    echo $triangle_0121->getResultingWavelength();
+                    ?>
+                </code></p>
+            <p>The value at a explicit state can be accessed by <code>TriangleFunctionGenerator::getStateAtPhase($phase)</code>, for example 3 and 2:</p>
+            <p>
+                <code class="code_output">
+                <?php
+                echo '<p>', $triangle_0121->getStateAtPhase(3), '</p><p>', $triangle_0121->getStateAtPhase(2), '</p>';
+                ?>
+                </code>            </p>
         </section>
     </article>
     <time datetime="2017-07-31" id="last-edit">#LAST EDIT 31-07-2017</time>
