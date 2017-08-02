@@ -73,4 +73,7 @@ class TriangleFunctionGenerator
     {
         return $this->resulting_wavelength;
     }
+    public function setPhase($phase) {
+        $this->phase = $phase;
+    }
 }

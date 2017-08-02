@@ -136,7 +136,7 @@
             <p>
 
             <p>
-            <code  class="code_example">
+            <div>
                 <?php
             $square_1_minus_1_2 = new \controller\game_controller\iterators\SquareFunctionGenerator(1, -1, 2);
             foreach(range(0, 7) as $line) {
@@ -149,14 +149,22 @@
                     $phase = NULL;
                     $value = NULL;
                 }
-                echo "<p>line $line | phase: $phase, value: $value</p>";
+                if ($value < 0) {
+                    $start = 10 - abs($value) * 4;
+                } else {
+                    $start = 10;
+                }
+                $width = abs($value) * 4;
+                $value = $value > 0 ? '+' . strval($value) : strval($value);
+                echo "<p>line $line | phase: $phase, value: $value <span style=\"display: inline;width:70%;height:1.2em;\"><span style=\"background-color:blue;width:$width", "em;margin-left:$start", "em;height:1.2em;text-align:center;display:inline-block\">$value</span></span></p>";
             }
 
             #To Do: Visual represantation
                 ?>
 
-            </code>
+            </div>
                 </p>
+            
             <p>While <code>SquareFunctionGenerator::generateWave()</code> is able to being called at arbitrary times:</p>
               
             <p>
@@ -174,7 +182,14 @@
                             $phase = NULL;
                             $value = NULL;
                         }
-                        echo "<p>line $line | phase: $phase, value: $value</p>";
+                        if ($value < 0) {
+                            $start = 10 - abs($value) * 4;
+                        } else {
+                            $start = 10;
+                        }
+                        $width = abs($value) * 4;
+                        $value = $value > 0 ? '+' . strval($value) : strval($value);
+                        echo "<p>line $line | phase: $phase, value: $value <span style=\"display: inline;width:70%;height:1.2em;\"><span style=\"background-color:blue;width:$width", "em;margin-left:$start", "em;height:1.2em;text-align:center;display:inline-block\">$value</span></span></p>";
                         }
                     #To Do: Visual represantation
                     ?>
@@ -195,7 +210,14 @@
                         $phase = NULL;
                         $value = NULL;
                     }
-                    echo "<p>line $line | phase: $phase, value: $value</p>";
+                    if ($value < 0) {
+                        $start = 10 - abs($value) * 4;
+                    } else {
+                        $start = 10;
+                    }
+                    $width = abs($value) * 4;
+                    $value = $value > 0 ? '+' . strval($value) : strval($value);
+                    echo "<p>line $line | phase: $phase, value: $value <span style=\"display: inline;width:70%;height:1.2em;\"><span style=\"background-color:blue;width:$width", "em;margin-left:$start", "em;height:1.2em;text-align:center;display:inline-block\">$value</span></span></p>";
                 }
                 #To Do: Visual represantation
                 ?>
@@ -224,7 +246,14 @@
                         $phase = NULL;
                         $value = NULL;
                     }
-                    echo "<p>line $line | phase: $phase, value: $value</p>";
+                    if ($value < 0) {
+                        $start = 15 - abs($value) * 2;
+                    } else {
+                        $start = 15;
+                    }
+                    $width = abs($value) * 2;
+                    $value = $value > 0 ? '+' . strval($value) : strval($value);
+                    echo "<p>line $line | phase: $phase, value: $value <span style=\"display: inline;width:70%;height:1.2em;\"><span style=\"background-color:blue;width:$width", "em;margin-left:$start", "em;height:1.2em;text-align:center;display:inline-block\">$value</span></span></p>";
                 }
 
                 #To Do: Visual represantation
@@ -257,7 +286,14 @@
                         $value = NULL;
                         $wavelength = NULL;
                     }
-                    echo "<p>line $line | phase: $phase, value: $value (wavelength: $wavelength)</p>";
+                    if ($value < 0) {
+                        $start = 10 - abs($value) * 4;
+                    } else {
+                        $start = 10;
+                    }
+                    $width = abs($value) * 4;
+                    $value = $value > 0 ? '+' . strval($value) : strval($value);
+                    echo "<p>line $line | phase: $phase, value: $value <span style=\"display: inline;width:70%;height:1.2em;\"><span style=\"background-color:blue;width:$width", "em;margin-left:$start", "em;height:1.2em;text-align:center;display:inline-block\">$value</span></span></p>";
                 }
 
                 #To Do: Visual represantation
@@ -301,7 +337,13 @@
                         $right_value = current($current_right);
 
                         $summand = $left_value + $right_value;
-                        echo "<p>line $line | left phase: $left_phase, left value: $left_value; right phase: $right_phase, right value: $right_value; summand = $summand </p>";
+                        if ($value < 0) {
+                            $start = 10 - abs($summand) * 4;
+                        } else {
+                            $start = 10;
+                        }
+                        $width = abs($summand) * 4;
+                        echo "<p>line $line | left phase: $left_phase, left value: $left_value; right phase: $right_phase, right value: $right_value; summand = $summand<span style=\"display: inline;width:70%;height:1.2em;\"><span style=\"background-color:blue;width:$width", "em;margin-left:$start", "em;height:1.2em;text-align:center;display:inline-block\">$summand</span></span> </p>";
                     }
                     ?>
                 </code>
@@ -319,12 +361,19 @@
                 <code class="code_output">
                     <?php
                     $triangle_0121 = new \controller\game_controller\iterators\TriangleFunctionGenerator([1, 0, 4, 0], [0, -1, 4, 1]);
-                    
+
                     foreach (range(0,7) as $line) {
                         $current = $triangle_0121->generateWave();
                         $phase = key($current);
                         $value = current($current);
-                        echo "<p>line $line | phase: $phase, value: $value</p>";
+                        if ($value < 0) {
+                            $start = 10 - abs($value) * 4;
+                        } else {
+                            $start = 10;
+                        }
+                        $width = abs($value) * 4;
+                        $value = $value > 0 ? '+' . strval($value) : strval($value);
+                        echo "<p>line $line | phase: $phase, value: $value <span style=\"display: inline;width:70%;height:1.2em;\"><span style=\"background-color:blue;width:$width", "em;margin-left:$start", "em;height:1.2em;text-align:center;display:inline-block\">$value</span></span></p>";
                     }
                     ?>
                 </code>
@@ -344,6 +393,61 @@
                 echo '<p>', $triangle_0121->getStateAtPhase(3), '</p><p>', $triangle_0121->getStateAtPhase(2), '</p>';
                 ?>
                 </code>            </p>
+            <p>and again it is possible to retrieve just one cycle with <code>TriangleFunctionGenerator::generateCycle()</code></p>
+            <p>
+                <code class="code_output">
+                    <?php
+                    $triangle_0121->setPhase(0);
+                    foreach(range(0,3) as $line) {
+                        $current = $triangle_0121->generateCycle();
+                        if ($current) {
+                            $phase = key($current);
+                            $value = current($current);
+                        } else {
+                            $phase = $value = NULL;
+                        }
+                        if ($value < 0) {
+                            $start = 10 - abs($value) * 4;
+                        } else {
+                            $start = 10;
+                        }
+                        $width = abs($value) * 4;
+                        $value = $value > 0 ? '+' . strval($value) : strval($value);
+                        echo "<p>line $line | phase: $phase, value: $value <span style=\"display: inline;width:70%;height:1.2em;\"><span style=\"background-color:blue;width:$width", "em;margin-left:$start", "em;height:1.2em;text-align:center;display:inline-block\">$value</span></span></p>";
+                    }
+                    ?>
+                </code>
+            </p>
+            <p>As mentioned above it is possible to use an arbityra number of generators like this:</p>
+            <p>
+                <code class="code_output">
+                    <?php
+                    $triangle_fun = new \controller\game_controller\iterators\TriangleFunctionGenerator([0,1,6,0], [0,1,6,1], [0,1,6,2], [0,1,6,3]);
+                    echo '<p>Resulting wavelength: ', $triangle_fun->getResultingWavelength(), '<p>';
+                    foreach(range(0,11) as $line) {
+                        $current = $triangle_fun->generateWave();
+                        if ($current) {
+                            $phase = key($current);
+                            $value = current($current);
+                        } else {
+                            $phase = $value = NULL;
+                        }
+                        if ($value < 0) {
+                            $start = 10 - abs($value) * 4;
+                        } else {
+                            $start = 10;
+                        }
+                        $width = abs($value) * 4;
+                        $value = $value > 0 ? '+' . strval($value) : strval($value);
+                        $line = $line < 10 ? '0' . strval($line) :strval($line);
+                        echo "<p>line $line | phase: $phase, value: $value <span style=\"display: inline;width:70%;height:1.2em;\"><span style=\"background-color:blue;width:$width", "em;margin-left:$start", "em;height:1.2em;text-align:center;display:inline-block\">$value</span></span></p>";
+                    }
+                    ?>
+                </code>
+            </p>
+        </section>
+        <section>
+            <h2>Using combined square functions for knight and rook</h2>
         </section>
     </article>
     <time datetime="2017-07-31" id="last-edit">#LAST EDIT 31-07-2017</time>
