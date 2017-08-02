@@ -8,6 +8,7 @@ class TriangleFunctionGenerator
     protected $signatures;
     protected $resulting_wavelength;
     protected $phase;
+    protected $timer;
 
     public function __construct(...$input)
     {
@@ -15,6 +16,7 @@ class TriangleFunctionGenerator
         $this->resulting_wavelength = \controller\Math\VectorMath::leastCommonMultipleOfArray(array_column($input, 2));
         $this->phase = $input[0][3];
         $this->signatures = $input;
+        $this->timer = 0;
         foreach ($input as $arguments) {
             $new_generator = new \controller\game_controller\iterators\SquareFunctionGenerator(...$arguments);
             $this->generator_objects[] = $new_generator;
@@ -24,10 +26,12 @@ class TriangleFunctionGenerator
 
     public function generateCycle()
     {
-        if ($this->phase >= $this->resulting_wavelength) {
+        if ($this->timer >= $this->resulting_wavelength) {
             return NULL;
         }
-        return $this->cycle();
+        $return_value = $this->generateWave();
+        $this->timer ++;
+        return $return_value;
     }
 
     public function generateWave(): array
@@ -75,5 +79,14 @@ class TriangleFunctionGenerator
     }
     public function setPhase($phase) {
         $this->phase = $phase;
+    }
+
+    public function getTimer()
+    {
+        return $this->timer;
+    }
+    public function setTimer($time)
+    {
+        $this->timer = $time;
     }
 }

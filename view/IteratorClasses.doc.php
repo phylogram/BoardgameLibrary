@@ -72,7 +72,7 @@
 
 <div>
     <article class="library-description" id="doc_IteratorClasses">
-        <?php require('../bootstrap/init.php');
+        <?php require('../bootstrap/init.php'); #To Do: write functions/classes for all that repeating stuff
         ?>
         <header>
             <h1 itemprop="headline">The Basic Iterator Classes</h1>
@@ -445,10 +445,79 @@
                     ?>
                 </code>
             </p>
+
         </section>
         <section>
-            <h2>Using combined square functions for knight and rook</h2>
+            <h2>Using combined square functions for knight and king</h2>
+            <p>we can use combined square functions for knight and king. This are the possible movements of the king:</p>
+            <img src="pictures/KingMatrix.PNG" />
+            <p>We can add two SquareFunctions with a phase difference of 1:</p>
+            <p>
+                <code class="code_example">
+                    $triangle_king = new \controller\game_controller\iterators\TriangleFunctionGenerator([0,1,8,6], [-1,0,8,7]);
+                </code>
+            </p>
+            <p>and with <code>TriangleFunctionGenerator::generateCycle();</code> we can move exactly one time around.</p>
+            <p>
+                <code class="code_output">
+                    <?php
+                    $triangle_king = new \controller\game_controller\iterators\TriangleFunctionGenerator([0,1,8,6], [-1,0,8,7]);
+                    echo $triangle_king->getResultingWavelength();
+                    foreach(range(0,7) as $line) {
+                        $current = $triangle_king->generateCycle();
+                        if ($current) {
+                            $phase = key($current);
+                            $value = current($current);
+                        } else {
+                            $phase = $value = NULL;
+                        }
+                        if ($value < 0) {
+                            $start = 10 - abs($value) * 4;
+                        } else {
+                            $start = 10;
+                        }
+                        $width = abs($value) * 4;
+                        $value = $value > 0 ? '+' . strval($value) : strval($value);
+                        echo "<p>line $line | phase: $phase, value: $value <span style=\"display: inline;width:70%;height:1.2em;\"><span style=\"background-color:blue;width:$width", "em;margin-left:$start", "em;height:1.2em;text-align:center;display:inline-block\">$value</span></span></p>";
+                    }
+                    ?>
+                </code>
+            </p>
+            <p>The knight has 4 possible values:</p>
+            <img src="pictures/KnightMatrix.PNG" />
+            <p>
+            <code class="code_example">
+                $triangle_knight = new \controller\game_controller\iterators\TriangleFunctionGenerator([-1,1,8,0], [-1,0,8,1], [0,1,8,2]);
+                </code>
+            </p>
+            <p>and with <code>TriangleFunctionGenerator::generateCycle();</code> we can move exactly one time around.</p>
+            <p>
+                <code class="code_output">
+                    <?php
+                    $triangle_knight = new \controller\game_controller\iterators\TriangleFunctionGenerator([-1,1,8,7], [-1,0,8,0], [0,1,8,6]);
+                    echo $triangle_knight->getResultingWavelength();
+                    foreach(range(0,7) as $line) {
+                        $current = $triangle_knight->generateCycle();
+                        if ($current) {
+                            $phase = key($current);
+                            $value = current($current);
+                        } else {
+                            $phase = $value = NULL;
+                        }
+                        if ($value < 0) {
+                            $start = 10 - abs($value) * 4;
+                        } else {
+                            $start = 10;
+                        }
+                        $width = abs($value) * 4;
+                        $value = $value > 0 ? '+' . strval($value) : strval($value);
+                        echo "<p>line $line | phase: $phase, value: $value <span style=\"display: inline;width:70%;height:1.2em;\"><span style=\"background-color:blue;width:$width", "em;margin-left:$start", "em;height:1.2em;text-align:center;display:inline-block\">$value</span></span></p>";
+                    }
+                    ?>
+                </code>
+            </p>
         </section>
     </article>
     <time datetime="2017-07-31" id="last-edit">#LAST EDIT 31-07-2017</time>
 </div>
+
