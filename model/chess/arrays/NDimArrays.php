@@ -77,18 +77,23 @@ class NDimArrays
         foreach ($vector as $v) {
             if ($v > MAX_V) {
                 trigger_error(...\errors\ErrorMessage::maxV($v));
+                return false; #if dev environment
             }
             if ($v < 1) {
                 trigger_error(...\errors\ErrorMessage::zeroOrLess($v));
+                return false; #if dev environment
             }
         }
+        return true;
     }
 
     protected function testNDim($n_dim)
     {
         if ($n_dim > MAX_DIM) {
             trigger_error(...\errors\ErrorMessage::maxDim($this->n_dim));
+            return false; #if dev environment
         }
+        return true;
     }
 
     # # # # # # # # # # #
@@ -169,8 +174,6 @@ class NDimArrays
             default:
                 trigger_error(...\errors\ErrorMessage::unknownMethod($method, ERROR_BAD));
         }
-
-       #To Do: check if any of position bigger as corresponding $vector
        $this->testNDim(count($position));
        $pass_me = $this->protected_select($position, $nested_array);
        return $pass_me;

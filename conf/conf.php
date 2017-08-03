@@ -45,3 +45,6 @@ const NAMESPACE_FOLDER_RELATION = array(
 #Talking to each other
 
 const NEXT = 'next'; #ignore, move on to next issue
+
+#Chess Board size
+const CHESS_BOARD_X_Y = array(8,8);

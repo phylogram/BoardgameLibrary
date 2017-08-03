@@ -57,11 +57,11 @@ class GameField
     {
         return $this>pieces_that_reach_me;
     }
-    public function pushPiecesThatReachMe(\model\chess\figures\AbstractFigure &$piece)
+    public function pushPiecesThatReachMe(\model\chess\figures\AbstractFigure &$piece, $phase)
     {
         #To Do: check piece for instance of
         $string_position = implode('-',$piece->getPosition());
-        $this->pieces_that_reach_me[$string_position] &= $piece; #Possible error
+        $this->pieces_that_reach_me[$string_position] = array($phase => $piece); #Possible error
     }
     public function removePiecesThatReachMe(\model\chess\figures\AbstractFigure &$piece)
     {

@@ -31,6 +31,26 @@ abstract class AbstractFigure
     abstract function move(array $vector): bool;
 
     /**
+     * updates alle possible movements - at the beginning and after move
+     */
+    abstract function updateAll(): bool;
+    /**
+     * only updates one phase - after other figures moved
+     * @param mixed $phase 
+     */
+    abstract function updatePhase($phase): bool;
+    
+    /**
+     * Deletes all posible movements
+     */
+    abstract function undoAll(): bool;
+
+    /**
+     * Deletes all movements of phase after $other_position
+     */
+    abstract function undoPhaseAfter($phase, $other_position);
+
+    /**
      * getIterator
      * returns reference to innerIterator at controller
      * @return callable
