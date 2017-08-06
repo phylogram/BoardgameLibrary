@@ -46,17 +46,17 @@
         background-color: rgba(44, 76, 134, 0.83) !important;
     }
 
-        .xdebug-error th, .xdebug-error td {
-            padding: 1% !important;
-        }
+    .xdebug-error th, .xdebug-error td {
+        padding: 1% !important;
+    }
 
-        .xdebug-error th {
-            background: rgba(48, 185, 67, 0.64) !important;
-        }
+    .xdebug-error th {
+        background: rgba(48, 185, 67, 0.64) !important;
+    }
 
-        .xdebug-error span {
-            display: none !important;
-        }
+    .xdebug-error span {
+        display: none !important;
+    }
 
     .xdebug-error_description th {
         font-size: 1.2em !important;
@@ -71,15 +71,16 @@
 </style>
 
 <div>
-    <article class="library-description" id="doc_IteratorClasses">
+    <article class="library-description" id="doc_ChessBoard">
         <?php require('../bootstrap/init.php'); #To Do: write functions/classes for all that repeating stuff
+
         ?>
         <header>
-            <h1 itemprop="headline">The Basic Iterator Classes</h1>
+            <h1 itemprop="headline">The ChessBoard class</h1>
             <p>
-                <time itemprop="datePublished" datetime="2017-07-31">erstellt am: 31.07.2017</time>
+                <time itemprop="datePublished" datetime="2017-08-06">published: 06.08.2017</time>
             </p>
-            <i>pseudo generators to access the "neighboring" fields</i>
+            <i>a child class of NDimArrays</i>
         </header>
         <section>
             <h2>The basic iterator - The SquareFunctionGenerator</h2>
@@ -97,10 +98,10 @@
             <p>
                 produces an pseudo-iterator, with
                 <code>
-                        peak
-                        <sup>max</sup> = $upper_limit, peak
-                        <sup>min</sup> = $lower_limit </code> and <code>
-                        λ = $wavelength
+                    peak
+                    <sup>max</sup> = $upper_limit, peak
+                    <sup>min</sup> = $lower_limit </code> and <code>
+                    λ = $wavelength
                 </code>
             </p>
             <p>Since we are iterating indexes all values are integers and therefore λ must be even (and positive).</p>
@@ -112,61 +113,61 @@
                 </code>
             </p>
             <p>
-            <code class="code_example">
-                foreach(range(0, 7) as $i) {
-            </code>
+                <code class="code_example">
+                    foreach(range(0, 7) as $i) {
+                </code>
             </p>
             <i style="background-color:yellow;">Code entspricht nicht Ausgeführten Code - ändern To Do</i>
             <p>
-            <code class="code_example" style="padding-left: 4em;">
-                $iterated_array = $square_1_minus_1_2->generateCycle();
+                <code class="code_example" style="padding-left: 4em;">
+                    $iterated_array = $square_1_minus_1_2->generateCycle();
                 </code>
             </p>
             <p>
-            <code class="code_example" style="padding-left:4em;">
-                $phase = key($iterated_array);
+                <code class="code_example" style="padding-left:4em;">
+                    $phase = key($iterated_array);
                     $value = current($iterated_array);
                     echo "line $i: phase: $phase, value: $value";
                 </code>
             </p>
             <p>
-            <code class="code_example" style="padding-left:4em;">
-            }</code>
+                <code class="code_example" style="padding-left:4em;">
+                    }</code>
             </p>
             <p>
 
             <p>
             <div>
                 <?php
-            $square_1_minus_1_2 = new \controller\game_controller\iterators\SquareFunctionGenerator(1, -1, 2);
-            foreach(range(0, 7) as $line) {
+                $square_1_minus_1_2 = new \controller\game_controller\iterators\SquareFunctionGenerator(1, -1, 2);
+                foreach(range(0, 7) as $line) {
 
-                $iterated_array = $square_1_minus_1_2->generateCycle();
-                if ($iterated_array) {
-                    $phase = key($iterated_array);
-                    $value = current($iterated_array);
-                } else {
-                    $phase = NULL;
-                    $value = NULL;
+                    $iterated_array = $square_1_minus_1_2->generateCycle();
+                    if ($iterated_array) {
+                        $phase = key($iterated_array);
+                        $value = current($iterated_array);
+                    } else {
+                        $phase = NULL;
+                        $value = NULL;
+                    }
+                    if ($value < 0) {
+                        $start = 10 - abs($value) * 4;
+                    } else {
+                        $start = 10;
+                    }
+                    $width = abs($value) * 4;
+                    $value = $value > 0 ? '+' . strval($value) : strval($value);
+                    echo "<p>line $line | phase: $phase, value: $value <span style=\"display: inline;width:70%;height:1.2em;\"><span style=\"background-color:blue;width:$width", "em;margin-left:$start", "em;height:1.2em;text-align:center;display:inline-block\">$value</span></span></p>";
                 }
-                if ($value < 0) {
-                    $start = 10 - abs($value) * 4;
-                } else {
-                    $start = 10;
-                }
-                $width = abs($value) * 4;
-                $value = $value > 0 ? '+' . strval($value) : strval($value);
-                echo "<p>line $line | phase: $phase, value: $value <span style=\"display: inline;width:70%;height:1.2em;\"><span style=\"background-color:blue;width:$width", "em;margin-left:$start", "em;height:1.2em;text-align:center;display:inline-block\">$value</span></span></p>";
-            }
 
-            #To Do: Visual represantation
+                #To Do: Visual represantation
                 ?>
 
             </div>
-                </p>
-            
+            </p>
+
             <p>While <code>SquareFunctionGenerator::generateWave()</code> is able to being called at arbitrary times:</p>
-              
+
             <p>
                 <code class="code_example">
                     <?php
@@ -190,7 +191,7 @@
                         $width = abs($value) * 4;
                         $value = $value > 0 ? '+' . strval($value) : strval($value);
                         echo "<p>line $line | phase: $phase, value: $value <span style=\"display: inline;width:70%;height:1.2em;\"><span style=\"background-color:blue;width:$width", "em;margin-left:$start", "em;height:1.2em;text-align:center;display:inline-block\">$value</span></span></p>";
-                        }
+                    }
                     #To Do: Visual representation
                     ?>
                 </code>
@@ -299,9 +300,9 @@
                 #To Do: Visual represantation
                 ?>
             </code>
-</section>
+        </section>
         <section>
-            <h2>Adding Square Functions to Create More Complex Movements</h2>
+            <h2>The TriangleFunctionGenerator</h2>
             <p>Let's take a look how the rook can move:</p>
             <img src="pictures/RookMatrix.PNG" />
             <p>which can be seen as Triangle-Function: </p>
@@ -379,7 +380,7 @@
                 </code>
             </p>
             <p>The new wavelength is calculated as the least common multiple by reduction by the greatest common divisor (
-<a href="https://en.wikipedia.org/wiki/Least_common_multiple#Reduction_by_the_greatest_common_divisor" target="_blank">wiki</a>) and can be accessed with <code>TriangleFunctionGenerator::getResultingWavelength()</code></p>
+                <a href="https://en.wikipedia.org/wiki/Least_common_multiple#Reduction_by_the_greatest_common_divisor" target="_blank">wiki</a>) and can be accessed with <code>TriangleFunctionGenerator::getResultingWavelength()</code></p>
             <p>
                 <code class="code_example">
                     <?php
@@ -389,9 +390,9 @@
             <p>The value at a explicit state can be accessed by <code>TriangleFunctionGenerator::getStateAtPhase($phase)</code>, for example 3 and 2:</p>
             <p>
                 <code class="code_output">
-                <?php
-                echo '<p>', $triangle_0121->getStateAtPhase(3), '</p><p>', $triangle_0121->getStateAtPhase(2), '</p>';
-                ?>
+                    <?php
+                    echo '<p>', $triangle_0121->getStateAtPhase(3), '</p><p>', $triangle_0121->getStateAtPhase(2), '</p>';
+                    ?>
                 </code>            </p>
             <p>and again it is possible to retrieve just one cycle with <code>TriangleFunctionGenerator::generateCycle()</code></p>
             <p>
@@ -486,8 +487,8 @@
             <p>The knight has 4 possible values:</p>
             <img src="pictures/KnightMatrix.PNG" />
             <p>
-            <code class="code_example">
-                $triangle_knight = new \controller\game_controller\iterators\TriangleFunctionGenerator([-1,1,8,0], [-1,0,8,1], [0,1,8,2]);
+                <code class="code_example">
+                    $triangle_knight = new \controller\game_controller\iterators\TriangleFunctionGenerator([-1,1,8,0], [-1,0,8,1], [0,1,8,2]);
                 </code>
             </p>
             <p>and with <code>TriangleFunctionGenerator::generateCycle();</code> we can move exactly one time around.</p>

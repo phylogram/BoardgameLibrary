@@ -71,7 +71,6 @@ class SquareFunctionGenerator
 
         if ($this->phase == $this->wavelength) {
             $this->phase = 0;
-            
         }
         return $this->cycle();
     }
@@ -89,11 +88,10 @@ class SquareFunctionGenerator
         
         switch (($phase % $this->wavelength) < $this->half_wavelength) {
             case true:
-                
                 return array($phase => $this->lower_limit);
                 break;
+
             case false:
-                
                 return array($phase => $this->upper_limit);
                 break;
         }

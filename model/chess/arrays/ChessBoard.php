@@ -5,7 +5,7 @@ class ChessBoard extends \model\chess\arrays\NDimArrays
 {
     protected $figures = array();
 
-    public function ChessBoard ()
+    public function __construct()
     {
         parent::__construct(...CHESS_BOARD_X_Y);
         \controller\game_controller\arrays\PutFieldsOnArray::excecute($this);  #Binded to class ??

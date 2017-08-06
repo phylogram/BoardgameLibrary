@@ -1,0 +1,597 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="30ef338f-6709-41ee-963f-ea94c42ec379" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/controller/SecureAndClean/SecureAndClean.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/controller/parser/PGNParser.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/view/ChessBoard.doc.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/conf/conf.php" afterPath="$PROJECT_DIR$/conf/conf.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/controller/game_controller/iterators/SquareFunctionGenerator.php" afterPath="$PROJECT_DIR$/controller/game_controller/iterators/SquareFunctionGenerator.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/html/index.php" afterPath="$PROJECT_DIR$/html/index.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/model/chess/arrays/ChessBoard.php" afterPath="$PROJECT_DIR$/model/chess/arrays/ChessBoard.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/view/IteratorClasses.doc.php" afterPath="$PROJECT_DIR$/view/IteratorClasses.doc.php" />
+    </list>
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="TRACKING_ENABLED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileEditorManager">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="NDimArrays.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/model/chess/arrays/NDimArrays.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="578">
+              <caret line="34" column="51" lean-forward="false" selection-start-line="34" selection-start-column="51" selection-end-line="34" selection-end-column="51" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ChessBoard.doc.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/view/ChessBoard.doc.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="410">
+              <caret line="75" column="0" lean-forward="false" selection-start-line="75" selection-start-column="0" selection-end-line="75" selection-end-column="0" />
+              <folding>
+                <marker date="1502027990000" expanded="true" signature="6023:6062" ph="..." />
+                <marker date="1502027990000" expanded="true" signature="6079:6107" ph="..." />
+                <marker date="1502027990000" expanded="true" signature="7483:7522" ph="..." />
+                <marker date="1502027990000" expanded="true" signature="7539:7567" ph="..." />
+                <marker date="1502027990000" expanded="true" signature="9080:9119" ph="..." />
+                <marker date="1502027990000" expanded="true" signature="9136:9164" ph="..." />
+                <marker date="1502027990000" expanded="true" signature="10848:10887" ph="..." />
+                <marker date="1502027990000" expanded="true" signature="10904:10932" ph="..." />
+                <marker date="1502027990000" expanded="true" signature="12814:12853" ph="..." />
+                <marker date="1502027990000" expanded="true" signature="12870:12898" ph="..." />
+                <marker date="1502027990000" expanded="true" signature="15547:15586" ph="..." />
+                <marker date="1502027990000" expanded="true" signature="15603:15631" ph="..." />
+                <marker date="1502027990000" expanded="true" signature="17231:17270" ph="..." />
+                <marker date="1502027990000" expanded="true" signature="17287:17315" ph="..." />
+                <marker date="1502027990000" expanded="true" signature="19580:19619" ph="..." />
+                <marker date="1502027990000" expanded="true" signature="19636:19664" ph="..." />
+                <marker date="1502027990000" expanded="true" signature="21192:21231" ph="..." />
+                <marker date="1502027990000" expanded="true" signature="21248:21276" ph="..." />
+                <marker date="1502027990000" expanded="true" signature="23280:23319" ph="..." />
+                <marker date="1502027990000" expanded="true" signature="23336:23364" ph="..." />
+                <marker date="1502027990000" expanded="true" signature="25142:25181" ph="..." />
+                <marker date="1502027990000" expanded="true" signature="25198:25226" ph="..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ChessBoard.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/model/chess/arrays/ChessBoard.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="714">
+              <caret line="42" column="1" lean-forward="false" selection-start-line="42" selection-start-column="1" selection-end-line="42" selection-end-column="1" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="GMallboth.pgn" pinned="false" current-in-tab="false">
+        <entry file="file://G:/Dokumente/phylogram/chessgame_2017/data/GMallboth.pgn">
+          <provider selected="true" editor-type-id="LargeFileEditor">
+            <state relative-caret-position="85">
+              <caret line="32" column="0" lean-forward="false" selection-start-line="32" selection-start-column="0" selection-end-line="32" selection-end-column="19" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="PGNParser.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/controller/parser/PGNParser.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="368">
+              <caret line="94" column="1" lean-forward="true" selection-start-line="94" selection-start-column="1" selection-end-line="94" selection-end-column="1" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="SquareFunctionGenerator.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/controller/game_controller/iterators/SquareFunctionGenerator.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="444">
+              <caret line="93" column="23" lean-forward="false" selection-start-line="93" selection-start-column="23" selection-end-line="93" selection-end-column="23" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="SecureAndClean.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/controller/SecureAndClean/SecureAndClean.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="51">
+              <caret line="8" column="35" lean-forward="false" selection-start-line="8" selection-start-column="35" selection-end-line="8" selection-end-column="35" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="conf.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/conf/conf.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="529">
+              <caret line="34" column="27" lean-forward="false" selection-start-line="34" selection-start-column="27" selection-end-line="34" selection-end-column="27" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>triang</find>
+      <find>usefull</find>
+    </findStrings>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="C:/wamp64/bin/apache/apache2.4.23/conf/extra/httpd-vhosts.conf" />
+        <option value="$PROJECT_DIR$/view/IteratorClasses.doc.php" />
+        <option value="$PROJECT_DIR$/model/chess/arrays/ChessBoard.php" />
+        <option value="$PROJECT_DIR$/controller/SecureAndClean/SecureAndClean.php" />
+        <option value="$PROJECT_DIR$/conf/conf.php" />
+        <option value="$PROJECT_DIR$/view/ChessBoard.doc.php" />
+        <option value="$PROJECT_DIR$/controller/game_controller/iterators/SquareFunctionGenerator.php" />
+        <option value="$PROJECT_DIR$/controller/parser/PGNParser.php" />
+      </list>
+    </option>
+  </component>
+  <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsGulpfileManager">
+    <detection-done>true</detection-done>
+    <sorting>DEFINITION_ORDER</sorting>
+  </component>
+  <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="10" />
+    <option name="y" value="20" />
+    <option name="width" value="1346" />
+    <option name="height" value="688" />
+  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectView">
+    <navigator currentView="ProjectPane" proportions="" version="1">
+      <flattenPackages />
+      <showMembers />
+      <showModules />
+      <showLibraryContents />
+      <hideEmptyPackages />
+      <abbreviatePackageNames />
+      <autoscrollToSource />
+      <autoscrollFromSource />
+      <sortByType />
+      <manualOrder />
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="Scope" />
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="chessLibrary" type="b2602c69:ProjectViewProjectNode" />
+              <item name="chessLibrary" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="chessLibrary" type="b2602c69:ProjectViewProjectNode" />
+              <item name="chessLibrary" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="controller" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="chessLibrary" type="b2602c69:ProjectViewProjectNode" />
+              <item name="chessLibrary" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="controller" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="game_controller" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="chessLibrary" type="b2602c69:ProjectViewProjectNode" />
+              <item name="chessLibrary" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="controller" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="game_controller" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="iterators" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="chessLibrary" type="b2602c69:ProjectViewProjectNode" />
+              <item name="chessLibrary" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="controller" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="parser" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="chessLibrary" type="b2602c69:ProjectViewProjectNode" />
+              <item name="chessLibrary" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="controller" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="SecureAndClean" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="chessLibrary" type="b2602c69:ProjectViewProjectNode" />
+              <item name="chessLibrary" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="errors" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="chessLibrary" type="b2602c69:ProjectViewProjectNode" />
+              <item name="chessLibrary" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="model" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="chessLibrary" type="b2602c69:ProjectViewProjectNode" />
+              <item name="chessLibrary" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="model" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="chess" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="chessLibrary" type="b2602c69:ProjectViewProjectNode" />
+              <item name="chessLibrary" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="model" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="chess" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="arrays" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="chessLibrary" type="b2602c69:ProjectViewProjectNode" />
+              <item name="chessLibrary" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="view" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+      <pane id="Scratches" />
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/conf/conf.php" />
+    <property name="full.screen.before.presentation.mode" value="false" />
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="ShelveChangesManager" show_recycled="false">
+    <option name="remove_strategy" value="false" />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="30ef338f-6709-41ee-963f-ea94c42ec379" name="Default" comment="" />
+      <created>1501871415565</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1501871415565</updated>
+      <workItem from="1501871422570" duration="678000" />
+      <workItem from="1501957307889" duration="1545000" />
+      <workItem from="1502014440371" duration="5399000" />
+      <workItem from="1502026566820" duration="6065000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="13687000" />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="-8" y="-8" width="1382" height="784" extended-state="6" />
+    <editor active="true" />
+    <layout>
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21449487" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.038748138" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24963397" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32935917" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+    </layout>
+    <layout-to-restore>
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.10614934" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+    </layout-to-restore>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager />
+    <watches-manager />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/model/chess/arrays/NDimArrays.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="578">
+          <caret line="34" column="51" lean-forward="false" selection-start-line="34" selection-start-column="51" selection-end-line="34" selection-end-column="51" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/view/ChessBoard.doc.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1428">
+          <caret line="84" column="42" lean-forward="false" selection-start-line="84" selection-start-column="42" selection-end-line="84" selection-end-column="42" />
+          <folding>
+            <marker date="1502027990000" expanded="true" signature="6023:6062" ph="..." />
+            <marker date="1502027990000" expanded="true" signature="6079:6107" ph="..." />
+            <marker date="1502027990000" expanded="true" signature="7483:7522" ph="..." />
+            <marker date="1502027990000" expanded="true" signature="7539:7567" ph="..." />
+            <marker date="1502027990000" expanded="true" signature="9080:9119" ph="..." />
+            <marker date="1502027990000" expanded="true" signature="9136:9164" ph="..." />
+            <marker date="1502027990000" expanded="true" signature="10848:10887" ph="..." />
+            <marker date="1502027990000" expanded="true" signature="10904:10932" ph="..." />
+            <marker date="1502027990000" expanded="true" signature="12814:12853" ph="..." />
+            <marker date="1502027990000" expanded="true" signature="12870:12898" ph="..." />
+            <marker date="1502027990000" expanded="true" signature="15547:15586" ph="..." />
+            <marker date="1502027990000" expanded="true" signature="15603:15631" ph="..." />
+            <marker date="1502027990000" expanded="true" signature="17231:17270" ph="..." />
+            <marker date="1502027990000" expanded="true" signature="17287:17315" ph="..." />
+            <marker date="1502027990000" expanded="true" signature="19580:19619" ph="..." />
+            <marker date="1502027990000" expanded="true" signature="19636:19664" ph="..." />
+            <marker date="1502027990000" expanded="true" signature="21192:21231" ph="..." />
+            <marker date="1502027990000" expanded="true" signature="21248:21276" ph="..." />
+            <marker date="1502027990000" expanded="true" signature="23280:23319" ph="..." />
+            <marker date="1502027990000" expanded="true" signature="23336:23364" ph="..." />
+            <marker date="1502027990000" expanded="true" signature="25142:25181" ph="..." />
+            <marker date="1502027990000" expanded="true" signature="25198:25226" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/model/chess/arrays/ChessBoard.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="714">
+          <caret line="42" column="1" lean-forward="false" selection-start-line="42" selection-start-column="1" selection-end-line="42" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://G:/Dokumente/phylogram/chessgame_2017/data/GMallboth.pgn">
+      <provider selected="true" editor-type-id="LargeFileEditor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/controller/parser/PGNParser.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="24" column="24" lean-forward="false" selection-start-line="24" selection-start-column="24" selection-end-line="24" selection-end-column="24" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/conf/conf.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="578">
+          <caret line="34" column="26" lean-forward="false" selection-start-line="34" selection-start-column="26" selection-end-line="34" selection-end-column="26" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/controller/SecureAndClean/SecureAndClean.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="8" column="20" lean-forward="true" selection-start-line="8" selection-start-column="20" selection-end-line="8" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/model/chess/arrays/NDimArrays.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="16" column="23" lean-forward="false" selection-start-line="16" selection-start-column="23" selection-end-line="16" selection-end-column="23" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://C:/wamp64/bin/apache/apache2.4.23/include/http_vhost.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2023">
+          <caret line="119" column="0" lean-forward="true" selection-start-line="119" selection-start-column="0" selection-end-line="119" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://C:/wamp64/bin/apache/apache2.4.23/conf/extra/httpd-vhosts.conf">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="493">
+          <caret line="29" column="0" lean-forward="false" selection-start-line="29" selection-start-column="0" selection-end-line="29" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/model/chess/arrays/NDimArrays.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://C:/wamp64/www/add_vhost.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="67" column="68" lean-forward="false" selection-start-line="67" selection-start-column="46" selection-end-line="67" selection-end-column="68" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://C:/wamp64/bin/apache/apache2.4.23/include/http_vhost.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2023">
+          <caret line="119" column="0" lean-forward="true" selection-start-line="119" selection-start-column="0" selection-end-line="119" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/view/ChessBoard.php" />
+    <entry file="file://$PROJECT_DIR$/view/IteratorClasses.doc.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="244">
+          <caret line="90" column="50" lean-forward="true" selection-start-line="90" selection-start-column="50" selection-end-line="90" selection-end-column="50" />
+          <folding>
+            <marker date="1502014878000" expanded="true" signature="6000:6039" ph="..." />
+            <marker date="1502014878000" expanded="true" signature="6056:6084" ph="..." />
+            <marker date="1502014878000" expanded="true" signature="7482:7521" ph="..." />
+            <marker date="1502014878000" expanded="true" signature="7538:7566" ph="..." />
+            <marker date="1502014878000" expanded="true" signature="9083:9122" ph="..." />
+            <marker date="1502014878000" expanded="true" signature="9139:9167" ph="..." />
+            <marker date="1502014878000" expanded="true" signature="10851:10890" ph="..." />
+            <marker date="1502014878000" expanded="true" signature="10907:10935" ph="..." />
+            <marker date="1502014878000" expanded="true" signature="12817:12856" ph="..." />
+            <marker date="1502014878000" expanded="true" signature="12873:12901" ph="..." />
+            <marker date="1502014878000" expanded="true" signature="15569:15608" ph="..." />
+            <marker date="1502014878000" expanded="true" signature="15625:15653" ph="..." />
+            <marker date="1502014878000" expanded="true" signature="17253:17292" ph="..." />
+            <marker date="1502014878000" expanded="true" signature="17309:17337" ph="..." />
+            <marker date="1502014878000" expanded="true" signature="19574:19613" ph="..." />
+            <marker date="1502014878000" expanded="true" signature="19630:19658" ph="..." />
+            <marker date="1502014878000" expanded="true" signature="21186:21225" ph="..." />
+            <marker date="1502014878000" expanded="true" signature="21242:21270" ph="..." />
+            <marker date="1502014878000" expanded="true" signature="23274:23313" ph="..." />
+            <marker date="1502014878000" expanded="true" signature="23330:23358" ph="..." />
+            <marker date="1502014878000" expanded="true" signature="25128:25167" ph="..." />
+            <marker date="1502014878000" expanded="true" signature="25184:25212" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://C:/wamp64/bin/apache/apache2.4.23/conf/extra/httpd-vhosts.conf">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="425">
+          <caret line="29" column="0" lean-forward="false" selection-start-line="29" selection-start-column="0" selection-end-line="29" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/model/chess/arrays/ChessBoard.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="714">
+          <caret line="42" column="1" lean-forward="false" selection-start-line="42" selection-start-column="1" selection-end-line="42" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/model/chess/arrays/NDimArrays.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="578">
+          <caret line="34" column="51" lean-forward="false" selection-start-line="34" selection-start-column="51" selection-end-line="34" selection-end-column="51" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$APPLICATION_CONFIG_DIR$/scratches/scratch.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/controller/SecureAndClean/SecureAndClean.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="8" column="35" lean-forward="false" selection-start-line="8" selection-start-column="35" selection-end-line="8" selection-end-column="35" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/conf/conf.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="529">
+          <caret line="34" column="27" lean-forward="false" selection-start-line="34" selection-start-column="27" selection-end-line="34" selection-end-column="27" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/view/ChessBoard.doc.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="410">
+          <caret line="75" column="0" lean-forward="false" selection-start-line="75" selection-start-column="0" selection-end-line="75" selection-end-column="0" />
+          <folding>
+            <marker date="1502027990000" expanded="true" signature="6023:6062" ph="..." />
+            <marker date="1502027990000" expanded="true" signature="6079:6107" ph="..." />
+            <marker date="1502027990000" expanded="true" signature="7483:7522" ph="..." />
+            <marker date="1502027990000" expanded="true" signature="7539:7567" ph="..." />
+            <marker date="1502027990000" expanded="true" signature="9080:9119" ph="..." />
+            <marker date="1502027990000" expanded="true" signature="9136:9164" ph="..." />
+            <marker date="1502027990000" expanded="true" signature="10848:10887" ph="..." />
+            <marker date="1502027990000" expanded="true" signature="10904:10932" ph="..." />
+            <marker date="1502027990000" expanded="true" signature="12814:12853" ph="..." />
+            <marker date="1502027990000" expanded="true" signature="12870:12898" ph="..." />
+            <marker date="1502027990000" expanded="true" signature="15547:15586" ph="..." />
+            <marker date="1502027990000" expanded="true" signature="15603:15631" ph="..." />
+            <marker date="1502027990000" expanded="true" signature="17231:17270" ph="..." />
+            <marker date="1502027990000" expanded="true" signature="17287:17315" ph="..." />
+            <marker date="1502027990000" expanded="true" signature="19580:19619" ph="..." />
+            <marker date="1502027990000" expanded="true" signature="19636:19664" ph="..." />
+            <marker date="1502027990000" expanded="true" signature="21192:21231" ph="..." />
+            <marker date="1502027990000" expanded="true" signature="21248:21276" ph="..." />
+            <marker date="1502027990000" expanded="true" signature="23280:23319" ph="..." />
+            <marker date="1502027990000" expanded="true" signature="23336:23364" ph="..." />
+            <marker date="1502027990000" expanded="true" signature="25142:25181" ph="..." />
+            <marker date="1502027990000" expanded="true" signature="25198:25226" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/controller/game_controller/iterators/SquareFunctionGenerator.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="444">
+          <caret line="93" column="23" lean-forward="false" selection-start-line="93" selection-start-column="23" selection-end-line="93" selection-end-column="23" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://G:/Dokumente/phylogram/chessgame_2017/data/GMallboth.pgn">
+      <provider selected="true" editor-type-id="LargeFileEditor">
+        <state relative-caret-position="85">
+          <caret line="32" column="0" lean-forward="false" selection-start-line="32" selection-start-column="0" selection-end-line="32" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/controller/parser/PGNParser.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="368">
+          <caret line="94" column="1" lean-forward="true" selection-start-line="94" selection-start-column="1" selection-end-line="94" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+  </component>
+</project>

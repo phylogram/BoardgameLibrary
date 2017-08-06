@@ -12,10 +12,10 @@ require_once('../bootstrap/init.php');
 </head>
 <body>
 
-    <h1><?php
-        echo 'This will be our homepage';
+        <?php
+        \controller\client_action\routing\PersonalRouter::find();
         ?>
-    </h1>
+
 
     
 </body>
