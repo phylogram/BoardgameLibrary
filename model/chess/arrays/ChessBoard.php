@@ -12,11 +12,16 @@ class ChessBoard extends \model\chess\arrays\NDimArrays
 
     }
 
+    /**
+     * add figure at a position to the array
+     * @param \model\chess\figures\AbstractFigure $figure
+     * @param $position
+     */
     public function addFigure(\model\chess\figures\AbstractFigure $figure, $position)
     {
         if (parent::testMaxV($position)) {  #look up if position is on board
-            $this->figures[] = $figure;     #figure comes to the figure array
-            $field = parent::select($position); #get field
+            $this->figures[] = $figure;     #append figure the figure array
+            $field = &parent::select($position); #get field
             $success = $field->setOccupiedBy($figure); #set the field as occupied by
 
             $figure->updateAll(); #Update All possible movements (since it's first time)
@@ -24,11 +29,15 @@ class ChessBoard extends \model\chess\arrays\NDimArrays
 
     }
 
+    /**
+     * @param $position
+     * @return bool|mixed if valid position returns reference to field, else false
+     */
     public function selectFromChessBoard($position)
     {
         if (!parent::testMaxV($position))
         {
-            return false;
+            return false; #We do not want an error here, becauase this is used in iteration where false just stops the loop
         }
         return parent::select($position, $method = 'nested_array');
     }

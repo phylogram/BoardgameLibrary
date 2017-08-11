@@ -1,7 +1,7 @@
 <?php
 namespace errors;
 
-#To Do chanhe error to extend Error and throw ,,,
+#If i extend from Exception I can't use Warnings?
 
 
 
@@ -44,7 +44,7 @@ class ErrorMessage {
 
 
     # # # # # # # # # # # #
-    #    Unkonwn Method   #
+    #    Unknown Method   #
     # # # # # # # # # # # #
 
     # See /models/chess/arrays/NDimArrays

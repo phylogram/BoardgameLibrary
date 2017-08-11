@@ -15,9 +15,9 @@ abstract class AbstractFigure
         $this->color = $color;
         $this->name = $name;
     }
-    public function getkilled()
+    public function getKilled()
     {
-        $protected->position = false;
+        $this->position = false;
     }
 
     /**
@@ -31,7 +31,7 @@ abstract class AbstractFigure
     abstract function move(array $vector): bool;
 
     /**
-     * updates alle possible movements - at the beginning and after move
+     * updates all possible movements - at the beginning and after move
      */
     abstract function updateAll(): bool;
     /**
@@ -41,7 +41,7 @@ abstract class AbstractFigure
     abstract function updatePhase($phase): bool;
     
     /**
-     * Deletes all posible movements
+     * Deletes all possible movements
      */
     abstract function undoAll(): bool;
 

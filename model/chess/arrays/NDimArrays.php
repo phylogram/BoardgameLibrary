@@ -8,7 +8,7 @@ class NDimArrays
     # # # # # # # # # #
 
     protected $vector;          #The shape of the nested array. For exmple (2,1) -> [[Null], [Null]] and (1,1,1) -> [[[Null]]] - used for multiplication
-    protected $pos_vector;      #vector -1 – for indexing
+    protected $pos_vector;      #vector -1 ï¿½ for indexing
     protected $n_dim;           #The dimensionality of the $vector/it's lenght
     protected $skeleton;        #The empty array
     public $nested_array;    #the nested array with data or references in it
@@ -37,7 +37,7 @@ class NDimArrays
         $this->n_dim = sizeof($this->vector); #create number of dimensions
         $this->testNDim($this->n_dim); #test MAX_DIM
 
-        #create the skeleton & the nested_array – in this case the same
+        #create the skeleton & the nested_array ï¿½ in this case the same
         $this->skeleton = $this->emptyArray($this->vector);
         $this->nested_array = $this->skeleton;
 
@@ -58,7 +58,7 @@ class NDimArrays
     /**
      * returns empty array of size x0 * x1 * ... * xn (in use for __construct)
      * @param array $vector
-     * @return array (or False when error – now type hinting is ignored)
+     * @return array (or False when error ï¿½ now type hinting is ignored)
      */
     protected function emptyArray(array $vector)#: array
     {
@@ -148,7 +148,7 @@ class NDimArrays
     # Select  #
     # # # # # #
 
-    protected function protected_select(array $position, $nested_array)
+    protected function &protected_select(array $position, $nested_array)
     {
 
     while (true) {
@@ -162,7 +162,7 @@ class NDimArrays
 
     }
 
-    public function select(array $position, $method = 'skeleton')
+    public function &select(array $position, $method = 'skeleton')
     {
         switch ($method) {
             case 'skeleton':
@@ -175,7 +175,7 @@ class NDimArrays
                 trigger_error(...\errors\ErrorMessage::unknownMethod($method, ERROR_BAD));
         }
        $this->testNDim(count($position));
-       $pass_me = $this->protected_select($position, $nested_array);
-       return $pass_me;
+       return $this->protected_select($position, $nested_array);
+
    }
 }

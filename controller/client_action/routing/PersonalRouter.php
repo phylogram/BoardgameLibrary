@@ -1,9 +1,15 @@
 <?php
 namespace controller\client_action\routing;
 require('site_structure.php');
+
+/**
+ * Class PersonalRouter
+ * This class is not in use yet
+ * @package controller\client_action\routing
+ *
+ */
 class PersonalRouter
 {
-
 
     public static function find()
     {

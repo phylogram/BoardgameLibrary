@@ -6,23 +6,33 @@
  * Time: 15:00
  */
 
-namespace controller\parser;
+namespace model\chess\parser;
 
 /**
  * Class PGNParser
  * @package controller\parser
  * this is a static one-way only parser
+ * it just reads data in and doe not control it
  */
 class PGNParser
 {
-
     protected $current_type; # 0 = no content, 1 = tag, 2 = moves, 3 = inline comment (needs regex), -1 = error
     protected $last_type; # --##--
     protected $tags = array(
         'unknown' => '',
+
+        'Event' => NULL, #(the name of the tournament or match event)
+        'Site'  => NULL, #(the location of the event)
+        'Date'  => NULL, #(the starting date of the event)
+        'Round' => NULL, #(the playing round ordinal of the game)
+        'White' => NULL, #(the player[s] of the white pieces)
+        'Black' => NULL, #(the player[s] of the black pieces)
     );
     protected  $has_error = false;
     protected $moves = array();
+
+
+    protected $tag_pattern = '/\[\s*?(.+?)\s+?"(.+?)"\s*?\]/';
     /**
      * @param $line of pgn-file.
      * returns directly to database
@@ -39,7 +49,7 @@ class PGNParser
                     $this->readTag($line);
                     break;
                 case 2:
-                    $this->readMoves($line);
+                    $this->moves = SANParser::
                     break;
                 case 3:
                     $this->regEx($line);
@@ -78,18 +88,36 @@ class PGNParser
         return $return_value;
     }
 
-    public function readTag(str $string)
+    public function readTag(string $string)
     {
-        $result = preg_match('/\[(.+?) ".*?(.+?)".*?\]/', $string);
-        if (!$result || count($result)!=2) {
+        $result = array();
+        $success = preg_match($this->tag_pattern, $string, $result);
+        $result_length = count($result);
+        if (!$success || count($result)!=3) {
             return false; #To Do: Somme error message
         }
-        if (array_key_exists($result[0], $this->tags)) {
-            $this->tags[$result[0]] = $result[1];
+        if (array_key_exists($result[1], $this->tags)) {
+            $this->tags[$result[1]] = $result[2];
         } else {
-            $this->tags['unknown'] .= ' -- ' . result[1];
+            $this->tags['unknown'] .= $result[1] . ': ' .  $result[2] . ' -- ';
         }
     }
+
+
+        public function getTagPattern()
+    {
+        return $this->tag_pattern;
+    }
+        public function setTagPattern($pattern)
+    {
+        $this->tag_pattern = $pattern;
+    }
+
+    public function getTags()
+    {
+        return $this->tags;
+    }
+
 
 
 }
