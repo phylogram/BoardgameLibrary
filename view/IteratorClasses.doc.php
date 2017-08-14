@@ -1,78 +1,9 @@
-<!<link href="https://fonts.googleapis.com/css?family=Noto+Sans" rel="stylesheet">
+
 <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.0/build/pure-min.css" integrity="sha384-nn4HPE8lTHyVtfCBi5yW9d20FjT8BJwUXyWZT9InLYax14RDjBj46LmSztkmNP9w" crossorigin="anonymous" />
-<style>
-    article {
-        font-family: 'Noto Sans', sans-serif;
-    }
-
-    div article {
-        margin: 4%;
-    }
-
-    h1 {
-        font: 700;
-        font-size: x-large;
-    }
-
-    h2 {
-        font: 500;
-        font-size: larger;
-    }
-
-    h3 {
-        font: 300;
-        font-size: medium;
-    }
-
-    .code_example {
-        margin-left: 10%;
-    }
-
-    .code_output {
-        -moz-column-count: 3 !important;
-        column-count: 3 !important;
-    }
-
-    #last-edit {
-        font-weight: 700;
-        background-color: cornflowerblue;
-    }
-
-    .xdebug-error {
-        font-size: 1.5em !important;
-        width: 95% !important;
-        margin: 2% auto 5% auto !important;
-        border-color: rgb(6, 30, 34) !important;
-        background-color: rgba(44, 76, 134, 0.83) !important;
-    }
-
-        .xdebug-error th, .xdebug-error td {
-            padding: 1% !important;
-        }
-
-        .xdebug-error th {
-            background: rgba(48, 185, 67, 0.64) !important;
-        }
-
-        .xdebug-error span {
-            display: none !important;
-        }
-
-    .xdebug-error_description th {
-        font-size: 1.2em !important;
-        padding: 4% 1% 4% 10% !important;
-        background: rgba(44, 76, 134, 0.83) no-repeat left top !important;
-    }
-
-    .xdebug-error_callStack th {
-        background-color: rgba(44, 76, 134, 0.83) !important;
-        color: #ddd !important;
-    }
-</style>
 
 <div>
     <article class="library-description" id="doc_IteratorClasses">
-        <?php require('../bootstrap/init.php'); #To Do: write functions/classes for all that repeating stuff
+        <?php require('../bootstrap/init.php'); #To Do: Delete when imported by index.php
         ?>
         <header>
             <h1 itemprop="headline">The Basic Iterator Classes</h1>
@@ -142,24 +73,9 @@
             foreach(range(0, 7) as $line) {
 
                 $iterated_array = $square_1_minus_1_2->generateCycle();
-                if ($iterated_array) {
-                    $phase = key($iterated_array);
-                    $value = current($iterated_array);
-                } else {
-                    $phase = NULL;
-                    $value = NULL;
-                }
-                if ($value < 0) {
-                    $start = 10 - abs($value) * 4;
-                } else {
-                    $start = 10;
-                }
-                $width = abs($value) * 4;
-                $value = $value > 0 ? '+' . strval($value) : strval($value);
-                echo "<p>line $line | phase: $phase, value: $value <span style=\"display: inline;width:70%;height:1.2em;\"><span style=\"background-color:blue;width:$width", "em;margin-left:$start", "em;height:1.2em;text-align:center;display:inline-block\">$value</span></span></p>";
+                $output_html = \view\DimensionPhaseValue::print1D($iterated_array, $line);
+                echo $output_html;
             }
-
-            #To Do: Visual represantation
                 ?>
 
             </div>
@@ -175,23 +91,9 @@
                     foreach(range(0, 7) as $line) {
 
                         $iterated_array = $square_1_minus_1_2->generateWave();
-                        if ($iterated_array) {
-                            $phase = key($iterated_array);
-                            $value = current($iterated_array);
-                        } else {
-                            $phase = NULL;
-                            $value = NULL;
-                        }
-                        if ($value < 0) {
-                            $start = 10 - abs($value) * 4;
-                        } else {
-                            $start = 10;
-                        }
-                        $width = abs($value) * 4;
-                        $value = $value > 0 ? '+' . strval($value) : strval($value);
-                        echo "<p>line $line | phase: $phase, value: $value <span style=\"display: inline;width:70%;height:1.2em;\"><span style=\"background-color:blue;width:$width", "em;margin-left:$start", "em;height:1.2em;text-align:center;display:inline-block\">$value</span></span></p>";
-                        }
-                    #To Do: Visual representation
+                        $output_html = \view\DimensionPhaseValue::print1D($iterated_array, $line);
+                        echo $output_html;
+                    }
                     ?>
                 </code>
             </p>
@@ -203,23 +105,9 @@
                 foreach(range(0, 7) as $line) {
 
                     $iterated_array = $square_1_minus_1_4->generateWave();
-                    if ($iterated_array) {
-                        $phase = key($iterated_array);
-                        $value = current($iterated_array);
-                    } else {
-                        $phase = NULL;
-                        $value = NULL;
-                    }
-                    if ($value < 0) {
-                        $start = 10 - abs($value) * 4;
-                    } else {
-                        $start = 10;
-                    }
-                    $width = abs($value) * 4;
-                    $value = $value > 0 ? '+' . strval($value) : strval($value);
-                    echo "<p>line $line | phase: $phase, value: $value <span style=\"display: inline;width:70%;height:1.2em;\"><span style=\"background-color:blue;width:$width", "em;margin-left:$start", "em;height:1.2em;text-align:center;display:inline-block\">$value</span></span></p>";
+                    $output_html = \view\DimensionPhaseValue::print1D($iterated_array, $line);
+                    echo $output_html;
                 }
-                #To Do: Visual represantation
                 ?>
             </code>
             <p>It is possible to get and set all the properties of the class.</p>
@@ -237,26 +125,9 @@
                     # change values
                     $square_1_minus_1_2->setUpperLimit($current_upper+1);
                     $square_1_minus_1_2->setLowerLimit($current_lower-1);
-
-
-                    if ($iterated_array) {
-                        $phase = key($iterated_array);
-                        $value = current($iterated_array);
-                    } else {
-                        $phase = NULL;
-                        $value = NULL;
-                    }
-                    if ($value < 0) {
-                        $start = 15 - abs($value) * 2;
-                    } else {
-                        $start = 15;
-                    }
-                    $width = abs($value) * 2;
-                    $value = $value > 0 ? '+' . strval($value) : strval($value);
-                    echo "<p>line $line | phase: $phase, value: $value <span style=\"display: inline;width:70%;height:1.2em;\"><span style=\"background-color:blue;width:$width", "em;margin-left:$start", "em;height:1.2em;text-align:center;display:inline-block\">$value</span></span></p>";
+                    $output_html = \view\DimensionPhaseValue::print1D($iterated_array, $line, 0.3);
+                    echo $output_html;
                 }
-
-                #To Do: Visual representation
                 ?>
             </code>
             <p>and changing the wavelength between 4 and 2 (has to be even) every iteration (with ... you guess it: another SquareFunction) will result in</p>
@@ -276,30 +147,38 @@
 
                     # change values
                     $square_1_minus_1_2->setWaveLength($new_wavelength);
-
-                    if ($iterated_array) {
-                        $phase = key($iterated_array);
-                        $value = current($iterated_array);
-                        $wavelength = $square_1_minus_1_2->getWaveLength();
-                    } else {
-                        $phase = NULL;
-                        $value = NULL;
-                        $wavelength = NULL;
-                    }
-                    if ($value < 0) {
-                        $start = 10 - abs($value) * 4;
-                    } else {
-                        $start = 10;
-                    }
-                    $width = abs($value) * 4;
-                    $value = $value > 0 ? '+' . strval($value) : strval($value);
-                    echo "<p>line $line | phase: $phase, value: $value <span style=\"display: inline;width:70%;height:1.2em;\"><span style=\"background-color:blue;width:$width", "em;margin-left:$start", "em;height:1.2em;text-align:center;display:inline-block\">$value</span></span></p>";
+                    $output_html = \view\DimensionPhaseValue::print1D($iterated_array, $line);
+                    echo $output_html;
                 }
-
-                #To Do: Visual represantation
                 ?>
             </code>
 </section>
+        <section>
+            <h2>Multidimensional indexing - The NDimSquareFunctionGenerator class</h2>
+            <p>Most boardgames are not one-dimensional, so we need to combine multiple SquareFunctions. This is done with the <code>NDimSquareFunctionGenerator</code> class which extends the <code>SquareFunctionGenerator</code> class</p>
+            <h3>The generateCycle method</h3>
+            <?php
+
+            $TwoDimSquare = new \controller\game_controller\iterators\NDimSquareFunctionGenerator([1, 0, 2, 0], [0, -1, 2, 1]);
+
+            foreach (range(0, 3) as $line) {
+                $iterated_array = $TwoDimSquare->generateCycle();
+                $output_html = view\DimensionPhaseValue::print2D($iterated_array, $line);
+                echo $output_html;
+            }
+            ?>
+            <h3>and the generateWave method</h3>
+            <?php
+
+            $TwoDimSquare->setPhase(0);
+            foreach (range(0, 3) as $line) {
+                $iterated_array = $TwoDimSquare->generateWave();
+                $output_html = view\DimensionPhaseValue::print2D($iterated_array, $line);
+                echo $output_html;
+            }
+            ?>
+        </section>
+
         <section>
             <h2>Adding Square Functions to Create More Complex Movements</h2>
             <p>Let's take a look how the rook can move:</p>
@@ -329,21 +208,11 @@
 
                     foreach (range(0,7) as $line) {
                         $current_left = $square_1_0_2_phase_0->generateWave();
-                        $left_phase = key($current_left);
-                        $left_value = current($current_left);
-
                         $current_right = $square_1_0_2_phase_1->generateWave();
-                        $right_phase = key($current_right);
-                        $right_value = current($current_right);
 
-                        $summand = $left_value + $right_value;
-                        if ($value < 0) {
-                            $start = 10 - abs($summand) * 4;
-                        } else {
-                            $start = 10;
-                        }
-                        $width = abs($summand) * 4;
-                        echo "<p>line $line | left phase: $left_phase, left value: $left_value; right phase: $right_phase, right value: $right_value; summand = $summand<span style=\"display: inline;width:70%;height:1.2em;\"><span style=\"background-color:blue;width:$width", "em;margin-left:$start", "em;height:1.2em;text-align:center;display:inline-block\">$summand</span></span> </p>";
+                        $output_html = view\DimensionPhaseValue::summingUp1D($current_left, $current_right, $line);
+                        echo $output_html;
+
                     }
                     ?>
                 </code>
@@ -363,34 +232,25 @@
                     $triangle_0121 = new \controller\game_controller\iterators\TriangleFunctionGenerator([1, 0, 4, 0], [0, -1, 4, 1]);
 
                     foreach (range(0,7) as $line) {
-                        $current = $triangle_0121->generateWave();
-                        $phase = key($current);
-                        $value = current($current);
-                        if ($value < 0) {
-                            $start = 10 - abs($value) * 4;
-                        } else {
-                            $start = 10;
-                        }
-                        $width = abs($value) * 4;
-                        $value = $value > 0 ? '+' . strval($value) : strval($value);
-                        echo "<p>line $line | phase: $phase, value: $value <span style=\"display: inline;width:70%;height:1.2em;\"><span style=\"background-color:blue;width:$width", "em;margin-left:$start", "em;height:1.2em;text-align:center;display:inline-block\">$value</span></span></p>";
+                        $iterated_array = $triangle_0121->generateWave();
+                        $output_html = view\DimensionPhaseValue::printZeroOf2D($iterated_array, $line);
+                        echo $output_html;
                     }
                     ?>
                 </code>
             </p>
-            <p>The new wavelength is calculated as the least common multiple by reduction by the greatest common divisor (
-<a href="https://en.wikipedia.org/wiki/Least_common_multiple#Reduction_by_the_greatest_common_divisor" target="_blank">wiki</a>) and can be accessed with <code>TriangleFunctionGenerator::getResultingWavelength()</code></p>
+            <p>The new wavelength is calculated as the least common multiple by reduction by the greatest common divisor (<a href="https://en.wikipedia.org/wiki/Least_common_multiple#Reduction_by_the_greatest_common_divisor" target="_blank">wiki</a>) and can be accessed with <code>TriangleFunctionGenerator::getWavelength()</code></p>
             <p>
                 <code class="code_example">
                     <?php
-                    echo $triangle_0121->getResultingWavelength();
+                    echo $triangle_0121->getWaveLength();
                     ?>
                 </code></p>
             <p>The value at a explicit state can be accessed by <code>TriangleFunctionGenerator::getStateAtPhase($phase)</code>, for example 3 and 2:</p>
             <p>
                 <code class="code_output">
                 <?php
-                echo '<p>', $triangle_0121->getStateAtPhase(3), '</p><p>', $triangle_0121->getStateAtPhase(2), '</p>';
+                echo '<p>', $triangle_0121->getStateAtPhase(3)[3], '</p><p>', $triangle_0121->getStateAtPhase(2)[2], '</p>';
                 ?>
                 </code>            </p>
             <p>and again it is possible to retrieve just one cycle with <code>TriangleFunctionGenerator::generateCycle()</code></p>
@@ -398,55 +258,45 @@
                 <code class="code_output">
                     <?php
                     $triangle_0121->setPhase(0);
-                    foreach(range(0,3) as $line) {
-                        $current = $triangle_0121->generateCycle();
-                        if ($current) {
-                            $phase = key($current);
-                            $value = current($current);
-                        } else {
-                            $phase = $value = NULL;
-                        }
-                        if ($value < 0) {
-                            $start = 10 - abs($value) * 4;
-                        } else {
-                            $start = 10;
-                        }
-                        $width = abs($value) * 4;
-                        $value = $value > 0 ? '+' . strval($value) : strval($value);
-                        echo "<p>line $line | phase: $phase, value: $value <span style=\"display: inline;width:70%;height:1.2em;\"><span style=\"background-color:blue;width:$width", "em;margin-left:$start", "em;height:1.2em;text-align:center;display:inline-block\">$value</span></span></p>";
+                    foreach(range(0,5) as $line) {
+                        $iterated_array = $triangle_0121->generateCycle();
+                        $output_html = view\DimensionPhaseValue::printZeroOf2D($iterated_array, $line);
+                        echo $output_html;
                     }
                     ?>
                 </code>
             </p>
-            <p>As mentioned above it is possible to use an arbityra number of generators like this:</p>
+            <p>As mentioned above it is possible to use an arbitrary number of generators like this:</p>
             <p>
                 <code class="code_output">
                     <?php
                     $triangle_fun = new \controller\game_controller\iterators\TriangleFunctionGenerator([0,1,6,0], [0,1,6,1], [0,1,6,2], [0,1,6,3]);
-                    echo '<p>Resulting wavelength: ', $triangle_fun->getResultingWavelength(), '<p>';
+                    echo '<p>Resulting wavelength: ', $triangle_fun->getWavelength(), '<p>';
                     foreach(range(0,11) as $line) {
-                        $current = $triangle_fun->generateWave();
-                        if ($current) {
-                            $phase = key($current);
-                            $value = current($current);
-                        } else {
-                            $phase = $value = NULL;
-                        }
-                        if ($value < 0) {
-                            $start = 10 - abs($value) * 4;
-                        } else {
-                            $start = 10;
-                        }
-                        $width = abs($value) * 4;
-                        $value = $value > 0 ? '+' . strval($value) : strval($value);
-                        $line = $line < 10 ? '0' . strval($line) :strval($line);
-                        echo "<p>line $line | phase: $phase, value: $value <span style=\"display: inline;width:70%;height:1.2em;\"><span style=\"background-color:blue;width:$width", "em;margin-left:$start", "em;height:1.2em;text-align:center;display:inline-block\">$value</span></span></p>";
+                        $iterated_array = $triangle_fun->generateWave();
+                        $output_html = view\DimensionPhaseValue::printZeroOf2D($iterated_array, $line);
+                        echo $output_html;
                     }
                     ?>
                 </code>
             </p>
 
         </section>
+        <section>
+            <h2>Finding signatures for value streams</h2>
+            <p>The FindSignature class allow to brute force test a range of triangle signatures for two test arrays</p>
+            <p>
+                <code class="pure-u-4-24">
+                    \controller\game_controller\iterators\findSignature::test2D(-2, 2, 8, 10, [-1, 0, 1, 1, 1, 0, -1, -1], [1, 1, 1, 0, -1, -1, -1, 0]);
+                </code>
+            </p>
+            <?php
+            \controller\game_controller\iterators\findSignature::test2D(-2, 2, 8, 10, [-1, 0, 1, 1, 1, 0, -1, -1], [1, 1, 1, 0, -1, -1, -1, 0]);
+
+            ?>
+        </section>
+
+
         <section>
             <h2>Using combined square functions for knight and king</h2>
             <p>we can use combined square functions for knight and king. This are the possible movements of the king:</p>
@@ -461,25 +311,13 @@
             <p>
                 <code class="code_output">
                     <?php
-                    $triangle_king = new \controller\game_controller\iterators\TriangleFunctionGenerator([0,1,8,6], [-1,0,8,7]);
-                    echo $triangle_king->getResultingWavelength();
-                    foreach(range(0,7) as $line) {
-                        $current = $triangle_king->generateCycle();
-                        if ($current) {
-                            $phase = key($current);
-                            $value = current($current);
-                        } else {
-                            $phase = $value = NULL;
-                        }
-                        if ($value < 0) {
-                            $start = 10 - abs($value) * 4;
-                        } else {
-                            $start = 10;
-                        }
-                        $width = abs($value) * 4;
-                        $value = $value > 0 ? '+' . strval($value) : strval($value);
-                        echo "<p>line $line | phase: $phase, value: $value <span style=\"display: inline;width:70%;height:1.2em;\"><span style=\"background-color:blue;width:$width", "em;margin-left:$start", "em;height:1.2em;text-align:center;display:inline-block\">$value</span></span></p>";
-                    }
+                    $upper = 2;
+                    $phase_length = 8;
+                    $wave_max = 8;
+                    $lower = $upper * -1;
+
+
+
                     ?>
                 </code>
             </p>
@@ -495,7 +333,7 @@
                 <code class="code_output">
                     <?php
                     $triangle_knight = new \controller\game_controller\iterators\TriangleFunctionGenerator([-1,1,8,7], [-1,0,8,0], [0,1,8,6]);
-                    echo $triangle_knight->getResultingWavelength();
+                    echo $triangle_knight->getWaveLength();
                     foreach(range(0,7) as $line) {
                         $current = $triangle_knight->generateCycle();
                         if ($current) {
@@ -520,4 +358,3 @@
     </article>
     <time datetime="2017-07-31" id="last-edit">#LAST EDIT 31-07-2017</time>
 </div>
-

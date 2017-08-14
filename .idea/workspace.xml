@@ -2,19 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="30ef338f-6709-41ee-963f-ea94c42ec379" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/php.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/model/chess/parser/SANParser.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/view/PGNParser_and_related_classes.doc.php" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/view/ChessBoard.doc.php" afterPath="" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/controller/game_controller/iterators/NDimDiagonalIndexesGenerator.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/controller/game_controller/iterators/NDimSquareFunctionGenerator.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/controller/game_controller/iterators/WaveFunctionGenerator.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/view/DimensionPhaseValue.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/controller/Math/VectorMath.php" afterPath="$PROJECT_DIR$/controller/Math/VectorMath.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/controller/SecureAndClean/SecureAndClean.php" afterPath="$PROJECT_DIR$/controller/SecureAndClean/SecureAndClean.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/controller/client_action/routing/PersonalRouter.php" afterPath="$PROJECT_DIR$/controller/client_action/routing/PersonalRouter.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/errors/ErrorMessage.php" afterPath="$PROJECT_DIR$/errors/ErrorMessage.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/model/chess/arrays/ChessBoard.php" afterPath="$PROJECT_DIR$/model/chess/arrays/ChessBoard.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/model/chess/arrays/NDimArrays.php" afterPath="$PROJECT_DIR$/model/chess/arrays/NDimArrays.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/model/chess/figures/AbstractFigure.php" afterPath="$PROJECT_DIR$/model/chess/figures/AbstractFigure.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/controller/parser/PGNParser.php" afterPath="$PROJECT_DIR$/model/chess/parser/PGNParser.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/controller/game_controller/iterators/SquareFunctionGenerator.php" afterPath="$PROJECT_DIR$/controller/game_controller/iterators/SquareFunctionGenerator.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/controller/game_controller/iterators/TriangleFunctionGenerator.php" afterPath="$PROJECT_DIR$/controller/game_controller/iterators/TriangleFunctionGenerator.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/view/IteratorClasses.doc.php" afterPath="$PROJECT_DIR$/view/IteratorClasses.doc.php" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -24,105 +21,89 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="SquareFunctionGenerator.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/controller/game_controller/iterators/SquareFunctionGenerator.php">
+    <leaf>
+      <file leaf-file-name="chessLibrary.iml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/.idea/chessLibrary.iml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="295">
-              <caret line="50" column="25" lean-forward="false" selection-start-line="50" selection-start-column="25" selection-end-line="50" selection-end-column="25" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="SecureAndClean.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/controller/SecureAndClean/SecureAndClean.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="357">
-              <caret line="26" column="1" lean-forward="false" selection-start-line="26" selection-start-column="1" selection-end-line="26" selection-end-column="1" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="PGNParser_and_related_classes.doc.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/view/PGNParser_and_related_classes.doc.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="748">
-              <caret line="134" column="0" lean-forward="false" selection-start-line="134" selection-start-column="0" selection-end-line="134" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="README.md" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/view/pure-release-1.0.0/README.md">
-          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-            <state split_layout="SPLIT">
-              <first_editor relative-caret-position="646">
-                <caret line="38" column="8" lean-forward="false" selection-start-line="38" selection-start-column="8" selection-end-line="38" selection-end-column="8" />
-                <folding />
-              </first_editor>
-              <second_editor />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="index.html" pinned="false" current-in-tab="true">
-        <entry file="file://$USER_HOME$/AppData/Local/Temp/index.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-116">
-              <caret line="42" column="67" lean-forward="true" selection-start-line="41" selection-start-column="88" selection-end-line="42" selection-end-column="67" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ErrorMessage.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/errors/ErrorMessage.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="901">
-              <caret line="97" column="0" lean-forward="false" selection-start-line="97" selection-start-column="0" selection-end-line="97" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ChessBoard.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/model/chess/arrays/ChessBoard.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="561">
-              <caret line="33" column="82" lean-forward="false" selection-start-line="33" selection-start-column="82" selection-end-line="33" selection-end-column="82" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="GameField.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/model/chess/fields/GameField.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-374">
+            <state relative-caret-position="0">
               <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="AbstractFigure.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/model/chess/figures/AbstractFigure.php">
+      <file leaf-file-name="IteratorClasses.doc.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/view/IteratorClasses.doc.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="561">
-              <caret line="33" column="18" lean-forward="false" selection-start-line="33" selection-start-column="18" selection-end-line="33" selection-end-column="18" />
+            <state relative-caret-position="266">
+              <caret line="289" column="152" lean-forward="false" selection-start-line="289" selection-start-column="152" selection-end-line="289" selection-end-column="152" />
+              <folding>
+                <marker date="1502691372135" expanded="true" signature="15912:16132" ph="..." />
+                <marker date="1502691372135" expanded="true" signature="15952:16115" ph="..." />
+                <marker date="1502691372135" expanded="true" signature="16270:17220" ph="..." />
+                <marker date="1502691372135" expanded="true" signature="16313:17220" ph="..." />
+                <marker date="1502691372135" expanded="true" signature="17349:17388" ph="..." />
+                <marker date="1502691372135" expanded="true" signature="17405:17433" ph="..." />
+                <marker date="1502691372135" expanded="true" signature="17405:17439" ph="..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="FindSignature.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/controller/game_controller/iterators/FindSignature.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-153">
+              <caret line="41" column="70" lean-forward="false" selection-start-line="41" selection-start-column="70" selection-end-line="41" selection-end-column="70" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="NDimArrays.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/model/chess/arrays/NDimArrays.php">
+      <file leaf-file-name="DimensionPhaseValue.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/view/DimensionPhaseValue.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="782">
-              <caret line="177" column="14" lean-forward="false" selection-start-line="177" selection-start-column="14" selection-end-line="177" selection-end-column="14" />
+            <state relative-caret-position="266">
+              <caret line="107" column="42" lean-forward="true" selection-start-line="107" selection-start-column="42" selection-end-line="107" selection-end-column="42" />
+              <folding>
+                <marker date="1502642360943" expanded="true" signature="783:852" ph="..." />
+                <marker date="1502642360943" expanded="true" signature="1227:1266" ph="..." />
+                <marker date="1502642360943" expanded="true" signature="1267:1452" ph="..." />
+                <marker date="1502642360943" expanded="false" signature="1290:1404" ph="..." />
+                <marker date="1502642360943" expanded="true" signature="1405:1440" ph="..." />
+                <marker date="1502642360943" expanded="true" signature="2184:2327" ph="..." />
+                <marker date="1502642360943" expanded="true" signature="2688:2754" ph="..." />
+                <marker date="1502642360943" expanded="true" signature="3266:3335" ph="..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="TriangleFunctionGenerator.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/controller/game_controller/iterators/TriangleFunctionGenerator.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="391">
+              <caret line="35" column="79" lean-forward="false" selection-start-line="35" selection-start-column="79" selection-end-line="35" selection-end-column="79" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="NDimSquareFunctionGenerator.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/controller/game_controller/iterators/NDimSquareFunctionGenerator.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="560">
+              <caret line="88" column="33" lean-forward="false" selection-start-line="88" selection-start-column="33" selection-end-line="88" selection-end-column="33" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="SquareFunctionGenerator.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/controller/game_controller/iterators/SquareFunctionGenerator.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="232">
+              <caret line="89" column="8" lean-forward="true" selection-start-line="89" selection-start-column="8" selection-end-line="89" selection-end-column="8" />
               <folding />
             </state>
           </provider>
@@ -139,6 +120,19 @@
       <find>ction re</find>
       <find>error</find>
       <find>return</find>
+      <find>$this-&gt;getS</find>
+      <find>$this-&gt;cyc</find>
+      <find>the Tr</find>
+      <find>$this-&gt;tim</find>
+      <find>time</find>
+      <find>this-&gt;G</find>
+      <find>getStat</find>
+      <find>3 and 2</find>
+      <find>getSt</find>
+      <find>-&gt;getStat</find>
+      <find>getter</find>
+      <find>king</find>
+      <find>using</find>
     </findStrings>
     <replaceStrings>
       <replace>throw</replace>
@@ -150,17 +144,13 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="C:/wamp64/bin/apache/apache2.4.23/conf/extra/httpd-vhosts.conf" />
-        <option value="$PROJECT_DIR$/view/IteratorClasses.doc.php" />
+        <option value="$PROJECT_DIR$/../../bin/apache/apache2.4.23/conf/extra/httpd-vhosts.conf" />
         <option value="$PROJECT_DIR$/conf/conf.php" />
-        <option value="$PROJECT_DIR$/controller/game_controller/iterators/SquareFunctionGenerator.php" />
         <option value="$PROJECT_DIR$/controller/parser/PGNParser.php" />
         <option value="$PROJECT_DIR$/view/PGNParser_and_related_classes.doc.php" />
         <option value="$PROJECT_DIR$/model/chess/parser/PGNParser.php" />
         <option value="$PROJECT_DIR$/model/chess/parser/SANParser.php" />
         <option value="$PROJECT_DIR$/controller/client_action/routing/PersonalRouter.php" />
-        <option value="$PROJECT_DIR$/controller/Math/VectorMath.php" />
-        <option value="$PROJECT_DIR$/controller/SecureAndClean/SecureAndClean.php" />
         <option value="$PROJECT_DIR$/errors/ErrorMessage.php" />
         <option value="$PROJECT_DIR$/model/chess/arrays/NDimArrays.php" />
         <option value="$PROJECT_DIR$/model/chess/arrays/ChessBoard.php" />
@@ -169,6 +159,20 @@
         <option value="$PROJECT_DIR$/controller/game_controller/iterators/DiagonalIterator.php" />
         <option value="$PROJECT_DIR$/controller/game_controller/iterators/DiagonalGenerator.php" />
         <option value="$USER_HOME$/AppData/Local/Temp/index.html" />
+        <option value="$PROJECT_DIR$/controller/SecureAndClean/SecureAndClean.php" />
+        <option value="$PROJECT_DIR$/controller/game_controller/iterators/NDimDiagonalIndexesGenerator.php" />
+        <option value="$PROJECT_DIR$/controller/game_controller/iterators/TriangleFunctionGeneratorTest.php" />
+        <option value="$PROJECT_DIR$/controller/game_controller/iterators/WaveFunction.php" />
+        <option value="$PROJECT_DIR$/controller/game_controller/iterators/MultipleWaveFunctionGenerator.php" />
+        <option value="$PROJECT_DIR$/controller/game_controller/iterators/WaveFunctionGenerator.php" />
+        <option value="$PROJECT_DIR$/controller/Math/VectorMath.php" />
+        <option value="$PROJECT_DIR$/view/DimensionPhaseValue.php" />
+        <option value="$PROJECT_DIR$/controller/game_controller/iterators/SquareFunctionGenerator.php" />
+        <option value="$PROJECT_DIR$/controller/game_controller/iterators/TriangleFunctionGenerator.php" />
+        <option value="$PROJECT_DIR$/controller/game_controller/iterators/NDimSquareFunctionGenerator.php" />
+        <option value="$PROJECT_DIR$/controller/game_controller/iterators/findSignature.php" />
+        <option value="$PROJECT_DIR$/view/IteratorClasses.doc.php" />
+        <option value="$PROJECT_DIR$/controller/game_controller/iterators/FindSignature.php" />
       </list>
     </option>
   </component>
@@ -178,12 +182,15 @@
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
   </component>
+  <component name="PhpServers">
+    <servers />
+  </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-1928" />
+    <option name="x" value="-8" />
     <option name="y" value="-8" />
-    <option name="width" value="1936" />
-    <option name="height" value="1096" />
+    <option name="width" value="1382" />
+    <option name="height" value="784" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -344,6 +351,9 @@
   <component name="ShelveChangesManager" show_recycled="false">
     <option name="remove_strategy" value="false" />
   </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
       <changelist id="30ef338f-6709-41ee-963f-ea94c42ec379" name="Default" comment="" />
@@ -359,21 +369,22 @@
       <workItem from="1502116875888" duration="4314000" />
       <workItem from="1502265770353" duration="11888000" />
       <workItem from="1502450171421" duration="11727000" />
+      <workItem from="1502610721520" duration="27273000" />
+      <workItem from="1502640498332" duration="12138000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="42179000" />
+    <option name="totallyTimeSpent" value="81590000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-1928" y="-8" width="1936" height="1096" extended-state="6" />
+    <frame x="-8" y="-8" width="1382" height="784" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1828125" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21083455" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.038748138" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24963397" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -385,6 +396,7 @@
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
     <layout-to-restore>
@@ -418,14 +430,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/controller/game_controller/iterators/SquareFunctionGenerator.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1581">
-          <caret line="93" column="23" lean-forward="false" selection-start-line="93" selection-start-column="23" selection-end-line="93" selection-end-column="23" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/controller/SecureAndClean/SecureAndClean.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="51">
@@ -438,70 +442,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="578">
           <caret line="34" column="27" lean-forward="false" selection-start-line="34" selection-start-column="27" selection-end-line="34" selection-end-column="27" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/model/chess/parser/PGNParser.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="935">
-          <caret line="55" column="21" lean-forward="true" selection-start-line="55" selection-start-column="21" selection-end-line="55" selection-end-column="21" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/model/chess/arrays/NDimArrays.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="578">
-          <caret line="34" column="51" lean-forward="false" selection-start-line="34" selection-start-column="51" selection-end-line="34" selection-end-column="51" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/model/chess/arrays/ChessBoard.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="714">
-          <caret line="42" column="1" lean-forward="false" selection-start-line="42" selection-start-column="1" selection-end-line="42" selection-end-column="1" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/view/ChessBoard.doc.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1275">
-          <caret line="75" column="0" lean-forward="false" selection-start-line="75" selection-start-column="0" selection-end-line="75" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://G:/Dokumente/phylogram/chessgame_2017/data/GMallboth.pgn">
-      <provider selected="true" editor-type-id="LargeFileEditor">
-        <state relative-caret-position="544">
-          <caret line="32" column="0" lean-forward="false" selection-start-line="32" selection-start-column="0" selection-end-line="32" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/controller/game_controller/iterators/SquareFunctionGenerator.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1581">
-          <caret line="93" column="23" lean-forward="false" selection-start-line="93" selection-start-column="23" selection-end-line="93" selection-end-column="23" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/controller/SecureAndClean/SecureAndClean.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="8" column="35" lean-forward="false" selection-start-line="8" selection-start-column="35" selection-end-line="8" selection-end-column="35" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/conf/conf.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="578">
-          <caret line="34" column="27" lean-forward="false" selection-start-line="34" selection-start-column="27" selection-end-line="34" selection-end-column="27" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -521,14 +461,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/view/ChessBoard.doc.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1428">
-          <caret line="84" column="42" lean-forward="false" selection-start-line="84" selection-start-column="42" selection-end-line="84" selection-end-column="42" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/view/ChessBoard.doc.php" />
     <entry file="file://$PROJECT_DIR$/model/chess/arrays/ChessBoard.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="714">
@@ -537,13 +470,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://G:/Dokumente/phylogram/chessgame_2017/data/GMallboth.pgn">
-      <provider selected="true" editor-type-id="LargeFileEditor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://G:/Dokumente/phylogram/chessgame_2017/data/GMallboth.pgn" />
     <entry file="file://$PROJECT_DIR$/model/chess/parser/PGNParser.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="323">
@@ -556,7 +483,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="578">
           <caret line="34" column="26" lean-forward="false" selection-start-line="34" selection-start-column="26" selection-end-line="34" selection-end-column="26" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -576,14 +502,14 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://C:/wamp64/bin/apache/apache2.4.23/include/http_vhost.h">
+    <entry file="file://$PROJECT_DIR$/../../bin/apache/apache2.4.23/include/http_vhost.h">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2023">
           <caret line="119" column="0" lean-forward="true" selection-start-line="119" selection-start-column="0" selection-end-line="119" selection-end-column="0" />
         </state>
       </provider>
     </entry>
-    <entry file="file://C:/wamp64/bin/apache/apache2.4.23/conf/extra/httpd-vhosts.conf">
+    <entry file="file://$PROJECT_DIR$/../../bin/apache/apache2.4.23/conf/extra/httpd-vhosts.conf">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="493">
           <caret line="29" column="0" lean-forward="false" selection-start-line="29" selection-start-column="0" selection-end-line="29" selection-end-column="0" />
@@ -598,14 +524,14 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://C:/wamp64/www/add_vhost.php">
+    <entry file="file://$PROJECT_DIR$/../add_vhost.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="289">
           <caret line="67" column="68" lean-forward="false" selection-start-line="67" selection-start-column="46" selection-end-line="67" selection-end-column="68" />
         </state>
       </provider>
     </entry>
-    <entry file="file://C:/wamp64/bin/apache/apache2.4.23/include/http_vhost.h">
+    <entry file="file://$PROJECT_DIR$/../../bin/apache/apache2.4.23/include/http_vhost.h">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2023">
           <caret line="119" column="0" lean-forward="true" selection-start-line="119" selection-start-column="0" selection-end-line="119" selection-end-column="0" />
@@ -613,7 +539,7 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/view/ChessBoard.php" />
-    <entry file="file://C:/wamp64/bin/apache/apache2.4.23/conf/extra/httpd-vhosts.conf">
+    <entry file="file://$PROJECT_DIR$/../../bin/apache/apache2.4.23/conf/extra/httpd-vhosts.conf">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="425">
           <caret line="29" column="0" lean-forward="false" selection-start-line="29" selection-start-column="0" selection-end-line="29" selection-end-column="0" />
@@ -631,38 +557,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="578">
           <caret line="34" column="27" lean-forward="false" selection-start-line="34" selection-start-column="27" selection-end-line="34" selection-end-column="27" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/view/IteratorClasses.doc.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-674">
-          <caret line="90" column="50" lean-forward="false" selection-start-line="90" selection-start-column="50" selection-end-line="90" selection-end-column="50" />
-          <folding>
-            <marker date="1502014878000" expanded="true" signature="6000:6039" ph="..." />
-            <marker date="1502014878000" expanded="true" signature="6056:6084" ph="..." />
-            <marker date="1502014878000" expanded="true" signature="7482:7521" ph="..." />
-            <marker date="1502014878000" expanded="true" signature="7538:7566" ph="..." />
-            <marker date="1502014878000" expanded="true" signature="9083:9122" ph="..." />
-            <marker date="1502014878000" expanded="true" signature="9139:9167" ph="..." />
-            <marker date="1502014878000" expanded="true" signature="10851:10890" ph="..." />
-            <marker date="1502014878000" expanded="true" signature="10907:10935" ph="..." />
-            <marker date="1502014878000" expanded="true" signature="12817:12856" ph="..." />
-            <marker date="1502014878000" expanded="true" signature="12873:12901" ph="..." />
-            <marker date="1502014878000" expanded="true" signature="15569:15608" ph="..." />
-            <marker date="1502014878000" expanded="true" signature="15625:15653" ph="..." />
-            <marker date="1502014878000" expanded="true" signature="17253:17292" ph="..." />
-            <marker date="1502014878000" expanded="true" signature="17309:17337" ph="..." />
-            <marker date="1502014878000" expanded="true" signature="19574:19613" ph="..." />
-            <marker date="1502014878000" expanded="true" signature="19630:19658" ph="..." />
-            <marker date="1502014878000" expanded="true" signature="21186:21225" ph="..." />
-            <marker date="1502014878000" expanded="true" signature="21242:21270" ph="..." />
-            <marker date="1502014878000" expanded="true" signature="23274:23313" ph="..." />
-            <marker date="1502014878000" expanded="true" signature="23330:23358" ph="..." />
-            <marker date="1502014878000" expanded="true" signature="25128:25167" ph="..." />
-            <marker date="1502014878000" expanded="true" signature="25184:25212" ph="..." />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -681,13 +575,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://G:/Dokumente/phylogram/chessgame_2017/data/GMallboth.pgn">
-      <provider selected="true" editor-type-id="LargeFileEditor">
-        <state relative-caret-position="362491">
-          <caret line="21323" column="0" lean-forward="false" selection-start-line="21323" selection-start-column="0" selection-end-line="21324" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://G:/Dokumente/phylogram/chessgame_2017/data/GMallboth.pgn" />
     <entry file="file://$PROJECT_DIR$/model/chess/parser/PGNParser.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1700">
@@ -720,34 +608,50 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/controller/Math/VectorMath.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="612">
-          <caret line="36" column="1" lean-forward="false" selection-start-line="36" selection-start-column="1" selection-end-line="36" selection-end-column="1" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/controller/SecureAndClean/SecureAndClean.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="26" column="1" lean-forward="false" selection-start-line="26" selection-start-column="1" selection-end-line="26" selection-end-column="1" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/errors/ErrorMessage.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="901">
+        <state relative-caret-position="1649">
           <caret line="97" column="0" lean-forward="false" selection-start-line="97" selection-start-column="0" selection-end-line="97" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/model/chess/arrays/NDimArrays.php">
+    <entry file="file://$PROJECT_DIR$/view/ChessBoard.doc.php" />
+    <entry file="file://$PROJECT_DIR$/controller/game_controller/iterators/DiagonalIterator.php" />
+    <entry file="file://$PROJECT_DIR$/controller/game_controller/iterators/DiagonalGenerator.php" />
+    <entry file="file://$USER_HOME$/AppData/Local/Temp/index.html" />
+    <entry file="file://$PROJECT_DIR$/view/pure-release-1.0.0/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="17">
+            <caret line="38" column="8" lean-forward="false" selection-start-line="38" selection-start-column="8" selection-end-line="38" selection-end-column="8" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/view/PGNParser_and_related_classes.doc.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="782">
-          <caret line="177" column="14" lean-forward="false" selection-start-line="177" selection-start-column="14" selection-end-line="177" selection-end-column="14" />
+        <state relative-caret-position="422">
+          <caret line="134" column="0" lean-forward="false" selection-start-line="134" selection-start-column="0" selection-end-line="134" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/controller/game_controller/iterators/TriangleFunctionGeneratorTest.php" />
+    <entry file="file://$PROJECT_DIR$/controller/game_controller/iterators/MultipleWaveFunctionGenerator.php" />
+    <entry file="file://$PROJECT_DIR$/controller/SecureAndClean/SecureAndClean.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="16" column="28" lean-forward="true" selection-start-line="16" selection-start-column="28" selection-end-line="16" selection-end-column="28" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/controller/game_controller/iterators/NDimDiagonalIndexesGenerator.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="13" column="36" lean-forward="false" selection-start-line="13" selection-start-column="36" selection-end-line="13" selection-end-column="36" />
           <folding />
         </state>
       </provider>
@@ -760,10 +664,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/model/chess/fields/GameField.php">
+    <entry file="file://$PROJECT_DIR$/model/chess/arrays/NDimArrays.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-374">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        <state relative-caret-position="589">
+          <caret line="177" column="14" lean-forward="false" selection-start-line="177" selection-start-column="14" selection-end-line="177" selection-end-column="14" />
           <folding />
         </state>
       </provider>
@@ -776,61 +680,99 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/view/ChessBoard.doc.php">
+    <entry file="file://$PROJECT_DIR$/model/chess/fields/GameField.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="408">
-          <caret line="89" column="37" lean-forward="false" selection-start-line="89" selection-start-column="37" selection-end-line="89" selection-end-column="37" />
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/controller/game_controller/iterators/DiagonalIterator.php">
+    <entry file="file://$PROJECT_DIR$/controller/game_controller/iterators/WaveFunctionGenerator.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="11" column="23" lean-forward="false" selection-start-line="11" selection-start-column="23" selection-end-line="11" selection-end-column="23" />
+        <state relative-caret-position="153">
+          <caret line="14" column="53" lean-forward="true" selection-start-line="14" selection-start-column="53" selection-end-line="14" selection-end-column="53" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/controller/game_controller/iterators/DiagonalGenerator.php">
+    <entry file="file://$PROJECT_DIR$/controller/Math/VectorMath.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="15" column="33" lean-forward="false" selection-start-line="15" selection-start-column="33" selection-end-line="15" selection-end-column="33" />
+        <state relative-caret-position="510">
+          <caret line="30" column="29" lean-forward="false" selection-start-line="30" selection-start-column="29" selection-end-line="30" selection-end-column="29" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.idea/chessLibrary.iml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/controller/game_controller/iterators/SquareFunctionGenerator.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="295">
-          <caret line="50" column="25" lean-forward="false" selection-start-line="50" selection-start-column="25" selection-end-line="50" selection-end-column="25" />
+        <state relative-caret-position="232">
+          <caret line="89" column="8" lean-forward="true" selection-start-line="89" selection-start-column="8" selection-end-line="89" selection-end-column="8" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/view/PGNParser_and_related_classes.doc.php">
+    <entry file="file://$PROJECT_DIR$/view/DimensionPhaseValue.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="748">
-          <caret line="134" column="0" lean-forward="false" selection-start-line="134" selection-start-column="0" selection-end-line="134" selection-end-column="0" />
+        <state relative-caret-position="266">
+          <caret line="107" column="42" lean-forward="true" selection-start-line="107" selection-start-column="42" selection-end-line="107" selection-end-column="42" />
+          <folding>
+            <marker date="1502642360943" expanded="true" signature="783:852" ph="..." />
+            <marker date="1502642360943" expanded="true" signature="1227:1266" ph="..." />
+            <marker date="1502642360943" expanded="true" signature="1267:1452" ph="..." />
+            <marker date="1502642360943" expanded="false" signature="1290:1404" ph="..." />
+            <marker date="1502642360943" expanded="true" signature="1405:1440" ph="..." />
+            <marker date="1502642360943" expanded="true" signature="2184:2327" ph="..." />
+            <marker date="1502642360943" expanded="true" signature="2688:2754" ph="..." />
+            <marker date="1502642360943" expanded="true" signature="3266:3335" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/controller/game_controller/iterators/NDimSquareFunctionGenerator.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="560">
+          <caret line="88" column="33" lean-forward="false" selection-start-line="88" selection-start-column="33" selection-end-line="88" selection-end-column="33" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/view/pure-release-1.0.0/README.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="646">
-            <caret line="38" column="8" lean-forward="false" selection-start-line="38" selection-start-column="8" selection-end-line="38" selection-end-column="8" />
-            <folding />
-          </first_editor>
-          <second_editor />
+    <entry file="file://$PROJECT_DIR$/controller/game_controller/iterators/TriangleFunctionGenerator.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="391">
+          <caret line="35" column="79" lean-forward="false" selection-start-line="35" selection-start-column="79" selection-end-line="35" selection-end-column="79" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$USER_HOME$/AppData/Local/Temp/index.html">
+    <entry file="file://$PROJECT_DIR$/view/IteratorClasses.doc.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-116">
-          <caret line="42" column="67" lean-forward="true" selection-start-line="41" selection-start-column="88" selection-end-line="42" selection-end-column="67" />
+        <state relative-caret-position="266">
+          <caret line="289" column="152" lean-forward="false" selection-start-line="289" selection-start-column="152" selection-end-line="289" selection-end-column="152" />
+          <folding>
+            <marker date="1502691372135" expanded="true" signature="15912:16132" ph="..." />
+            <marker date="1502691372135" expanded="true" signature="15952:16115" ph="..." />
+            <marker date="1502691372135" expanded="true" signature="16270:17220" ph="..." />
+            <marker date="1502691372135" expanded="true" signature="16313:17220" ph="..." />
+            <marker date="1502691372135" expanded="true" signature="17349:17388" ph="..." />
+            <marker date="1502691372135" expanded="true" signature="17405:17433" ph="..." />
+            <marker date="1502691372135" expanded="true" signature="17405:17439" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/controller/game_controller/iterators/FindSignature.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-153">
+          <caret line="41" column="70" lean-forward="false" selection-start-line="41" selection-start-column="70" selection-end-line="41" selection-end-column="70" />
           <folding />
         </state>
       </provider>

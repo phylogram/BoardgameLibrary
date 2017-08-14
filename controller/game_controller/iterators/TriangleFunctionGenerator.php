@@ -2,91 +2,44 @@
 namespace controller\game_controller\iterators;
 #To Do: Documentation
 #To Do: Write an trait for this basic iterators
-class TriangleFunctionGenerator
+class TriangleFunctionGenerator  extends NDimSquareFunctionGenerator
 {
-    protected $generator_objects = array();
-    protected $signatures;
-    protected $resulting_wavelength;
-    protected $phase;
-    protected $timer;
+    /** To Do: Only Change phpDoc in child class?
+     * TriangleFunctionGenerator constructor.
+     * /\/\/\/\/\/\/\/\/\/\/\/\/\/\/\
+     * @param array ...$input as many arrays in the form of [$upper_limit, $lower_limit, int $wavelength, int $phase]
+     */
 
-    public function __construct(...$input)
+    # # # # # # # # # # #
+    # Public Generators #
+    # # # # # # # # # # #
+
+    /** generate Cycle()
+     * generates one Cycle of values, afterward false
+     * @return array(phase=>value)|bool
+     */
+
+    /** generateWave()
+     * generates values as long as asked for
+     * @return array(phase=>value)
+     */
+
+    /** getStateAtPhase()
+     * calculates value at given phase
+     * @param int $phase XOR none, which results in current
+     * @return array(phase=>value)
+     */
+    public function getStateAtPhase($input_phase = 'current'): array
     {
-        #To Do: check for errors!
-        $this->resulting_wavelength = \controller\Math\VectorMath::leastCommonMultipleOfArray(array_column($input, 2));
-        $this->phase = $input[0][3];
-        $this->signatures = $input;
-        $this->timer = 0;
-        foreach ($input as $arguments) {
-            $new_generator = new \controller\game_controller\iterators\SquareFunctionGenerator(...$arguments);
-            $this->generator_objects[] = $new_generator;
-
-        }
+        $return_array = parent::getStateAtPhase($input_phase);
+        $return_value = \controller\Math\VectorMath::add2ndLevel($return_array);
+        $input_phase = $input_phase == 'current' ? $this->phase : $input_phase;
+        return array($input_phase => $return_value);
     }
 
-    public function generateCycle()
-    {
-        if ($this->timer >= $this->resulting_wavelength) {
-            return NULL;
-        }
-        $return_value = $this->generateWave();
-        $this->timer ++;
-        return $return_value;
-    }
+    # # # # # # # # # # # # # # #
+    # protected actual iterator #
+    # # # # # # # # # # # # # # #
 
-    public function generateWave(): array
-    {
-        if ($this->phase == $this->resulting_wavelength) {
-            $this->phase = 0;
-        }
-        return $this->cycle();
-    }
-    protected function cycle()
-    {
-
-        $array = array();
-        foreach ($this->generator_objects as $square) {
-            $current = $square->generateWave();
-            $array[] =  array_pop($current);
-        }
-        $return_value = array($this->phase => array_sum($array));
-        $this->phase ++;
-        return $return_value;
-    }
-
-    public function getStateAtPhase($input_phase)
-    {
-        #calucalte phase for each generator
-        $phases = array();
-        foreach ($this->signatures as $signature) {
-            $phases[] = (($this->resulting_wavelength % $input_phase) + $signature[3]) % $signature[2];
-        }
-        $return_array = array();
-
-        foreach (array_combine($phases, $this->generator_objects) as $phase => $object) {
-            $state = $object->getStateAtPhase($phase);
-
-            $return_array += $state;
-        }
-
-        return array_sum($return_array);
-    }
-
-
-    public function getResultingWavelength()
-    {
-        return $this->resulting_wavelength;
-    }
-    public function setPhase($phase) {
-        $this->phase = $phase;
-    }
-
-    public function getTimer()
-    {
-        return $this->timer;
-    }
-    public function setTimer($time)
-    {
-        $this->timer = $time;
-    }
+    #Will call parent or self?
 }

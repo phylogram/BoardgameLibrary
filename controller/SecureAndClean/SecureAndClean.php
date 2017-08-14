@@ -13,14 +13,14 @@ namespace controller\SecureAndClean;
 class SecureAndClean
 {
     /**
-     * Takes string by reference, trims it and cleans it of code
+     * Takes string by reference, trims it and cleans it of possible code elements
      * @param string $string
      */
     public static function convert(string &$string)
     {
         $string = trim($string);
         $string = strip_tags($string);
-        #To Do – there is more securing to do f.e. sql injection
+        #SQL Injection will be covered by the database library
 
 
     }

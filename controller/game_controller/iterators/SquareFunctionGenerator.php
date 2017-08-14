@@ -1,7 +1,7 @@
 <?php
 namespace controller\game_controller\iterators;
 
-class SquareFunctionGenerator
+class SquareFunctionGenerator implements WaveFunctionGenerator
 {
     # # # # # # # # # # # # # # # # # # # # # #
     #   _   _   _   _   _   _   _   _   _   _ #
@@ -18,6 +18,7 @@ class SquareFunctionGenerator
     # _ _|   |_ _|   |_ _
     protected $half_wavelength;
     protected $phase; #where are we in the cycle: can't be bigger wavelength
+    protected  $timer;
 
 
     /**
@@ -44,6 +45,7 @@ class SquareFunctionGenerator
         $this->checkPhase($phase);
         $this->half_wavelength = intdiv($this->wavelength, 2);
         $this->phase = $phase;
+        $this->timer = 0;
     }
 
     # # # # # # # # # # #
@@ -56,7 +58,7 @@ class SquareFunctionGenerator
      */
     public function generateCycle()
     {
-        if ($this->phase >= $this->wavelength) {
+        if ($this->timer >= $this->wavelength) {
             return NULL;
         }
         return $this->cycle();
@@ -77,22 +79,22 @@ class SquareFunctionGenerator
     /**
      * gets value at state
      * @return array [$phase => $value]
-     * @param $phase int or 'current'
+     * @param $input_phase int or 'current'
      */
-    public function getStateAtPhase($phase = 'current'): array
+    public function getStateAtPhase($input_phase = 'current'): array
     {
         
-        if ($phase == 'current') {
-            $phase = $this->phase;
+        if ($input_phase == 'current') {
+            $input_phase = $this->phase;
         }
         
-        switch (($phase % $this->wavelength) < $this->half_wavelength) {
+        switch (($input_phase % $this->wavelength) < $this->half_wavelength) {
             case true:
-                return array($phase => $this->lower_limit);
+                return array($input_phase => $this->lower_limit);
                 break;
 
             case false:
-                return array($phase => $this->upper_limit);
+                return array($input_phase => $this->upper_limit);
                 break;
         }
     }
@@ -105,11 +107,12 @@ class SquareFunctionGenerator
     {
         $return_value = $this->getStateAtPhase();
         $this->phase ++;
+        $this->timer ++;
         return $return_value;
     }
 
     # # # # # # # # # # # #
-    # Getters ad setters  #
+    # Getters and setters  #
     # # # # # # # # # # # #
     public function getPhase(): int
     {
@@ -149,6 +152,15 @@ class SquareFunctionGenerator
     {
         $this->wavelength = $wavelength;
         $this->half_wavelength = intdiv($wavelength, 2);
+    }
+    ########################################
+    public function getTimer()
+    {
+        return $this->timer;
+    }
+    public function setTimer($timer)
+    {
+        $this->timer = $timer;
     }
     # # # # # # # # #
     # Check Values  #

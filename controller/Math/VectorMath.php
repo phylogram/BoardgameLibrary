@@ -17,7 +17,21 @@ class VectorMath {
             $item += $scalar;
     }
 
-    /**
+    /** for use in array_walk() & array_walk_recursive()
+     * @param int $carry
+     * @param int $item
+     * @return int
+     */
+    public static function add2ndLevel($Two_Dim_nested_array)
+    {
+        $return_value = 0;
+        foreach ($Two_Dim_nested_array as $level) {
+            $return_value += array_sum($level);
+        }
+        return $return_value;
+    }
+
+        /**
      * returns the least common multiple of an array of integers
      * #https://en.wikipedia.org/wiki/Least_common_multiple#Reduction_by_the_greatest_common_divisor
      * abs($array_item_n * $array_item_n-1) / gmp_gcd($array_item_n * $array_item_n-1)
@@ -33,5 +47,9 @@ class VectorMath {
         }
         return gmp_intval($current_least_common_multiply);
         }
+    public static function columnSum(array $array, int $column): int
+    {
+        return array_sum(array_column($array, $column));
+    }
         
 }
