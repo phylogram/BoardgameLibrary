@@ -30,8 +30,9 @@ class VectorMath {
         }
         $position_b = 0;
         $array_sum = array();
-        foreach ($a as $key_a => $item_a) {
-            $array_sum[$key_a] = $item_a + $b[$position_b];
+        $phase_a = key($a);
+        foreach ($a[$phase_a] as $key_a => $item_a) {
+            $array_sum[$phase_a][$key_a] = $item_a + $b[$position_b];
             $position_b ++;
         }
         return $array_sum;

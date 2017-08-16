@@ -16,6 +16,10 @@ interface VectorWaveFunctionGenerator
     #   Vector API arrays
     #
     # should have the following form:
+    #
+    # array(phase =>
+    #           array(dim => value)
+    #           ... )
 
 
     # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #

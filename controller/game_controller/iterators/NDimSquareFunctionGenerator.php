@@ -53,10 +53,8 @@ class NDimSquareFunctionGenerator extends SquareFunctionGenerator
             $input_phase = $this->phase;
         }
 
-        #calculate phase for each generator
-        $phases = array();
-
         #calculate phases for individual generators
+        $phases = array();
 
         foreach ($this->signatures as $signature) {
             
@@ -67,8 +65,6 @@ class NDimSquareFunctionGenerator extends SquareFunctionGenerator
             $resulting_phase = ($phase_in_first_wavelength + $phase_shift) % $sub_generator_wavelength;
             $phases[] = $resulting_phase;
         }
-        
-        
 
         #Afterward we get the values for each SquareFunctionGenerator
         $return_array = array();

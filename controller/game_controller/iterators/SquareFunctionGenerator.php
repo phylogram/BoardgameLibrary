@@ -10,6 +10,7 @@ class SquareFunctionGenerator implements IndexWaveFunctionGenerator
     # # # # # # # # # # # # # # # # # # # # # #
 
 
+    protected $dim; #The dimension
 
     protected $upper_limit;     #The upper value
     protected $lower_limit;     #The lower value
@@ -34,8 +35,9 @@ class SquareFunctionGenerator implements IndexWaveFunctionGenerator
      * @param int $phase #where are we in the cycle: can't be bigger than wavelength, can't be smaller than 2
      * @return boolean #false if fails
      */
-    public function __construct($upper_limit, $lower_limit, int $wavelength, int $phase = 0)
+    public function __construct($upper_limit, $lower_limit, int $wavelength, int $phase, int $dim = 0)
     {
+        $this->dim = $dim;
         $this->upper_limit = $upper_limit;
         $this->lower_limit = $lower_limit;
 
@@ -90,12 +92,16 @@ class SquareFunctionGenerator implements IndexWaveFunctionGenerator
         switch (($input_phase % $this->wavelength) < $this->half_wavelength) {
             case true:
 
-                return array($input_phase => $this->upper_limit);
+                return array($input_phase => array(
+                    $this->dim => $this->upper_limit)
+                );
                 break;
 
             case false:
 
-                return array($input_phase => $this->lower_limit);
+                return array($input_phase => array(
+                    $this->dim => $this->lower_limit)
+                );
                 break;
         }
     }

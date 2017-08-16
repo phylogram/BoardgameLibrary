@@ -2,26 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="30ef338f-6709-41ee-963f-ea94c42ec379" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/controller/game_controller/iterators/IndexWaveFunctionGenerator.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/controller/game_controller/iterators/NDimTriangleFunctionGenerator.phpVector" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/controller/game_controller/iterators/FindSignature.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/model/chess/arrays/ChessBoard.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/model/chess/arrays/NDimArrays.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/model/chess/fields/GameField.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/model/chess/figures/AbstractFigure.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/model/chess/parser/PGNParser.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/model/chess/parser/PgnInnerTranslation.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/model/chess/parser/SANParser.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/model/chess/parser/VectorStringTranslation.php" afterPath="" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/controller/game_controller/iterators/WaveFunctionGenerator.php" afterPath="$PROJECT_DIR$/controller/game_controller/iterators/VectorWaveFunctionGenerator.php" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/controller/game_controller/iterators/NDimDiagonalIndexesGenerator.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/controller/game_controller/iterators/NDimTriangleFunctionGenerator.phpVector" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/conf/conf.php" afterPath="$PROJECT_DIR$/conf/conf.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/controller/Math/VectorMath.php" afterPath="$PROJECT_DIR$/controller/Math/VectorMath.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/controller/game_controller/iterators/NDimSquareFunctionGenerator.php" afterPath="$PROJECT_DIR$/controller/game_controller/iterators/NDimSquareFunctionGenerator.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/controller/game_controller/iterators/SquareFunctionGenerator.php" afterPath="$PROJECT_DIR$/controller/game_controller/iterators/SquareFunctionGenerator.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/controller/game_controller/iterators/TriangleFunctionGenerator.php" afterPath="$PROJECT_DIR$/controller/game_controller/iterators/TriangleFunctionGenerator.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/errors/ErrorMessage.php" afterPath="$PROJECT_DIR$/errors/ErrorMessage.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/view/IteratorClasses.doc.php" afterPath="$PROJECT_DIR$/view/IteratorClasses.doc.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/controller/game_controller/iterators/VectorWaveFunctionGenerator.php" afterPath="$PROJECT_DIR$/controller/game_controller/iterators/VectorWaveFunctionGenerator.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/view/deleteMe.php" afterPath="$PROJECT_DIR$/view/deleteMe.php" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -35,8 +23,18 @@
       <file leaf-file-name="deleteMe.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/view/deleteMe.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="277">
-              <caret line="19" column="12" lean-forward="false" selection-start-line="19" selection-start-column="12" selection-end-line="19" selection-end-column="12" />
+            <state relative-caret-position="425">
+              <caret line="25" column="88" lean-forward="false" selection-start-line="25" selection-start-column="88" selection-end-line="25" selection-end-column="88" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="SecureAndClean.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/controller/SecureAndClean/SecureAndClean.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="272">
+              <caret line="21" column="38" lean-forward="true" selection-start-line="21" selection-start-column="38" selection-end-line="21" selection-end-column="38" />
               <folding />
             </state>
           </provider>
@@ -45,8 +43,8 @@
       <file leaf-file-name="VectorMath.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/controller/Math/VectorMath.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="561">
-              <caret line="36" column="26" lean-forward="false" selection-start-line="36" selection-start-column="26" selection-end-line="36" selection-end-column="26" />
+            <state relative-caret-position="425">
+              <caret line="34" column="31" lean-forward="false" selection-start-line="34" selection-start-column="31" selection-end-line="34" selection-end-column="31" />
               <folding />
             </state>
           </provider>
@@ -55,8 +53,8 @@
       <file leaf-file-name="SquareFunctionGenerator.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/controller/game_controller/iterators/SquareFunctionGenerator.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="419">
-              <caret line="121" column="5" lean-forward="true" selection-start-line="121" selection-start-column="5" selection-end-line="121" selection-end-column="5" />
+            <state relative-caret-position="204">
+              <caret line="39" column="15" lean-forward="true" selection-start-line="39" selection-start-column="15" selection-end-line="39" selection-end-column="15" />
               <folding />
             </state>
           </provider>
@@ -81,11 +79,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="VectorWaveFunctionGenerator.php" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/controller/game_controller/iterators/VectorWaveFunctionGenerator.php">
+      <file leaf-file-name="NDimSquareFunctionGenerator.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/controller/game_controller/iterators/NDimSquareFunctionGenerator.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="204">
-              <caret line="17" column="37" lean-forward="false" selection-start-line="17" selection-start-column="37" selection-end-line="17" selection-end-column="37" />
+            <state relative-caret-position="1241">
+              <caret line="78" column="9" lean-forward="true" selection-start-line="78" selection-start-column="9" selection-end-line="78" selection-end-column="9" />
               <folding />
             </state>
           </provider>
@@ -168,14 +166,14 @@
         <option value="$PROJECT_DIR$/view/IteratorClasses.doc.php" />
         <option value="$PROJECT_DIR$/view/deleteme" />
         <option value="$PROJECT_DIR$/controller/game_controller/iterators/TriangleFunctionGenerator.php" />
-        <option value="$PROJECT_DIR$/controller/game_controller/iterators/NDimSquareFunctionGenerator.php" />
         <option value="$PROJECT_DIR$/controller/game_controller/iterators/NDimTriangleFunctionGenerator.php" />
         <option value="$PROJECT_DIR$/controller/game_controller/iterators/WaveFunctionGenerator.php" />
         <option value="$PROJECT_DIR$/controller/game_controller/iterators/IndexWaveFunctionGenerator.php" />
+        <option value="$PROJECT_DIR$/controller/game_controller/iterators/VectorWaveFunctionGenerator.php" />
+        <option value="$PROJECT_DIR$/controller/game_controller/iterators/NDimSquareFunctionGenerator.php" />
         <option value="$PROJECT_DIR$/controller/Math/VectorMath.php" />
         <option value="$PROJECT_DIR$/controller/game_controller/iterators/SquareFunctionGenerator.php" />
         <option value="$PROJECT_DIR$/view/deleteMe.php" />
-        <option value="$PROJECT_DIR$/controller/game_controller/iterators/VectorWaveFunctionGenerator.php" />
       </list>
     </option>
   </component>
@@ -232,19 +230,6 @@
               <item name="chessLibrary" type="b2602c69:ProjectViewProjectNode" />
               <item name="chessLibrary" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="controller" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="chessLibrary" type="b2602c69:ProjectViewProjectNode" />
-              <item name="chessLibrary" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="controller" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="game_controller" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="chessLibrary" type="b2602c69:ProjectViewProjectNode" />
-              <item name="chessLibrary" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="controller" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="game_controller" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="iterators" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
             <path>
               <item name="chessLibrary" type="b2602c69:ProjectViewProjectNode" />
@@ -329,12 +314,12 @@
       <workItem from="1502450171421" duration="11727000" />
       <workItem from="1502610721520" duration="27273000" />
       <workItem from="1502640498332" duration="21914000" />
-      <workItem from="1502788480988" duration="22454000" />
+      <workItem from="1502788480988" duration="26715000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="113820000" />
+    <option name="totallyTimeSpent" value="118081000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="784" extended-state="6" />
@@ -365,14 +350,14 @@
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.038748138" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.10614934" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33383012" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21083455" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.6706408" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24963397" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -551,22 +536,6 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/controller/game_controller/iterators/TriangleFunctionGeneratorTest.php" />
     <entry file="file://$PROJECT_DIR$/controller/game_controller/iterators/MultipleWaveFunctionGenerator.php" />
-    <entry file="file://$PROJECT_DIR$/controller/SecureAndClean/SecureAndClean.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="16" column="28" lean-forward="true" selection-start-line="16" selection-start-column="28" selection-end-line="16" selection-end-column="28" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/controller/game_controller/iterators/NDimDiagonalIndexesGenerator.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="13" column="36" lean-forward="false" selection-start-line="13" selection-start-column="36" selection-end-line="13" selection-end-column="36" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/model/game/arrays/ChessBoard.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="561">
@@ -662,38 +631,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/controller/game_controller/iterators/NDimSquareFunctionGenerator.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="952">
-          <caret line="64" column="41" lean-forward="true" selection-start-line="64" selection-start-column="41" selection-end-line="64" selection-end-column="41" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/controller/game_controller/iterators/NDimTriangleFunctionGenerator.phpVector">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="11" column="108" lean-forward="false" selection-start-line="11" selection-start-column="108" selection-end-line="11" selection-end-column="108" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/controller/Math/VectorMath.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="561">
-          <caret line="36" column="26" lean-forward="false" selection-start-line="36" selection-start-column="26" selection-end-line="36" selection-end-column="26" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/controller/game_controller/iterators/SquareFunctionGenerator.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="419">
-          <caret line="121" column="5" lean-forward="true" selection-start-line="121" selection-start-column="5" selection-end-line="121" selection-end-column="5" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/view/IteratorClasses.doc.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1445">
@@ -705,10 +642,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/view/deleteMe.php">
+    <entry file="file://$PROJECT_DIR$/controller/game_controller/iterators/IndexWaveFunctionGenerator.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="277">
-          <caret line="19" column="12" lean-forward="false" selection-start-line="19" selection-start-column="12" selection-end-line="19" selection-end-column="12" />
+        <state relative-caret-position="306">
+          <caret line="23" column="41" lean-forward="false" selection-start-line="23" selection-start-column="41" selection-end-line="23" selection-end-column="41" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/controller/game_controller/iterators/VectorWaveFunctionGenerator.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="21" column="21" lean-forward="false" selection-start-line="21" selection-start-column="21" selection-end-line="21" selection-end-column="21" />
           <folding />
         </state>
       </provider>
@@ -730,18 +675,58 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/controller/game_controller/iterators/IndexWaveFunctionGenerator.php">
+    <entry file="file://$PROJECT_DIR$/controller/game_controller/iterators/NDimDiagonalIndexesGenerator.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="23" column="41" lean-forward="false" selection-start-line="23" selection-start-column="41" selection-end-line="23" selection-end-column="41" />
+        <state relative-caret-position="153">
+          <caret line="14" column="1" lean-forward="true" selection-start-line="14" selection-start-column="1" selection-end-line="14" selection-end-column="1" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/controller/game_controller/iterators/VectorWaveFunctionGenerator.php">
+    <entry file="file://$PROJECT_DIR$/controller/game_controller/iterators/NDimTriangleFunctionGenerator.phpVector">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="11" column="108" lean-forward="false" selection-start-line="11" selection-start-column="108" selection-end-line="11" selection-end-column="108" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/controller/game_controller/iterators/NDimSquareFunctionGenerator.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1241">
+          <caret line="78" column="9" lean-forward="true" selection-start-line="78" selection-start-column="9" selection-end-line="78" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/controller/Math/VectorMath.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="425">
+          <caret line="34" column="31" lean-forward="false" selection-start-line="34" selection-start-column="31" selection-end-line="34" selection-end-column="31" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/controller/game_controller/iterators/SquareFunctionGenerator.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="204">
-          <caret line="17" column="37" lean-forward="false" selection-start-line="17" selection-start-column="37" selection-end-line="17" selection-end-column="37" />
+          <caret line="39" column="15" lean-forward="true" selection-start-line="39" selection-start-column="15" selection-end-line="39" selection-end-column="15" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/view/deleteMe.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="425">
+          <caret line="25" column="88" lean-forward="false" selection-start-line="25" selection-start-column="88" selection-end-line="25" selection-end-column="88" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/controller/SecureAndClean/SecureAndClean.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="21" column="38" lean-forward="true" selection-start-line="21" selection-start-column="38" selection-end-line="21" selection-end-column="38" />
           <folding />
         </state>
       </provider>
