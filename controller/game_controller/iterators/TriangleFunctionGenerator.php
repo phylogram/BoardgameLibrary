@@ -32,7 +32,9 @@ class TriangleFunctionGenerator  extends NDimSquareFunctionGenerator
     public function getStateAtPhase($input_phase = 'current'): array
     {
         $return_array = parent::getStateAtPhase($input_phase);
+
         $return_value = \controller\Math\VectorMath::add2ndLevel($return_array);
+
         $input_phase = $input_phase == 'current' ? $this->phase : $input_phase;
         return array($input_phase => $return_value);
     }

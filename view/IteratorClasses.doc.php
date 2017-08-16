@@ -282,20 +282,6 @@
             </p>
 
         </section>
-        <section>
-            <h2>Finding signatures for value streams</h2>
-            <p>The FindSignature class allow to brute force test a range of triangle signatures for two test arrays</p>
-            <p>
-                <code class="pure-u-4-24">
-                    \controller\game_controller\iterators\findSignature::test2D(-2, 2, 8, 10, [-1, 0, 1, 1, 1, 0, -1, -1], [1, 1, 1, 0, -1, -1, -1, 0]);
-                </code>
-            </p>
-            <?php
-            \controller\game_controller\iterators\findSignature::test2D(-2, 2, 8, 10, [-1, 0, 1, 1, 1, 0, -1, -1], [1, 1, 1, 0, -1, -1, -1, 0]);
-
-            ?>
-        </section>
-
 
         <section>
             <h2>Using combined square functions for knight and king</h2>
@@ -311,12 +297,13 @@
             <p>
                 <code class="code_output">
                     <?php
-                    $upper = 2;
-                    $phase_length = 8;
-                    $wave_max = 8;
-                    $lower = $upper * -1;
-
-
+                    $triangle_fun = new \controller\game_controller\iterators\TriangleFunctionGenerator([0,1,8,6], [-1,0,8,7]);
+                    echo '<p>Resulting wavelength: ', $triangle_fun->getWavelength(), '<p>';
+                    foreach(range(0,7) as $line) {
+                        $iterated_array = $triangle_fun->generateWave();
+                        $output_html = view\DimensionPhaseValue::printZeroOf2D($iterated_array, $line);
+                        echo $output_html;
+                    }
 
                     ?>
                 </code>

@@ -9,8 +9,19 @@
 namespace controller\game_controller\iterators;
 
 
-interface WaveFunctionGenerator
+interface VectorWaveFunctionGenerator
 {
+    #Yet I don't kow how to implement this 'contract' but:
+    #
+    #   Vector API arrays
+    #
+    # should have the following form:
+
+
+    # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
+    #                          Vector API                             #
+    #      generates relative values (negative and positive integers) #
+    # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
     /**
      * generates one Cycle of values, afterward false
      * @return array(phase=>value) or if multidimensional array(phase=>array(dimension=>value))|bool
@@ -29,4 +40,5 @@ interface WaveFunctionGenerator
      * @return array(phase=>value) or if multidimensional array(phase=>array(dimension=>value))
      */
     public function getStateAtPhase($input_phase): array;
+
 }

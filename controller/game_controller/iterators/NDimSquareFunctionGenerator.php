@@ -67,13 +67,18 @@ class NDimSquareFunctionGenerator extends SquareFunctionGenerator
             $resulting_phase = ($phase_in_first_wavelength + $phase_shift) % $sub_generator_wavelength;
             $phases[] = $resulting_phase;
         }
+        
+        
 
         #Afterward we get the values for each SquareFunctionGenerator
         $return_array = array();
         $dim_number = 0;
+
         foreach (array_combine($phases, $this->generator_objects) as $phase => $object) {
+
             $state = $object->getStateAtPhase($phase);
             $return_array[$this->phase][$dim_number] = current($state);
+
             $dim_number ++;
         }
 

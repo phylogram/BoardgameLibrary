@@ -11,7 +11,7 @@ class ErrorMessage {
     # Forbidden by config #
     # # # # # # # # # # # #
 
-    # See /models/chess/arrays/NDimArrays
+    # See /models/game/arrays/NDimArrays
     /*
      * returns list: "Dimension of size $v is greater than the defi..." and error_level: bad
      *@v string!
@@ -20,7 +20,7 @@ class ErrorMessage {
         return ["Dimension of size $v is greater than the defined max dimension lenght at www/conf/conf.php: const MAX_V = " . MAX_V, ERROR_BAD];
     }
 
-    # See /models/chess/arrays/NDimArrays
+    # See /models/game/arrays/NDimArrays
     /*
      * returns list: "$n_dim is greater than the defined max dimension ..." and error_level: bad
      *@n_dim string!
@@ -33,7 +33,7 @@ class ErrorMessage {
     #        <=0          #
     # # # # # # # # # # # #
 
-    # See /models/chess/arrays/NDimArrays
+    # See /models/game/arrays/NDimArrays
     /*
      * return ["Int: $v is zero or less", ERROR_BAD];
      *@v string or int or float
@@ -47,7 +47,7 @@ class ErrorMessage {
     #    Unknown Method   #
     # # # # # # # # # # # #
 
-    # See /models/chess/arrays/NDimArrays
+    # See /models/game/arrays/NDimArrays
     /*
      * return ["Unknown Method. Method has to be ", error bad]
      *@method args of strings, floats, or ints

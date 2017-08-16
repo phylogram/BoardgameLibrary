@@ -1,7 +1,7 @@
 <?php
 namespace controller\game_controller\iterators;
 
-class SquareFunctionGenerator implements WaveFunctionGenerator
+class SquareFunctionGenerator implements IndexWaveFunctionGenerator
 {
     # # # # # # # # # # # # # # # # # # # # # #
     #   _   _   _   _   _   _   _   _   _   _ #
@@ -48,9 +48,9 @@ class SquareFunctionGenerator implements WaveFunctionGenerator
         $this->timer = 0;
     }
 
-    # # # # # # # # # # #
-    # Public Generators #
-    # # # # # # # # # # #
+    # # # # # # # # # # # # # # # #
+    # Public Relative Generators  #
+    # # # # # # # # # # # # # # # #
 
     /**
      * generates on cycle, afterwards only NULL
@@ -83,20 +83,42 @@ class SquareFunctionGenerator implements WaveFunctionGenerator
      */
     public function getStateAtPhase($input_phase = 'current'): array
     {
-        
-        if ($input_phase == 'current') {
+        if ($input_phase === 'current') {
+            
             $input_phase = $this->phase;
         }
-        
         switch (($input_phase % $this->wavelength) < $this->half_wavelength) {
             case true:
-                return array($input_phase => $this->lower_limit);
+
+                return array($input_phase => $this->upper_limit);
                 break;
 
             case false:
-                return array($input_phase => $this->upper_limit);
+
+                return array($input_phase => $this->lower_limit);
                 break;
         }
+    }
+    # # # # # # # # # # # # # # # #
+    # Public positional generator #
+    # # # # # # # # # # # # # # # #
+
+    public function generateCycleFrom(array $position)
+    {
+        $vector = $this->generateCycle();
+        return \controller\Math\VectorMath::addVector($vector, $position);
+    }
+
+    public function generateWaveFrom(array $position): array
+    {
+        $vector = $this->generateWave();
+        return \controller\Math\VectorMath::addVector($vector, $position);
+    }
+
+    public function getStateAtPhaseFrom($input_phase, $position): array
+    {
+        $vector = $this->getStateAtPhase();
+        return \controller\Math\VectorMath::addVector($vector, $position);
     }
 
     # # # # # # # # # # # # # # # #

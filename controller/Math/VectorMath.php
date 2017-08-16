@@ -17,6 +17,29 @@ class VectorMath {
             $item += $scalar;
     }
 
+    /**
+     * the return array will keep the keys of $a!
+     * @param array $a
+     * @param array $b
+     * @return bool
+     */
+    public static function addVector(array $a, array $b)
+    {
+        if (count($a) != count($b)) {
+            return false; #To Do: error
+        }
+        $position_b = 0;
+        $array_sum = array();
+        foreach ($a as $key_a => $item_a) {
+            $array_sum[$key_a] = $item_a + $b[$position_b];
+            $position_b ++;
+        }
+        return $array_sum;
+    }
+
+
+
+
     /** for use in array_walk() & array_walk_recursive()
      * @param int $carry
      * @param int $item
