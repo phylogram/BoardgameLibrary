@@ -20,19 +20,26 @@ class NDimSquareFunctionGenerator extends SquareFunctionGenerator
      *     _ _     _ _
      * _ _|   |_ _|
      *    |_ _|   |_ _
-     * @param array ...$input as many arrays in the form of [$upper_limit, $lower_limit, int $wavelength, int $phase]
+     * @param array $signatures as many arrays in the form of [$upper_limit, $lower_limit, int $wavelength, int $phase[, $dim = 0, 1, ... ]]
+     * @param array $dimension = 0
      */
-    public function __construct(...$input)
+    public function __construct(\controller\game_controller\iterators\SignatureNDim $signatures, $dimension = 0)
     {
-        #To Do: check for errors!
-        $this->phase = $input[0][3];
-        $this->wavelength = \controller\Math\VectorMath::leastCommonMultipleOfArray(array_column($input, 2));
-        $this->signatures = $input;
-        $this->dimensions = count($input);
-        $this->upper_limit = \controller\Math\VectorMath::columnSum($input, 0); #To Do: This is in some cases wrong, for example wavelength 2 and phase 0/1
-        $this->lower_limit = \controller\Math\VectorMath::columnSum($input, 1); #To Do: See upper limit
-        foreach ($input as $arguments) {
-            $this->generator_objects[] = new parent(...$arguments);
+        #To Do: check for errors! each array len = 4
+        $this->dim = $dimension;
+        $this->phase = $signatures->getPhase();
+        $this->timer = 0;
+
+        $this->signatures = $signatures->signatures;
+        $this->wavelength = $signatures->getWavelength();
+        $this->half_wavelength = $signatures->getHalfWavelength();
+
+        $this->dimensions = $signatures->getSubDimensions();
+        $this->upper_limit = $signatures->getUpperLimit();
+        $this->lower_limit = $signatures->getLowerLimit();
+        
+        foreach ($this->signatures as $signature) {
+                $this->generator_objects[$signature->dim] = new parent($signature);
         }
     }
 
@@ -59,23 +66,22 @@ class NDimSquareFunctionGenerator extends SquareFunctionGenerator
         foreach ($this->signatures as $signature) {
             
             $phase_in_first_wavelength = $input_phase % $this->wavelength;
-            $sub_generator_wavelength = $signature[2];
-            $phase_shift = $signature[3];
+            $sub_generator_wavelength = $signature->wavelength;
+            $phase_shift = $signature->phase;
 
             $resulting_phase = ($phase_in_first_wavelength + $phase_shift) % $sub_generator_wavelength;
-            $phases[] = $resulting_phase;
+            $phases[$signature->dim] = $resulting_phase;
         }
 
         #Afterward we get the values for each SquareFunctionGenerator
         $return_array = array();
-        $dim_number = 0;
 
         foreach (array_combine($phases, $this->generator_objects) as $phase => $object) {
 
             $state = $object->getStateAtPhase($phase);
-            $return_array[$this->phase][$dim_number] = current($state);
 
-            $dim_number ++;
+            $return_array[$this->phase][$object->getDim()] = $state[$phase][$object->getDim()];
+
         }
 
         return $return_array;

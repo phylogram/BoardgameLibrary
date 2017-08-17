@@ -7,20 +7,25 @@
  */
 require_once ('..\bootstrap\init.php');
 
+echo 'three' + 3;
 
-
-$square = new \controller\game_controller\iterators\SquareFunctionGenerator(0, 1, 2, 0, 2);
+$square = new \controller\game_controller\iterators\SquareFunctionGenerator(0, 1, 2, 0, 2, $another = 4);
 $n_dim = new \controller\game_controller\iterators\NDimSquareFunctionGenerator([0, 1, 2, 0],[0, 1, 2, 0]);
 $triangle = new \controller\game_controller\iterators\TriangleFunctionGenerator([0, 1, 2, 0],[0, 1, 2, 0]);
 echo '<hr>';
 var_dump($square->generateCycle());
-var_dump($square->generateCycleFrom([2]));    #doen't work - set phase to zero and test!
+$square->setPhase(1);
+var_dump($square->generateCycleFrom([3]));
+$square->setPhase(0);
 echo '<hr>';
-var_dump($square->generateWave()); # set phase to zero
+var_dump($square->generateWave()); #
+$square->setPhase(0);
 var_dump($square->generateWaveFrom([3]));
+$square->setPhase(0);
 echo '<hr>';
-var_dump($square->getStateAtPhase());
+var_dump($square->getStateAtPhase(3));
 var_dump($square->getStateAtPhaseFrom(3, [4]));
+
 /**
 echo '<hr>';
 var_dump($n_dim->generateCycleFrom([5,99]));        #mark dimensions for each generator!

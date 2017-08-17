@@ -19,7 +19,7 @@ class SquareFunctionGenerator implements IndexWaveFunctionGenerator
     # _ _|   |_ _|   |_ _
     protected $half_wavelength;
     protected $phase; #where are we in the cycle: can't be bigger wavelength
-    protected  $timer;
+    protected $timer;
 
 
     /**
@@ -35,18 +35,18 @@ class SquareFunctionGenerator implements IndexWaveFunctionGenerator
      * @param int $phase #where are we in the cycle: can't be bigger than wavelength, can't be smaller than 2
      * @return boolean #false if fails
      */
-    public function __construct($upper_limit, $lower_limit, int $wavelength, int $phase, int $dim = 0)
+    public function __construct(\controller\game_controller\iterators\Signature1Dim $signature)
     {
-        $this->dim = $dim;
-        $this->upper_limit = $upper_limit;
-        $this->lower_limit = $lower_limit;
+        $this->dim = $signature->dim;
+        $this->upper_limit = $signature->upper_limit;
+        $this->lower_limit = $signature->lower_limit;
 
-        $this->checkWaveLength($wavelength);
-        $this->wavelength = $wavelength;
+        $this->checkWaveLength($signature->wavelength);
+        $this->wavelength = $signature->wavelength;
+        $this->half_wavelength =$signature->half_wavelength;
 
-        $this->checkPhase($phase);
-        $this->half_wavelength = intdiv($this->wavelength, 2);
-        $this->phase = $phase;
+        $this->checkPhase($signature->phase);
+        $this->phase = $signature->phase;
         $this->timer = 0;
     }
 
@@ -123,7 +123,7 @@ class SquareFunctionGenerator implements IndexWaveFunctionGenerator
 
     public function getStateAtPhaseFrom($input_phase, $position): array
     {
-        $vector = $this->getStateAtPhase();
+        $vector = $this->getStateAtPhase($input_phase);
         return \controller\Math\VectorMath::addVector($vector, $position);
     }
 
@@ -140,8 +140,24 @@ class SquareFunctionGenerator implements IndexWaveFunctionGenerator
     }
 
     # # # # # # # # # # # #
-    # Getters and setters  #
+    # Getters and setters #
     # # # # # # # # # # # #
+    /**
+     * @return int
+     */
+    public function getDim(): int
+    {
+        return $this->dim;
+    }
+
+    /**
+     * @param int $dim
+     */
+    public function setDim(int $dim)
+    {
+        $this->dim = $dim;
+    }
+    ###################################
     public function getPhase(): int
     {
         return $this->phase;
@@ -150,6 +166,7 @@ class SquareFunctionGenerator implements IndexWaveFunctionGenerator
     {
         $this->checkPhase($phase);
         $this->phase = $phase;
+        $this->timer = $this->phase;
     }
     ###################################
     public function getUpperLimit()
@@ -186,7 +203,11 @@ class SquareFunctionGenerator implements IndexWaveFunctionGenerator
     {
         return $this->timer;
     }
-    public function setTimer($timer)
+
+    /** Use setPhase instead
+     * @param $timer
+     */
+    protected function setTimer($timer)
     {
         $this->timer = $timer;
     }

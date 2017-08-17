@@ -1,111 +1,110 @@
 
 <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.0/build/pure-min.css" integrity="sha384-nn4HPE8lTHyVtfCBi5yW9d20FjT8BJwUXyWZT9InLYax14RDjBj46LmSztkmNP9w" crossorigin="anonymous" />
+<style>
+    img {
+        height: 300px;
+        margin: 15px;
+    }
 
-<div>
-    <article class="library-description" id="doc_IteratorClasses">
+    .code_example {
+        padding-left: 4em;
+        display: block;
+    }
+    #To Do: Repair NDimSquare // Make phase-object // make NDim Triangle-Iterator // make Iterator-multiplyer //and yield value
+    #To Do: repair the ndim array
+
+</style>
+<div class="pure-g">
+<div class="pure-menu pure-menu-horizontal pure-u-22-24">
+    <a href="http://boardgamelibrary.dev/" class="pure-menu-heading pure-menu-link">The N-Dim Board Game Library</a>
+
+    <ul class="pure-menu-list">
+        <li class="pure-menu-item"><a href="http://boardgamelibrary.dev/IteratorClasses.doc.php" class="pure-menu-link">Iterator Classes</a></li>
+        <li class="pure-menu-item"><a href="http://boardgamelibrary.dev/NDimArrays.doc.php" class="pure-menu-link">NDimArrays</a></li>
+    </ul>
+</div>
+</div>
+<div id="layout" class="pure-g">
+    <div class="pure-u-2-24" style="background-color: #111112;">
+
+    </div>
+    <article class="pure-u-20-24" id="doc_IteratorClasses" style="margin-left: 2%; margin-top: 1px;">
         <?php require('../bootstrap/init.php'); #To Do: Delete when imported by index.php
         ?>
         <header>
             <h1 itemprop="headline">The Basic Iterator Classes</h1>
-            <p>
-                <time itemprop="datePublished" datetime="2017-07-31">erstellt am: 31.07.2017</time>
-            </p>
+
             <i>pseudo generators to access the "neighboring" fields</i>
         </header>
         <section>
             <h2>The basic iterator - The SquareFunctionGenerator</h2>
             <figure>
-                <img src="pictures/SquareWave.PNG" />
-                <figcaption>https://en.wikipedia.org/wiki/Square_wave#/media/File:Waveforms.svg (edited)</figcaption>
+                <img src="pictures/SquareWave.svg" />
+                <figcaption>done with pyplot</figcaption>
             </figure>
             <p>The SquareFunctionGenerator class generates a ... square wave. This is useful for example to generate the inner moves for a bishop:</p>
-            <img src="pictures/BishopMatrix.PNG"/>
-            <p><strong>Note: </strong> This documentation is about one-dimensional iterators, the examples are two-dimensional. This is covered in the special figure-iterators (#To Do: link), which can use as many iterators for each dimension they need. The chess examples here are just for illustration purposes, but as you can see here and will see in the later examples, all patterns are just shifted for each dimension. Providing iterators like these for each dimension allows iterating over an arbitrary number of dimensions.</p>
+            <figure>
+                <img src="pictures/zugmöglichkeiten%20läufer.svg"/>
+                <figcaption style="alignment: right">
+                    <strong>R:</strong> -1, +1, -1, +1<br>
+                    <strong>C:</strong> +1, -1, +1, -1
+                </figcaption>
+            </figure>
 
         </section>
         <section class="code-overview" id="construct">
-            <h2>__construct</h2>
+            <h2>SquareFunctionGenerator::__construct()</h2>
             <p>
-                produces an pseudo-iterator, with
-                <code>
-                        peak
-                        <sup>max</sup> = $upper_limit, peak
-                        <sup>min</sup> = $lower_limit </code> and <code>
-                        λ = $wavelength
-                </code>
+                produces an pseudo-iterator, with peak<sup>max</sup> = <code>$upper_limit</code>, peak<sup>min</sup> = <code>$lower_limit</code> and λ = <code>$wavelength</code>
             </p>
             <p>Since we are iterating indexes all values are integers and therefore λ must be even (and positive).</p>
             <h2>API</h2>
-            <p><code>SquareFunctionGenerator::generateCycle()</code> returns every time it is called an array of <code>$phase=>$value</code> and at the and of the cycle only <code>NULL</code></p>
-            <p>
-                <code class="code_example">
-                    $square_1_minus_1_2 = new \controller\game_controller\iterators\SquareFunctionGenerator(1, -1, 2);
-                </code>
-            </p>
-            <p>
-            <code class="code_example">
-                foreach(range(0, 7) as $i) {
+            <p>A waveform is described by some basic values, like upper and lower extrema, wavelength and phase at the beginning. This will be defined via the <code>Signature1Dim</code> object</p>
+            <code class="code-example">
+                $signature_1_m1 = new \controller\game_controller\iterators\Signature1Dim(1, -1, 2, 0, 0);
             </code>
-            </p>
-            <i style="background-color:yellow;">Code entspricht nicht Ausgeführten Code - ändern To Do</i>
-            <p>
-            <code class="code_example" style="padding-left: 4em;">
-                $iterated_array = $square_1_minus_1_2->generateCycle();
-                </code>
-            </p>
-            <p>
-            <code class="code_example" style="padding-left:4em;">
-                $phase = key($iterated_array);
-                    $value = current($iterated_array);
-                    echo "line $i: phase: $phase, value: $value";
-                </code>
-            </p>
-            <p>
-            <code class="code_example" style="padding-left:4em;">
-            }</code>
-            </p>
-            <p>
-
-            <p>
-            <div>
+            <p> Then we can initialize a Square Function Object with it:</p>
+            <code class="code_example">
+                $square_1_minus = new \controller\game_controller\iterators\SquareFunctionGenerator($signature_1_m1);
+            </code>
+            <p><code>SquareFunctionGenerator::generateCycle()</code> returns every time it is called an array of <code>$phase=>$value</code> and at the and of the cycle only <code>NULL</code></p>
+            <div class="code_output">
                 <?php
-            $square_1_minus_1_2 = new \controller\game_controller\iterators\SquareFunctionGenerator(1, -1, 2);
-            foreach(range(0, 7) as $line) {
-
-                $iterated_array = $square_1_minus_1_2->generateCycle();
-                $output_html = \view\DimensionPhaseValue::print1D($iterated_array, $line);
-                echo $output_html;
+                $signature_1_m1 = new \controller\game_controller\iterators\Signature1Dim(1, -1, 2, 0, 0);
+                $square_1 = new \controller\game_controller\iterators\SquareFunctionGenerator($signature_1_m1);
+                foreach(range(0, 3) as $line) {
+                    $iterated_array = $square_1->generateCycle();
+                    $output_html = \view\DimensionPhaseValue::printZeroOf2D($iterated_array, $line);
+                    echo $output_html;
             }
                 ?>
-
             </div>
-                </p>
             
             <p>While <code>SquareFunctionGenerator::generateWave()</code> is able to being called at arbitrary times:</p>
               
             <p>
-                <code class="code_example">
+                <code class="code_output">
                     <?php
-                    $square_1_minus_1_2->setPhase(0);
+                    $square_1->setPhase(0);
 
                     foreach(range(0, 7) as $line) {
 
-                        $iterated_array = $square_1_minus_1_2->generateWave();
-                        $output_html = \view\DimensionPhaseValue::print1D($iterated_array, $line);
+                        $iterated_array = $square_1->generateWave();
+                        $output_html = \view\DimensionPhaseValue::printZeroOf2D($iterated_array, $line);
                         echo $output_html;
                     }
                     ?>
                 </code>
             </p>
             <p>It is possible to calculate the value for an arbitrary phase even when current is not at that phase with: <code>SquareFunctionGenerator::getStateAtPhase($phase = 'current')</code></p>
-            <p>Changing the wavelength to 4 will result in the following: </p>
+            <p>Changing the wavelength with <code>$square_1->setWaveLength(4);</code> will result in the following: </p>
             <code class="code_example">
                 <?php
-                $square_1_minus_1_4 = new \controller\game_controller\iterators\SquareFunctionGenerator(1, -1, 4);
+                $square_1->setPhase(0);
+                $square_1->setWaveLength(4);
                 foreach(range(0, 7) as $line) {
-
-                    $iterated_array = $square_1_minus_1_4->generateWave();
-                    $output_html = \view\DimensionPhaseValue::print1D($iterated_array, $line);
+                    $iterated_array = $square_1->generateWave();
+                    $output_html = \view\DimensionPhaseValue::printZeroOf2D($iterated_array, $line);
                     echo $output_html;
                 }
                 ?>
@@ -114,40 +113,46 @@
             <p>Changing the amplitude of the function between calls (++/--) will result in</p>
             <code class="code_example">
                 <?php
-                $square_1_minus_1_2->setPhase(0);
+                $square_1->setPhase(0);
                 foreach(range(0, 7) as $line) {
 
-                    $iterated_array = $square_1_minus_1_2->generateWave();
+                    $iterated_array = $square_1->generateWave();
                     # get Values
-                    $current_upper = $square_1_minus_1_2->getUpperLimit();
-                    $current_lower = $square_1_minus_1_2->getLowerLimit();
+                    $current_upper = $square_1->getUpperLimit();
+                    $current_lower = $square_1->getLowerLimit();
 
                     # change values
-                    $square_1_minus_1_2->setUpperLimit($current_upper+1);
-                    $square_1_minus_1_2->setLowerLimit($current_lower-1);
-                    $output_html = \view\DimensionPhaseValue::print1D($iterated_array, $line, 0.3);
+                    $square_1->setUpperLimit($current_upper+1);
+                    $square_1->setLowerLimit($current_lower-1);
+                    $output_html = \view\DimensionPhaseValue::printZeroOf2D($iterated_array, $line, 0.3);
                     echo $output_html;
                 }
                 ?>
             </code>
-            <p>and changing the wavelength between 4 and 2 (has to be even) every iteration (with ... you guess it: another SquareFunction) will result in</p>
+            <p>and changing the wavelength between 4 and 2 (has to be even) every odd iteration (with ... you guess it: another SquareFunction) will result in</p>
             <code class="code_example">
                 <?php
-                $square_4_2_2 = new \controller\game_controller\iterators\SquareFunctionGenerator(4, 2, 2);
+                $signature_422200 = new \controller\game_controller\iterators\Signature1Dim(4, 2, 2, 0, 0);
+                $square_2 = new \controller\game_controller\iterators\SquareFunctionGenerator($signature_422200);
 
-                $square_1_minus_1_2->setLowerLimit(-1);
-                $square_1_minus_1_2->setUpperLimit(1);
-                $square_1_minus_1_2->setPhase(0);
+                $square_1->setLowerLimit(-1);
+                $square_1->setUpperLimit(1);
+                $square_1->setPhase(0);
+                $square_1->setWaveLength(2);
 
                 foreach(range(0, 7) as $line) {
-                    $current_array = $square_4_2_2->generateWave();
-                    $new_wavelength = array_pop($current_array);
 
-                    $iterated_array = $square_1_minus_1_2->generateWave();
+                    $iterated_array = $square_1->generateWave();
 
-                    # change values
-                    $square_1_minus_1_2->setWaveLength($new_wavelength);
-                    $output_html = \view\DimensionPhaseValue::print1D($iterated_array, $line);
+                    # change values if second
+                    if ($line%2!==0) {
+                        $control_array = $square_2->generateWave();
+                        $new_wavelength = $control_array[$square_2->getPhase() - 1][$square_2->getDim()];
+
+                        $square_1->setWaveLength($new_wavelength);
+                    }
+
+                    $output_html = \view\DimensionPhaseValue::printZeroOf2D($iterated_array, $line);
                     echo $output_html;
                 }
                 ?>
@@ -156,13 +161,17 @@
         <section>
             <h2>Multidimensional indexing - The NDimSquareFunctionGenerator class</h2>
             <p>Most boardgames are not one-dimensional, so we need to combine multiple SquareFunctions. This is done with the <code>NDimSquareFunctionGenerator</code> class which extends the <code>SquareFunctionGenerator</code> class</p>
+            <p>For that we we'll need multiple signatures. This is done with the</p>
             <h3>The generateCycle method</h3>
             <?php
-
-            $TwoDimSquare = new \controller\game_controller\iterators\NDimSquareFunctionGenerator([1, 0, 2, 0], [0, -1, 2, 1]);
-
+            $signature_1020 = new \controller\game_controller\iterators\Signature1Dim(1, 0, 2, 0, 0);
+            $signature_0m121 = new \controller\game_controller\iterators\Signature1Dim(0, -1, 2, 1, 1);
+            $two_dim_signature = new \controller\game_controller\iterators\SignatureNDim([$signature_1020, $signature_0m121], 0);
+            $two_dim_square = new \controller\game_controller\iterators\NDimSquareFunctionGenerator($two_dim_signature);
+            #To Do: debug: false values
+            var_dump($two_dim_square);
             foreach (range(0, 3) as $line) {
-                $iterated_array = $TwoDimSquare->generateCycle();
+                $iterated_array = $two_dim_square->generateCycle();
                 $output_html = view\DimensionPhaseValue::print2D($iterated_array, $line);
                 echo $output_html;
             }
@@ -170,9 +179,9 @@
             <h3>and the generateWave method</h3>
             <?php
 
-            $TwoDimSquare->setPhase(0);
+            $two_dim_square->setPhase(0);
             foreach (range(0, 3) as $line) {
-                $iterated_array = $TwoDimSquare->generateWave();
+                $iterated_array = $two_dim_square->generateWave();
                 $output_html = view\DimensionPhaseValue::print2D($iterated_array, $line);
                 echo $output_html;
             }
@@ -182,29 +191,34 @@
         <section>
             <h2>Adding Square Functions to Create More Complex Movements</h2>
             <p>Let's take a look how the rook can move:</p>
-            <img src="pictures/RookMatrix.PNG" />
+            <figure>
+                <img src="pictures/zugmöglichkeiten%20turm.svg"/>
+                <figcaption style="alignment: right">
+                    <strong>R:</strong> &nbsp;0, +1, &nbsp;0, -1<br>
+                    <strong>C:</strong> +1, &nbsp;0, -1, &nbsp;0
+                </figcaption>
             <p>which can be seen as Triangle-Function: </p>
             <figure>
-                <img src="pictures/TriangleWave.PNG" />
-                <figcaption>https://en.wikipedia.org/wiki/Square_wave#/media/File:Waveforms.svg (edited)</figcaption>
+                <img src="pictures/TriangleWave.svg" />
+                <figcaption>done with pyplot</figcaption>
             </figure>
             <p>adding two shifted square functions will result in a triangle function</p>
-            <p>
-                <code class="code_example">
-                    $square_1_0_2_phase_0 = new \controller\game_controller\iterators\SquareFunctionGenerator(1, 0, 4, 0);
-                </code>
-            </p>
-            <p>
-                <code>
-                    $square_1_0_2_phase_1 = new \controller\game_controller\iterators\SquareFunctionGenerator(1, 0, 4, 1);
-                </code>
-            </p>
+                <code class="code_example">$signature_10400 = new \controller\game_controller\iterators\Signature1Dim(1, 0, 4, 0, 0);</code>
+                <code class="code_example">$signature_10411 = new \controller\game_controller\iterators\Signature1Dim(1, 0, 4, 1, 1);</code>
+                <code class="code_example">$square_1_0_2_phase_0 = new \controller\game_controller\iterators\SquareFunctionGenerator($signature_10400);</code>
+                <code class="code_example">$square_1_0_2_phase_1 = new \controller\game_controller\iterators\SquareFunctionGenerator($signature_10411);</code>
+
+                <code class="code_example">$current_value = $square_1_0_2_phase_0->generateWave() + $square_1_0_2_phase_1->generateWave();</code>
+                <code class="code_example">...</code>
+
             <p>with <code>$upper_value = $upper_value<sub>0</sub> + $upper_value<sub>1</sub></code> as well as with <code>$lowe_value</code></p>
             <p>
                 <code class="code_output">
                     <?php
-                    $square_1_0_2_phase_0 = new \controller\game_controller\iterators\SquareFunctionGenerator(1, 0, 4, 0);
-                    $square_1_0_2_phase_1 = new \controller\game_controller\iterators\SquareFunctionGenerator(1, 0, 4, 1);
+                    $signature_10400 = new \controller\game_controller\iterators\Signature1Dim(1, 0, 4, 0, 0);
+                    $signature_10411 = new \controller\game_controller\iterators\Signature1Dim(1, 0, 4, 1, 1);
+                    $square_1_0_2_phase_0 = new \controller\game_controller\iterators\SquareFunctionGenerator($signature_10400);
+                    $square_1_0_2_phase_1 = new \controller\game_controller\iterators\SquareFunctionGenerator($signature_10411);
 
                     foreach (range(0,7) as $line) {
                         $current_left = $square_1_0_2_phase_0->generateWave();
@@ -220,16 +234,14 @@
         </section>
         <section>
             <h2>The TriangleFunctionGenerator</h2>
-            <p>The TriangleFunctionGenerator calls as many SquareFunctionGenerators as arguments given. Each argument should be an array with the arguments for each Squarefunctiongenerator as above:</p>
-            <p>
-                <code class="code_example">
-                    $triangle_0121 = new \controller\game_controller\iterators\TriangleFunctionGenerator([1, 0, 4, 0], [0, -1, 4, 1]);
-                </code>
-            </p>
-            <p>
+            <p>The TriangleFunctionGenerator extends the NDimSquareFunction Generator and adds up the (sub-)dimensions to a new single dimension</p>
+            <code class="code_example">$two_dim_signature_2 = new \controller\game_controller\iterators\SignatureNDim([$signature_10400, $signature_10411], 0);</code>
+            <code class="code_example">$triangle_0121 = new \controller\game_controller\iterators\TriangleFunctionGenerator($two_dim_signature_2);</code>
+
                 <code class="code_output">
                     <?php
-                    $triangle_0121 = new \controller\game_controller\iterators\TriangleFunctionGenerator([1, 0, 4, 0], [0, -1, 4, 1]);
+                    $two_dim_signature_2 = new \controller\game_controller\iterators\SignatureNDim([$signature_10400, $signature_10411], 0);
+                    $triangle_0121 = new \controller\game_controller\iterators\TriangleFunctionGenerator($two_dim_signature_2);
 
                     foreach (range(0,7) as $line) {
                         $iterated_array = $triangle_0121->generateWave();
@@ -238,7 +250,7 @@
                     }
                     ?>
                 </code>
-            </p>
+
             <p>The new wavelength is calculated as the least common multiple by reduction by the greatest common divisor (<a href="https://en.wikipedia.org/wiki/Least_common_multiple#Reduction_by_the_greatest_common_divisor" target="_blank">wiki</a>) and can be accessed with <code>TriangleFunctionGenerator::getWavelength()</code></p>
             <p>
                 <code class="code_example">
@@ -250,7 +262,8 @@
             <p>
                 <code class="code_output">
                 <?php
-                echo '<p>', $triangle_0121->getStateAtPhase(3)[3], '</p><p>', $triangle_0121->getStateAtPhase(2)[2], '</p>';
+
+                echo '<p>', $triangle_0121->getStateAtPhase(3)[3][$triangle_0121->getDim()], ' and ', $triangle_0121->getStateAtPhase(2)[2][$triangle_0121->getDim()], '</p>';
                 ?>
                 </code>            </p>
             <p>and again it is possible to retrieve just one cycle with <code>TriangleFunctionGenerator::generateCycle()</code></p>
@@ -270,7 +283,7 @@
             <p>
                 <code class="code_output">
                     <?php
-                    $triangle_fun = new \controller\game_controller\iterators\TriangleFunctionGenerator([0,1,6,0], [0,1,6,1], [0,1,6,2], [0,1,6,3]);
+                    $triangle_fun = new \controller\game_controller\iterators\TriangleFunctionGenerator([[0,1,6,0], [0,1,6,1], [0,1,6,2], [0,1,6,3]]);
                     echo '<p>Resulting wavelength: ', $triangle_fun->getWavelength(), '<p>';
                     foreach(range(0,11) as $line) {
                         $iterated_array = $triangle_fun->generateWave();
@@ -297,7 +310,7 @@
             <p>
                 <code class="code_output">
                     <?php
-                    $triangle_fun = new \controller\game_controller\iterators\TriangleFunctionGenerator([0,1,8,6], [-1,0,8,7]);
+                    $triangle_fun = new \controller\game_controller\iterators\TriangleFunctionGenerator([[0,1,8,6], [-1,0,8,7]]);
                     echo '<p>Resulting wavelength: ', $triangle_fun->getWavelength(), '<p>';
                     foreach(range(0,7) as $line) {
                         $iterated_array = $triangle_fun->generateWave();
@@ -319,24 +332,12 @@
             <p>
                 <code class="code_output">
                     <?php
-                    $triangle_knight = new \controller\game_controller\iterators\TriangleFunctionGenerator([-1,1,8,7], [-1,0,8,0], [0,1,8,6]);
-                    echo $triangle_knight->getWaveLength();
+                    $triangle_knight = new \controller\game_controller\iterators\TriangleFunctionGenerator([[-1,1,8,7], [-1,0,8,0], [0,1,8,6]]);
+                    echo $triangle_fun->getWaveLength();
                     foreach(range(0,7) as $line) {
-                        $current = $triangle_knight->generateCycle();
-                        if ($current) {
-                            $phase = key($current);
-                            $value = current($current);
-                        } else {
-                            $phase = $value = NULL;
-                        }
-                        if ($value < 0) {
-                            $start = 10 - abs($value) * 4;
-                        } else {
-                            $start = 10;
-                        }
-                        $width = abs($value) * 4;
-                        $value = $value > 0 ? '+' . strval($value) : strval($value);
-                        echo "<p>line $line | phase: $phase, value: $value <span style=\"display: inline;width:70%;height:1.2em;\"><span style=\"background-color:blue;width:$width", "em;margin-left:$start", "em;height:1.2em;text-align:center;display:inline-block\">$value</span></span></p>";
+                        $iterated_array = $triangle_fun->generateWave();
+                        $output_html = view\DimensionPhaseValue::printZeroOf2D($iterated_array, $line);
+                        echo $output_html;
                     }
                     ?>
                 </code>
@@ -344,4 +345,5 @@
         </section>
     </article>
     <time datetime="2017-07-31" id="last-edit">#LAST EDIT 31-07-2017</time>
+</div>
 </div>

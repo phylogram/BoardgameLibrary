@@ -36,12 +36,9 @@ class TriangleFunctionGenerator  extends NDimSquareFunctionGenerator
         $return_value = \controller\Math\VectorMath::add2ndLevel($return_array);
 
         $input_phase = $input_phase == 'current' ? $this->phase : $input_phase;
-        return array($input_phase => $return_value);
+        return array($input_phase => array(
+            $this->dim => $return_value)
+        );
     }
 
-    # # # # # # # # # # # # # # #
-    # protected actual iterator #
-    # # # # # # # # # # # # # # #
-
-    #Will call parent or self?
 }

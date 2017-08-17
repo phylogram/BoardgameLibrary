@@ -49,7 +49,7 @@ OUTPUT_HTML;
 
         $output_html = <<<OUTPUT_HTML
     <span style="display: inline;width:70%;height:1.2em;">
-        <span style="background-color:blue;width: {$width}em;margin-left:{$start}em;height:1.2em;text-align:center;display:inline-block">
+        <span style="background-color:rgba(6,5,20,0.92);color:rgba(243,252,218,0.92);width: {$width}em;margin-left:{$start}em;height:1.2em;text-align:center;display:inline-block">
             $value
         </span>
     </span>
@@ -61,11 +61,12 @@ OUTPUT_HTML;
     public static function summingUp1D($right_array, $left_array, $line, $resize = 1)
     {
         if (is_array($right_array) && is_array($left_array)) {
+
             $right_phase = key($right_array);
-            $right_value = current($right_array);
+            $right_value = current(current($right_array));
 
             $left_phase = key($left_array);
-            $left_value = current($left_array);
+            $left_value = current(current($left_array));
 
             $sum = $right_value + $left_value;
 
@@ -105,7 +106,7 @@ OUTPUT_HTML;
     {
         if (is_array($input_array)) {
             $phase = key($input_array);
-            $value = current($input_array);
+            $value = current($input_array[$phase]);
             $bar = self::makeBar($value, $resize);
             $value = $value > 0 ? '+' . strval($value) : strval($value);
         } else {

@@ -2,13 +2,58 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="30ef338f-6709-41ee-963f-ea94c42ec379" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/controller/game_controller/iterators/NDimDiagonalIndexesGenerator.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/controller/game_controller/iterators/NDimTriangleFunctionGenerator.phpVector" afterPath="" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/controller/game_controller/iterators/Signature1Dim.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/controller/game_controller/iterators/SignatureNDim.php" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/view/pure-release-1.0.0/HISTORY.md" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/view/pure-release-1.0.0/LICENSE.md" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/view/pure-release-1.0.0/README.md" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/view/pure-release-1.0.0/base-context-min.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/view/pure-release-1.0.0/base-context.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/view/pure-release-1.0.0/base-min.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/view/pure-release-1.0.0/base.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/view/pure-release-1.0.0/bower.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/view/pure-release-1.0.0/buttons-core-min.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/view/pure-release-1.0.0/buttons-core.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/view/pure-release-1.0.0/buttons-min.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/view/pure-release-1.0.0/buttons.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/view/pure-release-1.0.0/forms-min.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/view/pure-release-1.0.0/forms-nr-min.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/view/pure-release-1.0.0/forms-nr.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/view/pure-release-1.0.0/forms.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/view/pure-release-1.0.0/grids-core-min.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/view/pure-release-1.0.0/grids-core.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/view/pure-release-1.0.0/grids-min.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/view/pure-release-1.0.0/grids-responsive-min.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/view/pure-release-1.0.0/grids-responsive-old-ie-min.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/view/pure-release-1.0.0/grids-responsive-old-ie.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/view/pure-release-1.0.0/grids-responsive.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/view/pure-release-1.0.0/grids-units-min.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/view/pure-release-1.0.0/grids-units.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/view/pure-release-1.0.0/grids.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/view/pure-release-1.0.0/menus-core-min.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/view/pure-release-1.0.0/menus-core.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/view/pure-release-1.0.0/menus-dropdown-min.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/view/pure-release-1.0.0/menus-dropdown.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/view/pure-release-1.0.0/menus-horizontal-min.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/view/pure-release-1.0.0/menus-horizontal.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/view/pure-release-1.0.0/menus-min.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/view/pure-release-1.0.0/menus-scrollable-min.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/view/pure-release-1.0.0/menus-scrollable.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/view/pure-release-1.0.0/menus-skin-min.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/view/pure-release-1.0.0/menus-skin.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/view/pure-release-1.0.0/menus.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/view/pure-release-1.0.0/pure-min.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/view/pure-release-1.0.0/pure-nr-min.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/view/pure-release-1.0.0/pure-nr.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/view/pure-release-1.0.0/pure.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/view/pure-release-1.0.0/tables-min.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/view/pure-release-1.0.0/tables.css" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/controller/Math/VectorMath.php" afterPath="$PROJECT_DIR$/controller/Math/VectorMath.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/controller/game_controller/iterators/NDimSquareFunctionGenerator.php" afterPath="$PROJECT_DIR$/controller/game_controller/iterators/NDimSquareFunctionGenerator.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/controller/game_controller/iterators/SquareFunctionGenerator.php" afterPath="$PROJECT_DIR$/controller/game_controller/iterators/SquareFunctionGenerator.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/controller/game_controller/iterators/VectorWaveFunctionGenerator.php" afterPath="$PROJECT_DIR$/controller/game_controller/iterators/VectorWaveFunctionGenerator.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/controller/game_controller/iterators/TriangleFunctionGenerator.php" afterPath="$PROJECT_DIR$/controller/game_controller/iterators/TriangleFunctionGenerator.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/view/DimensionPhaseValue.php" afterPath="$PROJECT_DIR$/view/DimensionPhaseValue.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/view/IteratorClasses.doc.php" afterPath="$PROJECT_DIR$/view/IteratorClasses.doc.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/view/deleteMe.php" afterPath="$PROJECT_DIR$/view/deleteMe.php" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -20,21 +65,30 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="deleteMe.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/view/deleteMe.php">
+      <file leaf-file-name="IteratorClasses.doc.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/view/IteratorClasses.doc.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="425">
-              <caret line="25" column="88" lean-forward="false" selection-start-line="25" selection-start-column="88" selection-end-line="25" selection-end-column="88" />
-              <folding />
+            <state relative-caret-position="170">
+              <caret line="10" column="23" lean-forward="true" selection-start-line="10" selection-start-column="23" selection-end-line="10" selection-end-column="23" />
+              <folding>
+                <element signature="n#style#0;n#div#0;n#div#1;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#article#0;n#div#1;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#figcaption#0;n#figure#1;n#section#0;n#article#0;n#div#1;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#figcaption#0;n#figure#0;n#section#3;n#article#0;n#div#1;n#!!top" expanded="true" />
+                <element signature="e#9790#9796#0#HTML" expanded="true" />
+                <element signature="e#9803#9809#0#HTML" expanded="true" />
+                <element signature="e#9863#9869#0#HTML" expanded="true" />
+                <element signature="e#9876#9882#0#HTML" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="SecureAndClean.php" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/controller/SecureAndClean/SecureAndClean.php">
+      <file leaf-file-name="Signature1Dim.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/controller/game_controller/iterators/Signature1Dim.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="272">
-              <caret line="21" column="38" lean-forward="true" selection-start-line="21" selection-start-column="38" selection-end-line="21" selection-end-column="38" />
+            <state relative-caret-position="340">
+              <caret line="25" column="8" lean-forward="true" selection-start-line="25" selection-start-column="8" selection-end-line="25" selection-end-column="62" />
               <folding />
             </state>
           </provider>
@@ -43,8 +97,8 @@
       <file leaf-file-name="VectorMath.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/controller/Math/VectorMath.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="425">
-              <caret line="34" column="31" lean-forward="false" selection-start-line="34" selection-start-column="31" selection-end-line="34" selection-end-column="31" />
+            <state relative-caret-position="340">
+              <caret line="20" column="34" lean-forward="false" selection-start-line="20" selection-start-column="34" selection-end-line="20" selection-end-column="34" />
               <folding />
             </state>
           </provider>
@@ -53,28 +107,9 @@
       <file leaf-file-name="SquareFunctionGenerator.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/controller/game_controller/iterators/SquareFunctionGenerator.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="204">
-              <caret line="39" column="15" lean-forward="true" selection-start-line="39" selection-start-column="15" selection-end-line="39" selection-end-column="15" />
+            <state relative-caret-position="271">
+              <caret line="38" column="5" lean-forward="false" selection-start-line="38" selection-start-column="5" selection-end-line="38" selection-end-column="5" />
               <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="DimensionPhaseValue.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/view/DimensionPhaseValue.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="385">
-              <caret line="114" column="0" lean-forward="true" selection-start-line="114" selection-start-column="0" selection-end-line="114" selection-end-column="0" />
-              <folding>
-                <marker date="1502642360943" expanded="true" signature="783:852" ph="..." />
-                <marker date="1502642360943" expanded="true" signature="1227:1266" ph="..." />
-                <marker date="1502642360943" expanded="true" signature="1267:1452" ph="..." />
-                <marker date="1502642360943" expanded="false" signature="1290:1404" ph="..." />
-                <marker date="1502642360943" expanded="true" signature="1405:1440" ph="..." />
-                <marker date="1502642360943" expanded="true" signature="2184:2327" ph="..." />
-                <marker date="1502642360943" expanded="true" signature="2688:2754" ph="..." />
-                <marker date="1502642360943" expanded="true" signature="3266:3335" ph="..." />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -82,8 +117,28 @@
       <file leaf-file-name="NDimSquareFunctionGenerator.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/controller/game_controller/iterators/NDimSquareFunctionGenerator.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1241">
-              <caret line="78" column="9" lean-forward="true" selection-start-line="78" selection-start-column="9" selection-end-line="78" selection-end-column="9" />
+            <state relative-caret-position="315">
+              <caret line="31" column="0" lean-forward="false" selection-start-line="31" selection-start-column="0" selection-end-line="31" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="SignatureNDim.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/controller/game_controller/iterators/SignatureNDim.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="510">
+              <caret line="41" column="65" lean-forward="false" selection-start-line="41" selection-start-column="65" selection-end-line="41" selection-end-column="65" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="TriangleFunctionGenerator.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/controller/game_controller/iterators/TriangleFunctionGenerator.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="17">
+              <caret line="1" column="19" lean-forward="false" selection-start-line="1" selection-start-column="17" selection-end-line="1" selection-end-column="19" />
               <folding />
             </state>
           </provider>
@@ -93,42 +148,45 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>return</find>
-      <find>$this-&gt;getS</find>
-      <find>$this-&gt;cyc</find>
-      <find>the Tr</find>
-      <find>$this-&gt;tim</find>
-      <find>time</find>
-      <find>this-&gt;G</find>
-      <find>getStat</find>
-      <find>3 and 2</find>
-      <find>getSt</find>
-      <find>-&gt;getStat</find>
-      <find>getter</find>
-      <find>king</find>
-      <find>using</find>
-      <find>test</find>
-      <find>trian</find>
-      <find>getSi</find>
-      <find>cy</find>
-      <find>generateW</find>
-      <find>squarefunction p</find>
-      <find>getSta</find>
-      <find>echo</find>
-      <find>echo &quot;getstate we send &quot; . $this-&gt;lower_limit . '&lt;br&gt;';</find>
-      <find>var</find>
-      <find>getst</find>
-      <find>echo.*</find>
       <find>var_dump.*</find>
       <find>echo \&quot;&lt;p&gt;T.*</find>
       <find>square-</find>
+      <find>getT</find>
+      <find>setp</find>
+      <find>\squareFunctionGenerator(</find>
+      <find>getState</find>
+      <find>::print1D</find>
+      <find>and chang</find>
+      <find>gette</find>
+      <find>new \</find>
+      <find>print</find>
       <find>traingle</find>
+      <find>change</find>
+      <find>summ</find>
+      <find>the value at a expl</find>
+      <find>we can</find>
+      <find>generat</find>
+      <find>and wi</find>
+      <find>getSu</find>
+      <find>make</find>
+      <find>img</find>
+      <find>png</find>
+      <find>le</find>
+      <find>multidi</find>
+      <find>setw</find>
+      <find>half</find>
+      <find>(\s{16})(public \$)</find>
+      <find>var</find>
+      <find>debu</find>
     </findStrings>
     <replaceStrings>
       <replace>throw</replace>
       <replace>n_dim-</replace>
       <replace>traingle-</replace>
+      <replace>::printZeroOf2D</replace>
       <replace>triangle</replace>
+      <replace>::printZeroOf2Da</replace>
+      <replace />
     </replaceStrings>
   </component>
   <component name="Git.Settings">
@@ -156,24 +214,32 @@
         <option value="$PROJECT_DIR$/controller/game_controller/iterators/TriangleFunctionGeneratorTest.php" />
         <option value="$PROJECT_DIR$/controller/game_controller/iterators/WaveFunction.php" />
         <option value="$PROJECT_DIR$/controller/game_controller/iterators/MultipleWaveFunctionGenerator.php" />
-        <option value="$PROJECT_DIR$/view/DimensionPhaseValue.php" />
         <option value="$PROJECT_DIR$/controller/game_controller/iterators/findSignature.php" />
         <option value="$PROJECT_DIR$/conf/conf.php" />
         <option value="$PROJECT_DIR$/controller/Math/FourierTransformation.php" />
         <option value="$PROJECT_DIR$/controller/game_controller/iterators/FindSignature.php" />
         <option value="$PROJECT_DIR$/controller/Math/WeWillFindANameLater.php" />
         <option value="$PROJECT_DIR$/controller/game_controller/iterators/FindSignatures.php" />
-        <option value="$PROJECT_DIR$/view/IteratorClasses.doc.php" />
         <option value="$PROJECT_DIR$/view/deleteme" />
-        <option value="$PROJECT_DIR$/controller/game_controller/iterators/TriangleFunctionGenerator.php" />
         <option value="$PROJECT_DIR$/controller/game_controller/iterators/NDimTriangleFunctionGenerator.php" />
         <option value="$PROJECT_DIR$/controller/game_controller/iterators/WaveFunctionGenerator.php" />
         <option value="$PROJECT_DIR$/controller/game_controller/iterators/IndexWaveFunctionGenerator.php" />
         <option value="$PROJECT_DIR$/controller/game_controller/iterators/VectorWaveFunctionGenerator.php" />
-        <option value="$PROJECT_DIR$/controller/game_controller/iterators/NDimSquareFunctionGenerator.php" />
         <option value="$PROJECT_DIR$/controller/Math/VectorMath.php" />
-        <option value="$PROJECT_DIR$/controller/game_controller/iterators/SquareFunctionGenerator.php" />
         <option value="$PROJECT_DIR$/view/deleteMe.php" />
+        <option value="$PROJECT_DIR$/controller/game_controller/iterators/TriangleFunctionGenerator.php" />
+        <option value="$USER_HOME$/Dropbox/schach/Bauer_schwarz.svg" />
+        <option value="$USER_HOME$/Dropbox/schach/schachbrett_solo_800px.svg" />
+        <option value="$PROJECT_DIR$/view/pictures/Bauer_weiss.svg" />
+        <option value="$PROJECT_DIR$/controller/game_controller/iterators/Siganture.php" />
+        <option value="$PROJECT_DIR$/controller/game_controller/iterators/Signature.php" />
+        <option value="$PROJECT_DIR$/controller/game_controller/iterators/Signature1Dim.php" />
+        <option value="$PROJECT_DIR$/controller/game_controller/iterators/SquareFunctionGenerator.php" />
+        <option value="$PROJECT_DIR$/view/DimensionPhaseValue.php" />
+        <option value="$PROJECT_DIR$/controller/game_controller/iterators/SignatureNDim.php" />
+        <option value="$PROJECT_DIR$/controller/game_controller/iterators/NDimSquareFunctionGenerator.php" />
+        <option value="$PROJECT_DIR$/view/pure-release-1.0.0/base.css" />
+        <option value="$PROJECT_DIR$/view/IteratorClasses.doc.php" />
       </list>
     </option>
   </component>
@@ -187,11 +253,10 @@
     <servers />
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-8" />
-    <option name="y" value="-8" />
-    <option name="width" value="1382" />
-    <option name="height" value="784" />
+  <component name="ProjectFrameBounds">
+    <option name="x" value="-7" />
+    <option name="width" value="697" />
+    <option name="height" value="775" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -209,6 +274,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scratches" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -235,7 +302,14 @@
               <item name="chessLibrary" type="b2602c69:ProjectViewProjectNode" />
               <item name="chessLibrary" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="controller" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="Math" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="game_controller" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="chessLibrary" type="b2602c69:ProjectViewProjectNode" />
+              <item name="chessLibrary" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="controller" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="game_controller" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="iterators" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
             <path>
               <item name="chessLibrary" type="b2602c69:ProjectViewProjectNode" />
@@ -262,13 +336,11 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scratches" />
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/conf/conf.php" />
+    <property name="last_opened_file_path" value="$USER_HOME$/Dropbox/schach/schachbrett_solo_800px.svg" />
     <property name="full.screen.before.presentation.mode" value="false" />
     <property name="settings.editor.selected.configurable" value="reference.webide.settings.project.settings.php" />
   </component>
@@ -314,19 +386,29 @@
       <workItem from="1502450171421" duration="11727000" />
       <workItem from="1502610721520" duration="27273000" />
       <workItem from="1502640498332" duration="21914000" />
-      <workItem from="1502788480988" duration="26715000" />
+      <workItem from="1502788480988" duration="35730000" />
+      <workItem from="1502899197982" duration="438000" />
+      <workItem from="1502904821671" duration="20379000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="118081000" />
+    <option name="totallyTimeSpent" value="147913000" />
+  </component>
+  <component name="TodoView">
+    <todo-panel id="selected-file">
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+    <todo-panel id="all">
+      <are-packages-shown value="true" />
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="784" extended-state="6" />
-    <editor active="true" />
+    <frame x="-7" y="0" width="697" height="775" extended-state="0" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21083455" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.4229075" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.0" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.6706408" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -370,63 +452,12 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="XDebuggerManager">
-    <breakpoint-manager />
+    <breakpoint-manager>
+      <option name="time" value="1" />
+    </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/model/game/chess/parser/PGNParser.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="24" column="24" lean-forward="false" selection-start-line="24" selection-start-column="24" selection-end-line="24" selection-end-column="24" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/conf/conf.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="578">
-          <caret line="34" column="26" lean-forward="false" selection-start-line="34" selection-start-column="26" selection-end-line="34" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/controller/SecureAndClean/SecureAndClean.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="8" column="20" lean-forward="true" selection-start-line="8" selection-start-column="20" selection-end-line="8" selection-end-column="20" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/model/game/arrays/NDimArrays.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="16" column="23" lean-forward="false" selection-start-line="16" selection-start-column="23" selection-end-line="16" selection-end-column="23" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../../bin/apache/apache2.4.23/include/http_vhost.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2023">
-          <caret line="119" column="0" lean-forward="true" selection-start-line="119" selection-start-column="0" selection-end-line="119" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../../bin/apache/apache2.4.23/conf/extra/httpd-vhosts.conf">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="493">
-          <caret line="29" column="0" lean-forward="false" selection-start-line="29" selection-start-column="0" selection-end-line="29" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/model/game/arrays/NDimArrays.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/../add_vhost.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="289">
@@ -467,7 +498,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="221">
           <caret line="13" column="1" lean-forward="false" selection-start-line="13" selection-start-column="1" selection-end-line="13" selection-end-column="1" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -476,7 +506,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1700">
           <caret line="105" column="0" lean-forward="false" selection-start-line="105" selection-start-column="0" selection-end-line="105" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -484,7 +513,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="221">
           <caret line="18" column="143" lean-forward="false" selection-start-line="18" selection-start-column="143" selection-end-line="18" selection-end-column="143" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -500,7 +528,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="289">
           <caret line="17" column="26" lean-forward="false" selection-start-line="17" selection-start-column="26" selection-end-line="17" selection-end-column="48" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -516,21 +543,10 @@
     <entry file="file://$PROJECT_DIR$/controller/game_controller/iterators/DiagonalIterator.php" />
     <entry file="file://$PROJECT_DIR$/controller/game_controller/iterators/DiagonalGenerator.php" />
     <entry file="file://$USER_HOME$/AppData/Local/Temp/index.html" />
-    <entry file="file://$PROJECT_DIR$/view/pure-release-1.0.0/README.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="17">
-            <caret line="38" column="8" lean-forward="false" selection-start-line="38" selection-start-column="8" selection-end-line="38" selection-end-column="8" />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/view/PGNParser_and_related_classes.doc.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="422">
           <caret line="134" column="0" lean-forward="false" selection-start-line="134" selection-start-column="0" selection-end-line="134" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -540,7 +556,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="561">
           <caret line="33" column="82" lean-forward="false" selection-start-line="33" selection-start-column="82" selection-end-line="33" selection-end-column="82" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -548,7 +563,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="589">
           <caret line="177" column="14" lean-forward="false" selection-start-line="177" selection-start-column="14" selection-end-line="177" selection-end-column="14" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -556,7 +570,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="561">
           <caret line="33" column="18" lean-forward="false" selection-start-line="33" selection-start-column="18" selection-end-line="33" selection-end-column="18" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -564,7 +577,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -587,7 +599,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="369">
           <caret line="31" column="1" lean-forward="true" selection-start-line="31" selection-start-column="1" selection-end-line="31" selection-end-column="1" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -603,7 +614,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="147">
           <caret line="53" column="252" lean-forward="false" selection-start-line="53" selection-start-column="252" selection-end-line="53" selection-end-column="252" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -611,7 +621,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="289">
           <caret line="22" column="5" lean-forward="true" selection-start-line="22" selection-start-column="5" selection-end-line="22" selection-end-column="5" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -619,26 +628,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-1648">
           <caret line="265" column="15" lean-forward="true" selection-start-line="265" selection-start-column="15" selection-end-line="265" selection-end-column="15" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/controller/game_controller/iterators/TriangleFunctionGenerator.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="492">
-          <caret line="46" column="1" lean-forward="true" selection-start-line="46" selection-start-column="1" selection-end-line="46" selection-end-column="1" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/view/IteratorClasses.doc.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1445">
-          <caret line="302" column="68" lean-forward="true" selection-start-line="302" selection-start-column="68" selection-end-line="302" selection-end-column="68" />
-          <folding>
-            <marker date="1502795140890" expanded="true" signature="17065:17104" ph="..." />
-            <marker date="1502795140890" expanded="true" signature="17121:17149" ph="..." />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -650,84 +639,162 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/controller/game_controller/iterators/VectorWaveFunctionGenerator.php">
+    <entry file="file://$PROJECT_DIR$/controller/game_controller/iterators/NDimDiagonalIndexesGenerator.php" />
+    <entry file="file://$PROJECT_DIR$/controller/game_controller/iterators/NDimTriangleFunctionGenerator.phpVector" />
+    <entry file="file://$PROJECT_DIR$/controller/SecureAndClean/SecureAndClean.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="272">
+          <caret line="21" column="38" lean-forward="true" selection-start-line="21" selection-start-column="38" selection-end-line="21" selection-end-column="38" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/controller/game_controller/iterators/VectorWaveFunctionGenerator.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="79">
           <caret line="21" column="21" lean-forward="false" selection-start-line="21" selection-start-column="21" selection-end-line="21" selection-end-column="21" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/view/DimensionPhaseValue.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="385">
-          <caret line="114" column="0" lean-forward="true" selection-start-line="114" selection-start-column="0" selection-end-line="114" selection-end-column="0" />
-          <folding>
-            <marker date="1502642360943" expanded="true" signature="783:852" ph="..." />
-            <marker date="1502642360943" expanded="true" signature="1227:1266" ph="..." />
-            <marker date="1502642360943" expanded="true" signature="1267:1452" ph="..." />
-            <marker date="1502642360943" expanded="false" signature="1290:1404" ph="..." />
-            <marker date="1502642360943" expanded="true" signature="1405:1440" ph="..." />
-            <marker date="1502642360943" expanded="true" signature="2184:2327" ph="..." />
-            <marker date="1502642360943" expanded="true" signature="2688:2754" ph="..." />
-            <marker date="1502642360943" expanded="true" signature="3266:3335" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/controller/game_controller/iterators/NDimDiagonalIndexesGenerator.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="14" column="1" lean-forward="true" selection-start-line="14" selection-start-column="1" selection-end-line="14" selection-end-column="1" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/controller/game_controller/iterators/NDimTriangleFunctionGenerator.phpVector">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="11" column="108" lean-forward="false" selection-start-line="11" selection-start-column="108" selection-end-line="11" selection-end-column="108" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/controller/game_controller/iterators/NDimSquareFunctionGenerator.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1241">
-          <caret line="78" column="9" lean-forward="true" selection-start-line="78" selection-start-column="9" selection-end-line="78" selection-end-column="9" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/controller/Math/VectorMath.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="425">
-          <caret line="34" column="31" lean-forward="false" selection-start-line="34" selection-start-column="31" selection-end-line="34" selection-end-column="31" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/controller/game_controller/iterators/SquareFunctionGenerator.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="39" column="15" lean-forward="true" selection-start-line="39" selection-start-column="15" selection-end-line="39" selection-end-column="15" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/view/deleteMe.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="425">
-          <caret line="25" column="88" lean-forward="false" selection-start-line="25" selection-start-column="88" selection-end-line="25" selection-end-column="88" />
+        <state relative-caret-position="153">
+          <caret line="9" column="17" lean-forward="true" selection-start-line="9" selection-start-column="17" selection-end-line="9" selection-end-column="17" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/controller/SecureAndClean/SecureAndClean.php">
+    <entry file="file://$USER_HOME$/Dropbox/schach/schachbrett_solo_800px.svg">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="21" column="38" lean-forward="true" selection-start-line="21" selection-start-column="38" selection-end-line="21" selection-end-column="38" />
+        <state relative-caret-position="34">
+          <caret line="2" column="0" lean-forward="true" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Dropbox/schach/Bauer_schwarz.svg">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" column="6" lean-forward="true" selection-start-line="4" selection-start-column="6" selection-end-line="4" selection-end-column="6" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/view/pictures/Bauer_weiss.svg">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/AppData/Local/Temp/LOGO.svg">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/controller/Math/VectorMath.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="20" column="34" lean-forward="false" selection-start-line="20" selection-start-column="34" selection-end-line="20" selection-end-column="34" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/controller/game_controller/iterators/TriangleFunctionGenerator.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="1" column="19" lean-forward="false" selection-start-line="1" selection-start-column="17" selection-end-line="1" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/view/DimensionPhaseValue.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="312">
+          <caret line="81" column="106" lean-forward="false" selection-start-line="81" selection-start-column="106" selection-end-line="81" selection-end-column="106" />
+          <folding>
+            <marker date="1502987587450" expanded="true" signature="783:852" ph="..." />
+            <marker date="1502987587450" expanded="true" signature="1227:1266" ph="..." />
+            <marker date="1502987587450" expanded="true" signature="1267:1494" ph="..." />
+            <marker date="1502987587450" expanded="true" signature="1290:1446" ph="..." />
+            <marker date="1502987587450" expanded="true" signature="1447:1482" ph="..." />
+            <marker date="1502987587450" expanded="true" signature="2245:2388" ph="..." />
+            <marker date="1502987587450" expanded="true" signature="2749:2815" ph="..." />
+            <marker date="1502987587450" expanded="true" signature="3335:3404" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/controller/game_controller/iterators/SquareFunctionGenerator.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="271">
+          <caret line="38" column="5" lean-forward="false" selection-start-line="38" selection-start-column="5" selection-end-line="38" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/controller/game_controller/iterators/Signature1Dim.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="25" column="8" lean-forward="true" selection-start-line="25" selection-start-column="8" selection-end-line="25" selection-end-column="62" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/controller/game_controller/iterators/SignatureNDim.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="510">
+          <caret line="41" column="65" lean-forward="false" selection-start-line="41" selection-start-column="65" selection-end-line="41" selection-end-column="65" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/controller/game_controller/iterators/NDimSquareFunctionGenerator.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="315">
+          <caret line="31" column="0" lean-forward="false" selection-start-line="31" selection-start-column="0" selection-end-line="31" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/view/pure-release-1.0.0/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="17">
+            <caret line="38" column="8" lean-forward="false" selection-start-line="38" selection-start-column="8" selection-end-line="38" selection-end-column="8" />
+            <folding />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/view/pure-release-1.0.0/base.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="459">
+          <caret line="243" column="29" lean-forward="false" selection-start-line="243" selection-start-column="29" selection-end-line="243" selection-end-column="29" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/view/IteratorClasses.doc.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="10" column="23" lean-forward="true" selection-start-line="10" selection-start-column="23" selection-end-line="10" selection-end-column="23" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#div#1;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#article#0;n#div#1;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#figcaption#0;n#figure#1;n#section#0;n#article#0;n#div#1;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#figcaption#0;n#figure#0;n#section#3;n#article#0;n#div#1;n#!!top" expanded="true" />
+            <element signature="e#9790#9796#0#HTML" expanded="true" />
+            <element signature="e#9803#9809#0#HTML" expanded="true" />
+            <element signature="e#9863#9869#0#HTML" expanded="true" />
+            <element signature="e#9876#9882#0#HTML" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
