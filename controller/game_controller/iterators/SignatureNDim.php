@@ -38,7 +38,7 @@ class SignatureNDim
         $this->upper_limit = \controller\Math\VectorMath::columnSum($signatures, 0); #To Do: This is in some cases wrong, for example wavelength 2 and phase 0/1
         $this->lower_limit = \controller\Math\VectorMath::columnSum($signatures, 1); #To Do: See upper limit
 
-        $this->wavelength = \controller\Math\VectorMath::leastCommonMultipleOfArray(array_column($this->signatures, 2));
+        $this->wavelength = \controller\Math\VectorMath::leastCommonMultipleOfArray(array_column($this->signatures, 'wavelength'));
         $this->half_wavelength = intdiv($this->half_wavelength, 2);
     }
 

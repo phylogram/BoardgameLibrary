@@ -6,7 +6,7 @@
  * Time: 16:37
  */
 
-namespace controller\game_controller\iterators;
+namespace controller\game_controller\iterators\signatures;
 
 
 class Signature1Dim
@@ -27,5 +27,6 @@ class Signature1Dim
         $this->phase = $phase;
         $this->dim = $dim;
     }
+
 
 }
