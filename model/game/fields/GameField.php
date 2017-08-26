@@ -1,11 +1,12 @@
 <?php
-namespace model\chess\fields;
+namespace model\game\fields;
 
 class GameField
 {
     protected $position = array(); #Position in array (chessboard)
-    protected $occupied_by; #reference to object = piece
+    protected $occupied_by = array(); #reference to object = piece
     protected $pieces_that_reach_me = array(); #reference to pieces, that move to field
+    protected $is_occupied;
 
     /**
      * $position is an array of the same lenght as nDim. Construct is used in PutFieldsOnArray;
@@ -36,20 +37,28 @@ class GameField
     ########################################################
     /**
      * 
-     * @param \model\chess\figures\AbstractFigure $piece 
+     * @param \model\chess\figures\AnyFigure $piece
      * @return boolean Success
      */
-    public function setOccupiedBy(\model\chess\figures\AbstractFigure &$piece): bool
+    public function setOccupiedBy(\model\chess\figures\AnyFigure $piece)
     {
-        if ($piece->getColor() == $this->occupied_by->getColor()) {
-            return false; #To Do: Error Message
-        }
-        $this->occupied_by &= $piece; #Possible error
-        return true;
+        $this->
     }
     public function getOccupiedBy()
     {
         return $this->occupied_by;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function isOccupied(): bool
+    {
+        return $this->is_occupied;
+    }
+    public function deleteOccupiedBy($figure)
+    {
+
     }
     ##########################################################
 
@@ -57,16 +66,21 @@ class GameField
     {
         return $this>pieces_that_reach_me;
     }
-    public function pushPiecesThatReachMe(\model\chess\figures\AbstractFigure &$piece, $phase)
+    public function pushPiecesThatReachMe(\model\chess\figures\AnyFigure $piece, $phase)
     {
         #To Do: check piece for instance of
         $string_position = implode('-',$piece->getPosition());
         $this->pieces_that_reach_me[$string_position] = array($phase => $piece); #Possible error
     }
-    public function removePiecesThatReachMe(\model\chess\figures\AbstractFigure &$piece)
+    public function removePiecesThatReachMe(\model\chess\figures\AnyFigure $piece)
     {
         $string_position = \model\parser\VectorStringTranslation::vectorToString($piece->getPosition());
         unset($this->pieces_that_reach_me[$string_position]);
     }
     ###############################################################
+
+    public function updatePiecesThatReachMe()
+    {
+
+    }
 }
