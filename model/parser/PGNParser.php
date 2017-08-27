@@ -6,7 +6,7 @@
  * Time: 15:00
  */
 
-namespace model\chess\parser;
+namespace model\game\chess\parser;
 
 /**
  * Class PGNParser

@@ -1,12 +1,12 @@
 <?php
-namespace model\chess\parser;
+
 class PgnInnerTranslation
 {
     protected $lower_case_letter;
-    protected const UPPER_CASE_LETTER = array(
+    const UPPER_CASE_LETTER = array(
             'P' =>  'Pawn',     #Bauer
             'N' =>  'Rook',   #Turm
-            'B' =>  'Bishop',   #Läufer
+            'B' =>  'Bishop',   #Lï¿½ufer
             'R' =>  'Knight',     #Springer
             'Q' =>  'Queen'    #Dame
         );

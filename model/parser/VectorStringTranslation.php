@@ -1,5 +1,5 @@
 <?php
-namespace model\chess\parser;
+namespace model\game\chess\parser;
 class VectorStringTranslation
 {
     static public function vectorToString(array $vector)
