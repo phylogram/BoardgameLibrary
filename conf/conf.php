@@ -25,12 +25,15 @@ const MAX_V = 16;
  */
 const NAMESPACE_FOLDER_RELATION = array(
 'bootstrap'         =>  'bootstrap',
+'chessParser_master' => 'chessParser_master',
 'conf'              =>  'conf',
 'controller'        =>  'controller',
     'client_action'         =>  'client_action',
         'routing'               => 'routing',
     'game_controller'       =>  'game_controller', #arrays here is the same name as in model\game\arrays
-        'iterators'         =>  'iterators', 
+        'iterators'         =>  'iterators',
+            'signatures'        => 'signatures',
+        'figures'               => 'figures',
         'Math'            =>  'Math',
     'parser'    => 'parser',
     'SecureAndClean' => 'SecureAndClean',
@@ -42,13 +45,22 @@ const NAMESPACE_FOLDER_RELATION = array(
     'fields'        =>  'fields',
     'chess'         =>  'chess',
     'parser'        =>  'parser',
-'testing'           =>  'testing',
+'database'           =>  'database',
 'view'              =>  'view',
 );
 
 #Talking to each other
 
+
 const NEXT = 'next'; #ignore, move on to next issue
 
+#Pieces Iteration
+const STOP = 0; #stop all, do nothing
+const GO = 1; #Do and go on
+const STOP_THERE = 2; #stop all, but mark
+const STOP_AND_GO = 3; #stop in phase, do nothing, and continue next phase
+const STOP_THERE_AND_GO = 4; #stop in phase, mark and continue next phase
+const SKIP = 5; #Pass and go
 #Chess Board size
 const CHESS_BOARD_X_Y = array(8,8);
+
