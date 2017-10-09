@@ -1,29 +1,31 @@
 <?php
-namespace model\chess\arrays;
+namespace model\game\arrays;
 
-class ChessBoard extends \model\chess\arrays\NDimArrays
+class ChessBoard extends NDimArrays
 {
     protected $figures = array();
 
-    public function __construct()
+    public function __construct(array $size = CHESS_BOARD_X_Y)
     {
-        parent::__construct(...CHESS_BOARD_X_Y);
-        \controller\game_controller\arrays\PutFieldsOnArray::excecute($this);  #Binded to class ??
+        parent::__construct(...$size);
+        \controller\game_controller\arrays\PutFieldsOnArray::execute($this);  #Binded to class ??
 
     }
 
     /**
      * add figure at a position to the array
-     * @param \model\chess\figures\AbstractFigure $figure
+     * @param \model\game\figures\AnyFigure $figure
      * @param $position
      */
-    public function addFigure(\model\chess\figures\AbstractFigure $figure, $position)
+    public function addFigure(\model\game\figures\AnyFigure $figure, $position) #write function for pieces array
     {
-        if (parent::testMaxV($position)) {  #look up if position is on board
-            $this->figures[] = $figure;     #append figure the figure array
-            $field = &parent::select($position); #get field
-            $success = $field->setOccupiedBy($figure); #set the field as occupied by
-
+        if (parent::testValidPosition($position)) {  #look up if position is on board
+            $this->figures[$figure->getName()] = $figure;     #append figure the figure array
+            $field = $this->selectFromChessBoard($position); #get field
+            $figure->setPosition($position);
+            $figure->setChessBoard($this);
+            $field->setOccupiedBy($figure); #set the field as occupied by
+            $field->updatePiecesThatReachMe();
             $figure->updateAll(); #Update All possible movements (since it's first time)
         }
 
@@ -35,18 +37,15 @@ class ChessBoard extends \model\chess\arrays\NDimArrays
      */
     public function selectFromChessBoard($position)
     {
-        if (!parent::testMaxV($position))
+        if (!parent::testValidPosition($position, $send_massage = false))
         {
-            return false; #We do not want an error here, becauase this is used in iteration where false just stops the loop
+            return false; #We do not want an error here, because this is used in iteration where false just stops the loop
         }
         return parent::select($position, $method = 'nested_array');
     }
-    public function moveFigure()
+    public function getFigures()
     {
-        #To Do: 
+        return $this->figures;
     }
-    public function killFigure()
-    {
-        #To Do:
-    }
+
 }

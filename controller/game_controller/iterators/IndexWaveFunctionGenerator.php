@@ -19,8 +19,8 @@ interface IndexWaveFunctionGenerator  extends VectorWaveFunctionGenerator
 
     public function generateCycleFrom(array $position);
 
-    public function generateWaveFrom(array $position): array;
+    public function generateWaveFrom(array $position);
 
-    public function getStateAtPhaseFrom($input_phase, $position): array;
+    public function getStateAtPhaseFrom($input_phase, $position);
 
 }

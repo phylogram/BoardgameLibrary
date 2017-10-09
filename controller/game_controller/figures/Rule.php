@@ -6,19 +6,22 @@
  * Time: 11:32
  */
 
-namespace model\game\figures;
-
+namespace controller\game_controller\figures;
 
 class Rule
 {
-    protected $move;
-    public function __construct(\model\game\figures\Move $move)
-    {
-        $this->move = $move;
-    }
+    const STOP = 0; #stop immediately
+    const GO = 1; # mark and go on
+    const SKIP = 2; #Skip but go on (jump)
+    const STOP_THERE = 3; #mark but stop (can kill)
 
-    public function validate()
+
+    public static function validate($figure)
     {
         return true;
+    }
+    public static function action($figure, $field)
+    {
+        return GO;
     }
 }

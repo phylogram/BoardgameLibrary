@@ -21,6 +21,7 @@ class SquareFunctionGenerator implements IndexWaveFunctionGenerator
     protected $phase; #where are we in the cycle: can't be bigger wavelength
     protected $timer;
 
+    protected $current_phase;
 
     /**
      * Summary of __construct
@@ -48,6 +49,9 @@ class SquareFunctionGenerator implements IndexWaveFunctionGenerator
         $this->checkPhase($signature->phase);
         $this->phase = $signature->phase;
         $this->timer = 0;
+
+        $this->current_phase = new \controller\game_controller\iterators\phase($this->phase);
+        
     }
 
     # # # # # # # # # # # # # # # #
@@ -63,45 +67,44 @@ class SquareFunctionGenerator implements IndexWaveFunctionGenerator
         if ($this->timer >= $this->wavelength) {
             return NULL;
         }
-        return $this->cycle();
+        return $this->generateWave();
     }
 
     /**
      * generates endless wave
      * @return mixed
      */
-    public function generateWave(): array
+    public function generateWave(): \controller\game_controller\iterators\phase
     {
 
-        if ($this->phase == $this->wavelength) {
+        if ($this->phase === $this->wavelength) {
             $this->phase = 0;
         }
-        return $this->cycle();
+        $this->current_phase =  $this->getStateAtPhase();
+        $this->cycle();
+        return $this->current_phase;
     }
     /**
      * gets value at state
      * @return array [$phase => $value]
      * @param $input_phase int or 'current'
      */
-    public function getStateAtPhase($input_phase = 'current'): array
+    public function getStateAtPhase($input_phase = 'current'): \controller\game_controller\iterators\phase
     {
         if ($input_phase === 'current') {
             
             $input_phase = $this->phase;
         }
+        $this->current_phase->setCurrentPhase($this->phase);
         switch (($input_phase % $this->wavelength) < $this->half_wavelength) {
             case true:
-
-                return array($input_phase => array(
-                    $this->dim => $this->upper_limit)
-                );
+                $this->current_phase->set($this->dim, $this->upper_limit);
+                return $this->current_phase;
                 break;
 
             case false:
-
-                return array($input_phase => array(
-                    $this->dim => $this->lower_limit)
-                );
+                $this->current_phase->set($this->dim, $this->lower_limit);
+                return $this->current_phase;
                 break;
         }
     }
@@ -111,32 +114,55 @@ class SquareFunctionGenerator implements IndexWaveFunctionGenerator
 
     public function generateCycleFrom(array $position)
     {
-        $vector = $this->generateCycle();
-        return \controller\Math\VectorMath::addVector($vector, $position);
+        $this->current_phase = $this->generateCycle();
+
+        if ($this->current_phase) {
+            return \controller\Math\VectorMath::addVector($this->current_phase, $position);
+        }
+
+        return $this->current_phase;
     }
 
-    public function generateWaveFrom(array $position): array
+    public function generateWaveFrom(array $position): \controller\game_controller\iterators\phase
     {
-        $vector = $this->generateWave();
-        return \controller\Math\VectorMath::addVector($vector, $position);
+        $this->current_phase = $this->generateWave();
+        if ($this->current_phase) {
+            return \controller\Math\VectorMath::addVector($this->current_phase, $position);
+        }
+        return $this->current_phase;
     }
 
-    public function getStateAtPhaseFrom($input_phase, $position): array
+    public function getStateAtPhaseFrom($input_phase, $position): \controller\game_controller\iterators\phase
     {
-        $vector = $this->getStateAtPhase($input_phase);
-        return \controller\Math\VectorMath::addVector($vector, $position);
+        $this->current_phase = $this->getStateAtPhase($input_phase);
+        if ($this->current_phase) {
+            return \controller\Math\VectorMath::addVector($this->current_phase, $position);
+        }
+        return $this->current_phase;
+    }
+    public function getMoveAtPhase($input_phase): \controller\game_controller\iterators\phase
+    {
+        $this->current_phase = $this->getStateAtPhase($input_phase);
+        $this->cycle();
+        return $this->current_phase;
+    }
+    public function getMoveAtPhaseFrom($input_phase, $position): \controller\game_controller\iterators\phase
+    {
+        $this->current_phase = $this->getStateAtPhaseFrom($input_phase, $position);
+        $this->cycle();
+        return $this->current_phase;
     }
 
     # # # # # # # # # # # # # # # #
-    # protected actual iterator   #
+    # protected incrementor  #
     # # # # # # # # # # # # # # # #
 
-    protected function cycle(): array
+    protected function cycle()
     {
-        $return_value = $this->getStateAtPhase();
+
         $this->phase ++;
         $this->timer ++;
-        return $return_value;
+
     }
 
     # # # # # # # # # # # #
@@ -211,6 +237,15 @@ class SquareFunctionGenerator implements IndexWaveFunctionGenerator
     {
         $this->timer = $timer;
     }
+    #############
+
+    /**
+     * @return phase
+     */
+    public function getCurrentPhase(): phase
+    {
+        return $this->current_phase;
+    }
     # # # # # # # # #
     # Check Values  #
     # # # # # # # # #
@@ -228,4 +263,6 @@ class SquareFunctionGenerator implements IndexWaveFunctionGenerator
         return false;
     }
     }
+
+
 }

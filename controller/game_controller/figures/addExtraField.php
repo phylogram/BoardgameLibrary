@@ -9,7 +9,11 @@
 namespace controller\game_controller\figures;
 
 
-class addExtraField
+class addExtraField #needs to yield stuff
 {
+    public function from()
+    {
+        return NULL;
+    }
 
 }

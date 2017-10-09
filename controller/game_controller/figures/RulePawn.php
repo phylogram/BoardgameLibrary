@@ -6,32 +6,33 @@
  * Time: 11:37
  */
 
-namespace \controller\game_controller\figures\;
+namespace controller\game_controller\figures;
 
 /**
  * Class RulePawn
  * only for iteration. Kill $ co .. is the conductor
  * @package model\game\chess\figures
  */
-class RulePawn extends \model\game\figures\Rule
+class RulePawn extends \model\game\figures\ChessRule
 {
 
-    public function validate()
+    public function validate(\model\game\figures\Move $move)
     {
 
         #Unidirectional
-        switch ($this->move->figure->getColor()) {
-            case 'white':
-                if ($this->move->getDirections()[1] != 1) {
+        switch ($move->figure->getColor()) {
+            case 0:
+                if ($move->getDirections()[0] != 1) {
                     return false;
                 }
                 break;
-            case 'black':
-                if ($this->move->getDirections()[1] != 0) {
+            case 1:
+                if ($move->getDirections()[0] != 0) {
                     return false;
                     break;
                 }
         }
+        return true;
 
     }
 }

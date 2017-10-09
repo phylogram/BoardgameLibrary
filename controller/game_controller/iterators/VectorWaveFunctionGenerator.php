@@ -36,13 +36,13 @@ interface VectorWaveFunctionGenerator
      * generates values as long as asked for
      * @return array(phase=>value) or if multidimensional array(phase=>array(dimension=>value))
      */
-    public function generateWave(): array;
+    public function generateWave();
 
     /**
      * calculates value at given phase
      * @param int $input_phase XOR none, which results in current
      * @return array(phase=>value) or if multidimensional array(phase=>array(dimension=>value))
      */
-    public function getStateAtPhase($input_phase): array;
+    public function getStateAtPhase($input_phase);
 
 }

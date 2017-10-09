@@ -39,8 +39,10 @@ class NDimSquareFunctionGenerator extends SquareFunctionGenerator
         $this->lower_limit = $signatures->getLowerLimit();
         
         foreach ($this->signatures as $signature) {
-                $this->generator_objects[$signature->dim] = new parent($signature);
+                $this->generator_objects[$signature->dim] = new \controller\game_controller\iterators\SquareFunctionGenerator($signature);
         }
+
+        $this->current_phase = new \controller\game_controller\iterators\phase($this->phase);
     }
 
     # # # # # # # # # # #
@@ -51,15 +53,15 @@ class NDimSquareFunctionGenerator extends SquareFunctionGenerator
     /**
      * calculates value at given phase
      * @param $input_phase int $phase XOR none, which results in current
-     * @return array(phase=>array(dimension=>value))
+     * @return array|phase
      */
-    public function getStateAtPhase($input_phase = 'current'): array
+    public function getStateAtPhase($input_phase = 'current'): \controller\game_controller\iterators\phase
     {
 
-        if ($input_phase == 'current') {
+        if ($input_phase === 'current') {
             $input_phase = $this->phase;
         }
-
+        $this->current_phase->setCurrentPhase($this->phase);
         #calculate phases for individual generators
         $phases = array();
 
@@ -72,19 +74,20 @@ class NDimSquareFunctionGenerator extends SquareFunctionGenerator
             $resulting_phase = ($phase_in_first_wavelength + $phase_shift) % $sub_generator_wavelength;
             $phases[$signature->dim] = $resulting_phase;
         }
-
         #Afterward we get the values for each SquareFunctionGenerator
-        $return_array = array();
+
 
         foreach (array_combine($phases, $this->generator_objects) as $phase => $object) {
 
             $state = $object->getStateAtPhase($phase);
 
-            $return_array[$this->phase][$object->getDim()] = $state[$phase][$object->getDim()];
+            $this->current_phase->set(  $object->getDim(),
+                                        current($state->values)
+                );
 
         }
 
-        return $return_array;
+        return $this->current_phase;
     }
 
     # # # # # # # # # # # #

@@ -29,16 +29,18 @@ class TriangleFunctionGenerator  extends NDimSquareFunctionGenerator
      * @param int $phase XOR none, which results in current
      * @return array(phase=>value)
      */
-    public function getStateAtPhase($input_phase = 'current'): array
+    public function getStateAtPhase($input_phase = 'current'): \controller\game_controller\iterators\phase
     {
-        $return_array = parent::getStateAtPhase($input_phase);
+        $this->current_phase = parent::getStateAtPhase($input_phase);
 
-        $return_value = \controller\Math\VectorMath::add2ndLevel($return_array);
+        $this->current_phase->sumUpDimensions($this->dim);
 
-        $input_phase = $input_phase == 'current' ? $this->phase : $input_phase;
-        return array($input_phase => array(
-            $this->dim => $return_value)
-        );
+        if ($input_phase == 'current') {
+            $this->current_phase->setCurrentPhase($this->phase);
+        } else {
+            $this->current_phase->setCurrentPhase($input_phase);
+    }
+        return $this->current_phase;
     }
 
 }

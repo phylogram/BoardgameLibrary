@@ -1,6 +1,8 @@
 <?php
 namespace model\game\fields;
 
+use model\game\figures\AnyFigure;
+
 class GameField
 {
     protected $position = array(); #Position in array (chessboard)
@@ -15,6 +17,7 @@ class GameField
     public function __construct(array $position)
     {
         $this->position = $position;
+        $this->is_occupied = false;
     }
 
 
@@ -35,15 +38,17 @@ class GameField
         return $this->position;
     }
     ########################################################
+
     /**
-     * 
-     * @param \model\chess\figures\AnyFigure $piece
-     * @return boolean Success
+     * @param array $occupied_by
      */
-    public function setOccupiedBy(\model\chess\figures\AnyFigure $piece)
+    public function setOccupiedBy(\model\game\figures\AnyFigure $occupied_by)
     {
-        $this->
+        $this->is_occupied = true;
+        $this->occupied_by[] = $occupied_by;
+
     }
+
     public function getOccupiedBy()
     {
         return $this->occupied_by;
@@ -56,31 +61,64 @@ class GameField
     {
         return $this->is_occupied;
     }
-    public function deleteOccupiedBy($figure)
+    public function deleteOccupiedBy($moving_figure)
     {
-
+        $success = false;
+        foreach ($this->occupied_by as $key => $reclining_figure) {
+            if ($moving_figure === $reclining_figure) {
+                unset($this->occupied_by[$key]);
+                $success = true;
+                break;
+            }
+        }
+        if (count($this->occupied_by) == 0) {
+            $this->is_occupied = false;
+        }
+        return $success;
     }
     ##########################################################
 
-    public function getPiecesThatReachMe(): array
-    {
-        return $this>pieces_that_reach_me;
-    }
-    public function pushPiecesThatReachMe(\model\chess\figures\AnyFigure $piece, $phase)
+    public function pushPiecesThatReachMe(\model\game\figures\AnyFigure $piece, $phase)
     {
         #To Do: check piece for instance of
-        $string_position = implode('-',$piece->getPosition());
-        $this->pieces_that_reach_me[$string_position] = array($phase => $piece); #Possible error
+
+        $this->pieces_that_reach_me[] = array($phase => $piece);
     }
-    public function removePiecesThatReachMe(\model\chess\figures\AnyFigure $piece)
+
+    public function deletePieceThatReachMe(\model\game\figures\AnyFigure $piece)
     {
-        $string_position = \model\parser\VectorStringTranslation::vectorToString($piece->getPosition());
-        unset($this->pieces_that_reach_me[$string_position]);
+        foreach ($this->pieces_that_reach_me as $key => $reaching_piece) {
+            if ($piece === current($reaching_piece)) {
+                unset($this->pieces_that_reach_me[$key]);
+                $success = true;
+                break;
+            }
+        }
     }
+
+    public function testIfReachMe(\model\game\figures\AnyFigure $asking_piece)
+    {
+        $can_reach_me = false;
+        if (count($this->pieces_that_reach_me) === 0) {
+            return $can_reach_me;
+        }
+        foreach ($this->pieces_that_reach_me as $piece) {
+            $can_reach_me = current($piece) === $asking_piece ? true : false;
+        }
+        return $can_reach_me;
+    }
+
     ###############################################################
 
     public function updatePiecesThatReachMe()
     {
+        foreach ($this->pieces_that_reach_me as $piece) {
 
+            current($piece)->updatePhaseFrom(key($piece));
+        }
+    }
+    public function getPiecesThatReachMe()
+    {
+        return $this->pieces_that_reach_me;
     }
 }

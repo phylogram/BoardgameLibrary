@@ -1,6 +1,5 @@
 
     <article class="pure-u-20-24" id="doc_NDimArrays">
-
         <header>
             <h1 itemprop="headline">The n_dim_array & cognate classes</h1>
 
@@ -15,6 +14,7 @@
                 <code class="code_example">$to_big_array = new \model\game\arrays\NDimArrays(1,2,3,4,5,6,7,17, -1);</code>
             <code class="code_output">
             <?php
+            ini_set('html_errors', true);
                 $to_big_array = new \model\game\arrays\NDimArrays(1,2,3,4,5,6,7,17, -1);
             ?>
             </code>
@@ -23,7 +23,6 @@
             <code class="code_example">var_dump($array_2_3->getSkeleton());</code>
             <code class="code_output">
                 <?php
-
                     $array_2_3 = new \model\game\arrays\NDimArrays(2,3);
                     var_dump($array_2_3->getSkeleton());
                 ?>

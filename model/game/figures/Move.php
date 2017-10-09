@@ -22,21 +22,12 @@ class Move
 
     public $figure;
 
-    public function __construct(array $start_position, array $target_position, \model\chess\figures\AbstractFigure $figure)
+    public function __construct(array $start_position, array $target_position)
     {
         #To Do: Check valid dimensions
         $this->start_position = $start_position;
         $this->target_position = $target_position;
 
-        $this->figure = $figure;
-
-        $this->start_field = $this->figure->getChessBoard()->selectFromChessboard($this->start_position);
-        $this->target_field = $this->figure->getChessBoard()->selectFromChessboard($this->target_position);
-
-        foreach (array_combine($start_position, $target_position) as $start => $target) {
-            $this->directions[] = $target > $start;
-            $this->move_vector[] = $target - $start;
-        }
 
     }
 
@@ -79,6 +70,32 @@ class Move
     public function getMoveVector(): array
     {
         return $this->move_vector;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getFigure(): \model\game\figures\AnyFigure
+    {
+        return $this->figure;
+    }
+
+    /**
+     * @param mixed $figure
+     */
+    public function setFigure(\model\game\figures\AnyFigure $figure)
+    {
+        $this->figure = $figure;
+
+
+
+        $this->start_field = $this->figure->getChessBoard()->selectFromChessboard($this->start_position);
+        $this->target_field = $this->figure->getChessBoard()->selectFromChessboard($this->target_position);
+
+        foreach (array_combine($this->start_position, $this->target_position) as $start => $target) {
+            $this->directions[] = $target > $start;
+            $this->move_vector[] = $target - $start;
+        }
     }
 
 }

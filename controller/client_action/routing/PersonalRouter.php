@@ -1,6 +1,5 @@
 <?php
 namespace controller\client_action\routing;
-require('site_structure.php');
 
 /**
  * Class PersonalRouter
@@ -13,22 +12,103 @@ class PersonalRouter
 
     public static function find()
     {
+
         $nodes = explode('/', $_SERVER['REQUEST_URI']);
-        if (count($nodes) > max_uri_depth) {
-            return false; #To do: 404er einbauen
+        $node = array_pop($nodes);
+        $view = '..' . DIRECTORY_SEPARATOR . 'view' . DIRECTORY_SEPARATOR;
+        switch ($node) {
+            case '':
+                echo \view\Wrapper::header();
+
+                echo \view\HomepageAND404::show('');
+
+                echo \view\Wrapper::footer();
+                break;
+            case 'NDimArrays':
+                if (!isset($_POST['data'])) {
+                    echo \view\Wrapper::header();
+                }
+                require_once $view . 'NDimArrays.doc.php';
+                if (!isset($_POST['data'])) {
+                    echo \view\Wrapper::footer();
+                }
+                break;
+            case 'IteratorClasses':
+                if (!isset($_POST['data'])) {
+                    echo \view\Wrapper::header();
+                }
+                require_once $view . 'IteratorClasses.doc.php';
+                if (!isset($_POST['data'])) {
+                    echo \view\Wrapper::footer();
+                }
+                break;
+            case 'BoardFieldPiece':
+                if (!isset($_POST['data'])) {
+                    echo \view\Wrapper::header();
+                }
+                require_once $view . 'BoardFieldPiece.php';
+                if (!isset($_POST['data'])) {
+                    echo \view\Wrapper::footer();
+                }
+                break;
+            case 'TestArea':
+                require_once $view . 'DeleteMe.php';
+                break;
+            case 'PlayExample':
+                if (!isset($_POST['data'])) {
+                    echo \view\Wrapper::header();
+                }
+                require_once $view . 'play.php';
+                if (!isset($_POST['data'])) {
+                    echo \view\Wrapper::footer();
+                }
+                break;
+            case explode('?', $node)[0] === 'Play':
+                if (!isset($_POST['data']['next'])) {
+                    echo \view\Wrapper::header();
+                }
+                require_once $view . 'playFromSelect.php';
+                if (!isset($_POST['data']['next'])) {
+                    echo \view\Wrapper::footer();
+                }
+                break;
+            case 'board_select.js':
+                require_once $view . 'board_select.js';
+                break;
+            case 'SelectBoard':
+                if (!isset($_POST['data'])) {
+                    echo \view\Wrapper::header();
+                }
+                require_once $view . 'database.php';
+                if (!isset($_POST['data'])) {
+                    echo \view\Wrapper::footer();
+                }
+                break;
+            case 'SelectBoard.js':
+                require_once 'SelectBoard.js';
+                break;
+            case 'ChessBoard.js':
+                require_once 'ChessBoard.js';
+                    break;
+            case 'update':
+                require_once $view . 'updateDatabase.php';
+                break;
+            case 'informMe':
+                require_once $view . 'infromMe.php.';
+                break;
+            case 'narrenschach_animation.swf':
+                require_once 'narrenschach_animation.swf';
+                break;
+            case 'videogames':
+                echo \view\Wrapper::header();
+                require_once $view . 'videogames.php';
+                echo \view\Wrapper::footer();
+            default:
+                echo \view\Wrapper::header();
+                echo \view\HomepageAND404::show($_SERVER['REQUEST_URI']);
+                echo \view\Wrapper::footer();
+
         }
 
-        $current_element = site_structure;
-        foreach ($nodes as $node) {
-            if (is_array($current_element)) {
-                if (array_key_exists($node, $current_element)) {
-                    $current_element = $current_element[$node];
-                } else {
-                    return false; #To do: 404er einbauen
-                }
-            } elseif (is_string($current_element)) {
-                require($current_element);
-            }
-        }
     }
 }

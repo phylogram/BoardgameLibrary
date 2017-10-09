@@ -8,26 +8,26 @@ class PutFieldsOnArray
      * puts field with position vectors on each field
      * works on the array itself
      * wrapper for actual recursive method
-     * @param \model\chess\arrays\NDimArrays $array_object 
+     * @param \model\game\arrays\NDimArrays $array_object 
      */
-    public static function excecute(\model\chess\arrays\NDimArrays &$array_object)
+    public static function execute(\model\game\arrays\NDimArrays &$array_object)
     {
     #To Do: Check if is instance of NDimArrays
         $n_dim = $array_object->getNDim();
         $pos_vector = $array_object->getPosVector();
 
         $position = array_fill(0,$n_dim, 0); #start at the beginning
-        self::recursiveExcecute($pos_vector, $n_dim-1, $array_object->nested_array, $position);
+        self::recursiveExecute($pos_vector, $n_dim-1, $array_object->nested_array, $position);
     }
 
-    protected static function recursiveExcecute(array $max_pos_vector, int $dim_pointer, array &$nested_array, array $position)
+    protected static function recursiveExecute(array $max_pos_vector, int $dim_pointer, array &$nested_array, array $position)
     {
         # Outer Loop
 
         if ($dim_pointer != 0) {
             while (true) {
                 #go one level deeper
-                self::recursiveExcecute($max_pos_vector, $dim_pointer-1, $nested_array[$position[$dim_pointer]], $position);
+                self::recursiveExecute($max_pos_vector, $dim_pointer-1, $nested_array[$position[$dim_pointer]], $position);
 
                #update position
                $position[$dim_pointer] ++;
@@ -47,7 +47,7 @@ class PutFieldsOnArray
 
             while (true) {
 
-                $nested_array[$position[0]] = new \model\chess\fields\GameField($position); #put a field in me
+                $nested_array[$position[0]] = new \model\game\fields\GameField($position); #put a field in me
 
                 #carry
                 if ($position[0] == $max_pos_vector[0]) {

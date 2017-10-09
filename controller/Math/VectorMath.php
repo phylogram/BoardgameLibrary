@@ -1,6 +1,8 @@
 <?php
 namespace controller\Math;
 
+use controller\game_controller\iterators\phase;
+
 class VectorMath {
 
     /**
@@ -18,30 +20,31 @@ class VectorMath {
     }
 
     /**
+     * To Do: Delete -> moved to phase object
      * the return array will keep the keys of $a!
      * @param array $a
      * @param array $b
      * @return bool
      */
-    public static function addVector(array $a, array $b)
+    public static function addVector(\controller\game_controller\iterators\phase $a, array $b)
     {
-        if (count($a) != count($b)) {
+        if (count($a->values) != count($b)) {
             return false; #To Do: error
         }
-        $position_b = 0;
-        $array_sum = array();
-        $phase_a = key($a);
-        foreach ($a[$phase_a] as $key_a => $item_a) {
-            $array_sum[$phase_a][$key_a] = $item_a + $b[$position_b];
-            $position_b ++;
+
+        $return_phase = clone $a;
+        foreach ($return_phase->values as &$value) {
+            $value += current($b);
+            next($b);
         }
-        return $array_sum;
+        return $return_phase;
     }
 
 
 
 
-    /** for use in array_walk() & array_walk_recursive()
+    /** delete -> go to phase
+     * for use in array_walk() & array_walk_recursive()
      * @param int $carry
      * @param int $item
      * @return int
@@ -75,5 +78,12 @@ class VectorMath {
     {
         return array_sum(array_column($array, $column));
     }
-        
+
+    public static function addScalarReturn(array $array, int $scalar): array
+    {
+        foreach ($array as &$item) {
+            $item += $scalar;
+        }
+        return $array;
+    }
 }

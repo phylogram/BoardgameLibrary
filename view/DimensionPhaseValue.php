@@ -18,11 +18,11 @@ class DimensionPhaseValue
      * @param int $resize
      * @return string
      */
-    public static function print1D($input_array, $line, $resize = 1)
+    public static function print1D($phase, $line, $resize = 1)
     {
-        if (is_array($input_array)) {
-            $phase = key($input_array);
-            $value = current($input_array);
+        if (is_a($phase, '\controller\game_controller\iterators\phase')) {
+            $current_phase = $phase->getCurrentPhase;
+            $value = current($phase->values);
             $bar = self::makeBar($value, $resize);
             $value = $value > 0 ? '+' . strval($value) : strval($value);
         } else {
@@ -60,13 +60,13 @@ OUTPUT_HTML;
 
     public static function summingUp1D($right_array, $left_array, $line, $resize = 1)
     {
-        if (is_array($right_array) && is_array($left_array)) {
+        if (is_a($right_array, '\controller\game_controller\iterators\phase') && is_a($left_array, '\controller\game_controller\iterators\phase')) {
 
-            $right_phase = key($right_array);
-            $right_value = current(current($right_array));
+            $right_phase = $right_array->getCurrentPhase();
+            $right_value = current($right_array->values);
 
-            $left_phase = key($left_array);
-            $left_value = current(current($left_array));
+            $left_phase = $left_array->getCurrentPhase();
+            $left_value = current($left_array->values);
 
             $sum = $right_value + $left_value;
 
@@ -88,9 +88,9 @@ OUTPUT_HTML;
 
     public static function print2D($input_array, $line)
     {
-        if (is_array($input_array)) {
-            $phase = key($input_array);
-            $values = implode('|', current($input_array));
+        if (is_a($input_array, '\controller\game_controller\iterators\phase')) {
+            $phase = $input_array->getCurrentPhase();
+            $values = implode('|', $input_array->values);
         } else {
             $phase = $values = 'NULL';
         }
@@ -104,9 +104,9 @@ OUTPUT_HTML;
 
     public  static function printZeroOf2D($input_array, $line, $resize = 1)
     {
-        if (is_array($input_array)) {
-            $phase = key($input_array);
-            $value = current($input_array[$phase]);
+        if (is_a($input_array, '\controller\game_controller\iterators\phase')) {
+            $phase = $input_array->getCurrentPhase();
+            $value = current($input_array->values);
             $bar = self::makeBar($value, $resize);
             $value = $value > 0 ? '+' . strval($value) : strval($value);
         } else {

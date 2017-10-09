@@ -6,7 +6,7 @@
  * Time: 16:37
  */
 
-namespace controller\game_controller\iterators\signatures;
+namespace controller\game_controller\iterators;
 
 
 class Signature1Dim

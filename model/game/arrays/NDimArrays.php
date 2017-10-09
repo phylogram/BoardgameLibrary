@@ -1,5 +1,5 @@
 <?php
-namespace model\chess\arrays;
+namespace model\game\arrays;
 
 class NDimArrays
 {
@@ -37,7 +37,7 @@ class NDimArrays
         $this->n_dim = sizeof($this->vector); #create number of dimensions
         $this->testNDim($this->n_dim); #test MAX_DIM
 
-        #create the skeleton & the nested_array � in this case the same
+        #create the skeleton & the nested_array in this case the same
         $this->skeleton = $this->emptyArray($this->vector);
         $this->nested_array = $this->skeleton;
 
@@ -70,17 +70,21 @@ class NDimArrays
     }
 
 
-    ###testing
+    ###database
 
-    protected function testMaxV($vector)
+    protected function testMaxV($vector, $send_massage = true)
     {
         foreach ($vector as $v) {
             if ($v > MAX_V) {
-                trigger_error(...\errors\ErrorMessage::maxV($v));
+                if ($send_massage) {
+                    trigger_error(...\errors\ErrorMessage::maxV($v));
+                }
                 return false; #if dev environment
             }
             if ($v < 1) {
-                trigger_error(...\errors\ErrorMessage::zeroOrLess($v));
+                if ($send_massage) {
+                    trigger_error(...\errors\ErrorMessage::zeroOrLess($v));
+                }
                 return false; #if dev environment
             }
         }
@@ -94,6 +98,18 @@ class NDimArrays
             return false; #if dev environment
         }
         return true;
+    }
+
+    protected function testValidPosition(array $position, $send_message = true)
+    {
+        foreach (array_combine($position, $this->pos_vector) as $requested => $available) {
+            if ($requested > $available || $requested < 0) {
+                #send error message
+                return false;
+            }
+        }
+        return true;
+
     }
 
     # # # # # # # # # # #

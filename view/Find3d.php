@@ -6,73 +6,63 @@
  * Time: 12:38
  */
 require_once ('..\bootstrap\init.php');
-echo '<style>td, th {text-align: center; border-width: thin; border-style: dashed; border-color: darkgray;}</style>';
-set_time_limit(600);
-echo '<h1>We will brut force this shit NEW</h1>';
+# 1	2	-1	0	0	1
 
-#To Do: write in Database and use in python for calculation
-$target1 = array(1, 2, 2, 1, -1, -2, -2, -1);
-$target2 = array(-2, -2, -1, 1, 2, 2, 1, -1);
 
-$input_value_range = range(-1, 1);
+#king!!!
+$db = new mysqli('localhost', 'root', '', 'test_database');
 
 $wavelength = 8;
 
-$phase_range = range(0, $wavelength - 1);
-$t = time();
-$counter = 0;
+$test_array = array(-1, 0, 1, 1, 1, 0, -1, -1);
 
-#input value range
-foreach ($input_value_range as $one1) {
-    echo "<p>Outer loop $one1 of 3: $counter waves generated</p>";
-    echo '<p style="padding-left:4em">Time elapsed in s: ', time() - $t, '</p>';
-    foreach ($input_value_range as $one2) {
-        foreach ($input_value_range as $two1) {
-            foreach ($input_value_range as $two2) {
-                foreach ($input_value_range as $three1) {
-                    foreach ($input_value_range as $three2) {
-                        #phase range!
-                        foreach ($phase_range as $p1) {
-                            foreach ($phase_range as $p2) {
-                                foreach ($phase_range as $p3) {
+$value_range = range(-2,  2, 1);
+$phase_range = range(0, 9);
+$counter = 1;
+foreach ($phase_range as $p1) {
+    foreach ($phase_range as $p2) {
 
-                                    #update
-                                    $counter ++;
+        foreach ($value_range as $fv1) {
+            foreach ($value_range as $fv2) {
 
-                                    #The Generator Generation
-                                    $test_generator = new \controller\game_controller\iterators\TriangleFunctionGenerator(
-                                        new \controller\game_controller\iterators\SignatureNDim(array(
-                                            new \controller\game_controller\iterators\Signature1Dim( $one1, $one2, $wavelength, $p1, 0), #The first sub_generator
-                                            new \controller\game_controller\iterators\Signature1Dim($two1, $two2, $wavelength, $p2, 1), #The 2nd
-                                            new \controller\game_controller\iterators\Signature1Dim($three1, $three2, $wavelength, $p3, 2) #The 3rd
-                                        ), 0)
-                                    );
+                foreach ($value_range as $sv1) {
+                    foreach ($value_range as $sv2) {
 
-                                    #Gather the $values
+                        $test_generator = new \controller\game_controller\iterators\TriangleFunctionGenerator(
+                            new \controller\game_controller\iterators\SignatureNDim(array(
 
-                                    $generated_array = array();
+                                new \controller\game_controller\iterators\Signature1Dim($fv1, $sv1, $wavelength, $p1, 0),
+                                new \controller\game_controller\iterators\Signature1Dim($fv2, $sv2, $wavelength, $p2, 1)
+                                ), 0)
+                        );
 
-                                    foreach (range(0, 7) as $i) {
-                                        $generated_array[] = current($test_generator->generateWave()->values);
-                                    }
 
-                                    #Compare arrays
-                                    $target = 0;
+                        #generate
+                        $generated_array = array();
 
-                                    if ($generated_array === $target1) {
-                                        $target = array
-                                    }
-                                }
+                        foreach (range(0, $wavelength - 1) as $item) {
+                            $generated_array[] = current($test_generator->generateWave()->values);
+                        }
+                        #echo implode(' ', $generated_array), '<br>';
+                        if ($generated_array == $test_array) {
+                            $sql = <<<SQL
+INSERT INTO king_waves (index_value, wave, p1, p2, fv1, fv2, sv1, sv2) VALUES ($counter, 1, $p1, $p2, $fv1, $fv2, $sv1, $sv2);
+SQL;
+                            echo $sql;
+                            $succ = $db->query($sql);
+                            if (!$succ) {
+                                echo $db->error, '<br>';
                             }
                         }
 
-
+                        $counter ++;
 
                     }
                 }
             }
         }
     }
+
 }
-$t = time() - $t;
-echo "<p><strong>Finished $i items in $t seconds</strong>";
+$db->close();
+echo 'fertig2';

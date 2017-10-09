@@ -1,5 +1,5 @@
 <?php
-
+namespace \model\parser;
 class PgnInnerTranslation
 {
     protected $lower_case_letter;
